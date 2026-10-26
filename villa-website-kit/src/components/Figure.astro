@@ -1,0 +1,25 @@
+---
+import { Picture } from 'astro:assets';
+import { alt as altFor, photo } from '../lib/photos';
+interface Props {
+  id: string; locale: string; sizes?: string; widths?: number[]; eager?: boolean;
+  caption?: string; position?: string; class?: string; ratio?: string;
+}
+const { id, locale, sizes = '(min-width: 60rem) 50vw, 100vw', widths = [480, 800, 1280], eager = false, caption, position = 'center', class: cls, ratio } = Astro.props;
+const p = photo(id);
+const ws = widths.filter((w) => w <= p.src.width);
+---
+<figure class:list={['fig', cls]} style={ratio ? `--ratio:${ratio}` : undefined}>
+  <Picture
+    src={p.src} alt={altFor(locale, p)} formats={['avif', 'webp']} fallbackFormat="webp" widths={ws.length ? ws : [p.src.width]} sizes={sizes}
+    loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding={eager ? 'sync' : 'async'}
+    style={`object-position:${position}`}
+  />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+<style>
+  .fig { margin: 0; }
+  .fig :global(img) { width: 100%; object-fit: cover; }
+  .fig[style*="--ratio"] :global(img) { aspect-ratio: var(--ratio); }
+  figcaption { margin-top: .6rem; font-size: var(--step--1); color: var(--c-ink-soft); }
+</style>

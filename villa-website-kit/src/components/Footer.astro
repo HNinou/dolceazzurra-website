@@ -1,0 +1,71 @@
+---
+import Logo from './Logo.astro';
+import { lp, t } from '../lib/i18n';
+import { cin, contact, legal, house, instagramUrl, telHref, mapsUrl } from '../lib/villa';
+interface Props { locale: string }
+const { locale } = Astro.props;
+const a = legal.address;
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="top">
+      <div class="brandcol">
+        <Logo />
+        <p class="tagline">{t(locale, 'footer.tagline')}</p>
+        <a class="btn btn-light" href={lp(locale, 'book')} data-cta="book">{t(locale, 'cta.checkDates')}</a>
+      </div>
+      <div>
+        <h2 class="fh">{t(locale, 'footer.contact')}</h2>
+        <ul class="fl">
+          <li><a href={`mailto:${contact.email}`}>{contact.email}</a></li>
+          {contact.phones.map((p: any) => <li><a href={telHref(p.number)}>{p.number}</a></li>)}
+          <li><a href={instagramUrl} rel="noopener">Instagram @{contact.instagram}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="fh">{t(locale, 'footer.address')}</h2>
+        <address>
+          {house.name}<br />
+          {a.street}, {a.locality}<br />
+          {a.postal_code} {a.city} ({a.province}), {t(locale, 'footer.country')}
+        </address>
+        <a class="maplink" href={mapsUrl} rel="noopener">{t(locale, 'common.openMaps')}</a>
+      </div>
+      <div>
+        <h2 class="fh">{t(locale, 'footer.info')}</h2>
+        <ul class="fl">
+          <li><a href={lp(locale, 'book')}>{t(locale, 'nav.book')}</a></li>
+          <li><a href={lp(locale, 'legal')}>{t(locale, 'nav.legal')}</a></li>
+          <li><a href={lp(locale, 'privacy')}>{t(locale, 'nav.privacy')}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <p class="cin"><abbr title={t(locale, 'footer.cinLong')}>CIN</abbr> {cin}</p>
+      <p>{legal.company} · {t(locale, 'footer.vat')} {legal.vat_id}</p>
+      <p>{t(locale, 'footer.architecture')} <a href={house.architect.url} rel="noopener">{house.architect.name}</a></p>
+      <p>© {year} {legal.company}</p>
+    </div>
+  </div>
+</footer>
+<style>
+  .site-footer { background: var(--c-ink); color: #E9E3DA; padding-block: var(--space-5) var(--space-4); font-size: .95rem; }
+  .site-footer a:not(.btn) { color: #fff; }
+  .site-footer a:not(.btn):hover { color: var(--c-oak); }
+  .site-footer :focus-visible { outline-color: var(--c-oak); }
+  .top { display: grid; gap: var(--space-4); }
+  @media (min-width: 48rem) { .top { grid-template-columns: 1.4fr 1fr 1fr .8fr; } }
+  .brandcol :global(.logo) { color: #fff; }
+  .tagline { margin: var(--space-2) 0 var(--space-3); font-family: var(--font-display); font-size: var(--step-1); font-weight: 350; color: #fff; }
+  .fh { font: 500 var(--step--1)/1.2 var(--font-text); letter-spacing: .08em; text-transform: uppercase; color: var(--c-oak); margin-bottom: var(--space-2); }
+  .fl { list-style: none; margin: 0; padding: 0; }
+  .fl li a, .maplink { display: inline-flex; align-items: center; min-height: 40px; }
+  address { font-style: normal; line-height: 1.7; }
+  .base { margin-top: var(--space-5); padding-top: var(--space-3); border-top: 1px solid rgba(201, 166, 124, .35); display: flex; flex-wrap: wrap; gap: .25rem var(--space-4); font-size: var(--step--1); color: #CFC8BD; }
+  .base p { margin: 0; }
+  .base a { display: inline-flex; min-height: 40px; align-items: center; }
+  .base p { display: flex; align-items: center; gap: .3em; flex-wrap: wrap; }
+  .cin { color: #fff; letter-spacing: .03em; }
+  abbr { text-decoration: none; }
+</style>

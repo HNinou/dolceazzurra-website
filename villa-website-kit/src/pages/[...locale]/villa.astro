@@ -1,0 +1,137 @@
+---
+import Base from '../../layouts/Base.astro';
+import Figure from '../../components/Figure.astro';
+import AwardLine from '../../components/AwardLine.astro';
+import { localePaths, localeFromParam, lp, t, tf } from '../../lib/i18n';
+import { page } from '../../lib/content';
+import { fill, house } from '../../lib/villa';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParam(Astro.params.locale);
+const c = page(locale, 'villa').frontmatter;
+const space = (id: string) => tf(locale, house.spaces.find((s: any) => s.id === id).en);
+const outdoorIds = ['patio', 'pool', 'courtyard', 'olive-lounge', 'games', 'roof-terrace', 'outdoor-shower'];
+---
+<Base locale={locale} slug="villa" title={fill(c.title)} description={fill(c.description)}>
+  <header class="page-head wrap">
+    <span class="kicker">{c.hero.kicker}</span>
+    <h1>{c.hero.title}</h1>
+    <p class="lead measure">{fill(c.hero.sub)}</p>
+  </header>
+  <Figure id="08" locale={locale} class="bleed" sizes="100vw" widths={[640, 960, 1280]} eager position="50% 60%" />
+
+  <section class="section" aria-labelledby="arch-h">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="kicker">{c.architecture.kicker}</span>
+        <h2 id="arch-h">{c.architecture.title}</h2>
+        {c.architecture.paragraphs.slice(0, 2).map((p: string) => <p>{p}</p>)}
+      </div>
+      <Figure id="11" locale={locale} ratio="4 / 3" class="reveal" />
+    </div>
+    <div class="wrap split reverse later">
+      <div class="reveal">
+        {c.architecture.paragraphs.slice(2).map((p: string) => <p>{p}</p>)}
+        <p class="small muted">{c.architecture.creditNote}</p>
+        <AwardLine locale={locale} />
+      </div>
+      <Figure id="07" locale={locale} ratio="4 / 3" class="reveal" />
+    </div>
+  </section>
+
+  <section class="section band" aria-labelledby="suites-h">
+    <div class="wrap split">
+      <Figure id="22" locale={locale} ratio="4 / 3" class="reveal" />
+      <div class="reveal">
+        <span class="kicker">{c.suites.kicker}</span>
+        <h2 id="suites-h">{c.suites.title}</h2>
+        <p>{c.suites.text}</p>
+        <ul class="list-clean">
+          <li>{space('suites')}</li>
+          <li>{tf(locale, house.capacity.beds)}</li>
+          <li>{space('bathrooms')}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="living-h">
+    <div class="wrap">
+      <div class="measure reveal">
+        <span class="kicker">{c.living.kicker}</span>
+        <h2 id="living-h">{c.living.title}</h2>
+        <p>{c.living.text}</p>
+        <p class="muted">{space('living')}</p>
+      </div>
+      <div class="pair">
+        <Figure id="18" locale={locale} ratio="3 / 2" class="reveal" />
+        <Figure id="17" locale={locale} ratio="3 / 2" class="reveal" />
+      </div>
+    </div>
+  </section>
+
+  <Figure id="14" locale={locale} class="bleed" sizes="100vw" widths={[640, 960, 1280]} position="50% 60%" />
+  <section class="section" aria-labelledby="out-h">
+    <div class="wrap split top">
+      <div class="reveal">
+        <span class="kicker">{c.outdoors.kicker}</span>
+        <h2 id="out-h">{c.outdoors.title}</h2>
+      </div>
+      <ul class="list-clean reveal">
+        {outdoorIds.map((id) => <li>{space(id)}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section band" aria-labelledby="sus-h">
+    <div class="wrap split top">
+      <div class="reveal">
+        <span class="kicker">{c.sustainability.kicker}</span>
+        <h2 id="sus-h">{c.sustainability.title}</h2>
+        <p>{c.sustainability.text}</p>
+      </div>
+      <ul class="list-clean reveal">
+        {house.sustainability.features.map((f: string) => <li>{tf(locale, f)}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="am-h">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="kicker">{c.amenities.kicker}</span>
+        <h2 id="am-h">{c.amenities.title}</h2>
+      </div>
+      <div class="amen">
+        {Object.entries(house.amenities).map(([g, items]: any) => (
+          <div class="reveal">
+            <h3>{t(locale, `amenityGroups.${g}`)}</h3>
+            <ul class="list-clean">{items.map((i: string) => <li>{tf(locale, i)}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section band cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <h2 id="cta-h">{c.cta.title}</h2>
+      <p class="lead">{fill(t(locale, 'cta.fromNight'))}</p>
+      <a class="btn btn-primary" href={lp(locale, 'book')} data-cta="book">{t(locale, 'cta.checkDates')}</a>
+    </div>
+  </section>
+</Base>
+<style>
+  .page-head { padding-block: var(--space-5) var(--space-4); }
+  .page-head h1 { max-width: 18ch; }
+  .later { margin-top: var(--space-5); }
+  .split.top { align-items: start; }
+  .pair { display: grid; gap: var(--space-2); margin-top: var(--space-4); }
+  @media (min-width: 48rem) { .pair { grid-template-columns: 1fr 1fr; } }
+  .amen { display: grid; gap: var(--space-4); }
+  @media (min-width: 48rem) { .amen { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 72rem) { .amen { grid-template-columns: repeat(3, 1fr); } }
+  .amen h3 { font-size: var(--step-1); }
+  .cta { text-align: center; }
+  .cta .lead { margin-bottom: var(--space-3); }
+</style>

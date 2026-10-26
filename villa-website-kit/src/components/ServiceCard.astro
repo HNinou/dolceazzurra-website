@@ -1,0 +1,18 @@
+---
+import { t } from '../lib/i18n';
+import { contact } from '../lib/villa';
+interface Props { locale: string; title: string; text?: string; subject: string }
+const { locale, title, text, subject } = Astro.props;
+const href = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}`;
+---
+<article class="card reveal">
+  <h2>{title}</h2>
+  {text && <p class="muted">{text}</p>}
+  <a class="link-arrow" href={href}>{t(locale, 'services.ask')}<span class="sr-only">: {title}</span></a>
+</article>
+<style>
+  .card { background: var(--c-surface); padding: var(--space-4) var(--space-3) var(--space-3); border-top: 2px solid var(--c-oak); display: flex; flex-direction: column; }
+  .card h2 { font-size: var(--step-1); font-weight: 420; margin-bottom: var(--space-2); }
+  .card p { flex: 1; }
+  .card .link-arrow { margin-top: var(--space-2); align-self: flex-start; }
+</style>

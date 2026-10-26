@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import { defaultLocale, liveLocales, lp, t } from '../lib/i18n';
+const locale = defaultLocale;
+---
+<Base locale={locale} slug="404" title="Page not found · Villa Dolce & Azzurra, Alassio" description="This page does not exist. Go back to the home page of Villa Dolce & Azzurra, an architect's house with pool above Alassio." noindex alternates={false}>
+  <div class="wrap nf">
+    <span class="kicker">404</span>
+    <h1>This page does not exist</h1>
+    <p class="lead">The link may be old: the site was rebuilt in 2026.</p>
+    <ul class="homes">
+      {liveLocales.map((l) => <li><a class="link-arrow" href={lp(l.code)} lang={l.code} hreflang={l.code}>{l.name}</a></li>)}
+    </ul>
+    <a class="btn btn-primary" href={lp(locale, 'book')} data-cta="book">{t(locale, 'cta.checkDates')}</a>
+  </div>
+</Base>
+<style>
+  .nf { padding-block: var(--space-6); }
+  .homes { list-style: none; padding: 0; display: flex; gap: var(--space-3); margin: var(--space-3) 0 var(--space-4); }
+</style>

@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import Gallery from '../../components/Gallery.astro';
+import { localePaths, localeFromParam } from '../../lib/i18n';
+import { page } from '../../lib/content';
+import { fill } from '../../lib/villa';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParam(Astro.params.locale);
+const c = page(locale, 'gallery').frontmatter;
+---
+<Base locale={locale} slug="gallery" title={fill(c.title)} description={fill(c.description)}>
+  <header class="page-head wrap">
+    <span class="kicker">{c.kicker}</span>
+    <h1>{c.heading}</h1>
+    <p class="lead measure">{c.intro}</p>
+  </header>
+  <div class="wrap gal"><Gallery locale={locale} /></div>
+</Base>
+<style>
+  .page-head { padding-block: var(--space-5) var(--space-4); }
+  .gal { padding-bottom: var(--space-6); }
+</style>

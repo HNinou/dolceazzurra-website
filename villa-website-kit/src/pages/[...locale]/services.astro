@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import Figure from '../../components/Figure.astro';
+import { localePaths, localeFromParam, lp, t, tf } from '../../lib/i18n';
+import { page } from '../../lib/content';
+import { fill, services } from '../../lib/villa';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParam(Astro.params.locale);
+const c = page(locale, 'services').frontmatter;
+---
+<Base locale={locale} slug="services" title={fill(c.title)} description={fill(c.description)}>
+  <header class="page-head wrap">
+    <span class="kicker">{c.kicker}</span>
+    <h1>{c.heading}</h1>
+    <p class="lead measure">{c.intro}</p>
+    <p class="note">{c.note}</p>
+  </header>
+  <Figure id="14" locale={locale} class="bleed" sizes="100vw" widths={[640, 960, 1280]} eager position="50% 60%" />
+  <section class="section" aria-label={c.heading}>
+    <div class="wrap cards">
+      {services.map((s: any) => {
+        const title = tf(locale, s.en);
+        return <ServiceCard locale={locale} title={title} text={c.details?.[s.id]} subject={`${c.subjectPrefix} ${title}`} />;
+      })}
+    </div>
+  </section>
+  <section class="section band cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <h2 id="cta-h">{fill(t(locale, 'cta.fromNight'))}</h2>
+      <a class="btn btn-primary" href={lp(locale, 'book')} data-cta="book">{t(locale, 'cta.checkDates')}</a>
+    </div>
+  </section>
+</Base>
+<style>
+  .page-head { padding-block: var(--space-5) var(--space-4); }
+  .note { font: 500 var(--step--1)/1.4 var(--font-text); letter-spacing: .06em; text-transform: uppercase; color: var(--c-olive-deep); }
+  .cards { display: grid; gap: var(--space-3); }
+  @media (min-width: 48rem) { .cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 72rem) { .cards { grid-template-columns: repeat(3, 1fr); } }
+  .cta { text-align: center; }
+  .cta h2 { font-size: var(--step-2); }
+</style>

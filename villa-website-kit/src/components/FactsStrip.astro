@@ -1,0 +1,30 @@
+---
+import { t } from '../lib/i18n';
+import { house } from '../lib/villa';
+interface Props { locale: string }
+const { locale } = Astro.props;
+const c = house.capacity;
+const items = [
+  [c.guests, t(locale, 'facts.guests')],
+  [c.suites, t(locale, 'facts.suites')],
+  [c.bathrooms, t(locale, 'facts.bathrooms')],
+  ['', t(locale, 'facts.pool')],
+  ['180°', t(locale, 'facts.view')],
+];
+---
+<ul class="facts" aria-label={t(locale, 'facts.label')}>
+  {items.map(([n, label]) => <li>{n !== '' && <span class="n">{n}</span>}<span class="l">{label}</span></li>)}
+</ul>
+<style>
+  .facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); }
+  .facts li { display: flex; align-items: center; justify-content: center; gap: .4rem; padding: 1.05rem .5rem; text-align: center; border-top: 1px solid var(--c-oak); }
+  .facts li:nth-child(odd):not(:last-child) { border-right: 1px solid var(--c-oak); }
+  .facts li:last-child { grid-column: 1 / -1; border-bottom: 1px solid var(--c-oak); }
+  .n { font: 380 var(--step-2)/1 var(--font-display); }
+  .l { font-size: var(--step--1); letter-spacing: .06em; text-transform: uppercase; color: var(--c-ink-soft); }
+  @media (min-width: 48rem) {
+    .facts { grid-template-columns: repeat(5, 1fr); border-block: 1px solid var(--c-oak); }
+    .facts li, .facts li:last-child { border: 0; grid-column: auto; padding-block: 1.6rem; }
+    .facts li + li { border-left: 1px solid var(--c-oak) !important; }
+  }
+</style>

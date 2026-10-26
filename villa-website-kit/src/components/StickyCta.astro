@@ -1,0 +1,23 @@
+---
+import { lp, t } from '../lib/i18n';
+import { fill } from '../lib/villa';
+interface Props { locale: string }
+const { locale } = Astro.props;
+---
+<a class="sticky-cta" href={lp(locale, 'book')} data-cta="book">
+  <span class="label">{t(locale, 'cta.checkDates')}</span>
+  <span class="price">{fill(t(locale, 'cta.fromNight'))}</span>
+</a>
+<style>
+  .sticky-cta {
+    position: fixed; left: .75rem; right: .75rem; bottom: .75rem; z-index: 40;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    min-height: 3.25rem; padding: .6rem 1.1rem; border-radius: var(--radius);
+    background: var(--c-bay); color: #fff; text-decoration: none;
+    box-shadow: 0 8px 24px rgba(20, 30, 40, .22);
+  }
+  .sticky-cta:hover { color: #fff; background: var(--c-bay-deep); }
+  .label { font: 500 var(--step--1)/1.2 var(--font-text); letter-spacing: .08em; text-transform: uppercase; }
+  .price { font-size: .9rem; opacity: .92; }
+  @media (min-width: 60rem) { .sticky-cta { display: none; } }
+</style>

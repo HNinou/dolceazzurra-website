@@ -1,0 +1,80 @@
+---
+import Base from '../../layouts/Base.astro';
+import Figure from '../../components/Figure.astro';
+import DistanceTable from '../../components/DistanceTable.astro';
+import { localePaths, localeFromParam, lp, t, tf } from '../../lib/i18n';
+import { page } from '../../lib/content';
+import { contact, fill, location, mapsUrl } from '../../lib/villa';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParam(Astro.params.locale);
+const c = page(locale, 'alassio').frontmatter;
+const verifiedRestaurants = location.restaurants.filter((r: any) => r.verified === true);
+// Villa photos only until the Alassio photos' rights are confirmed.
+const photoFor: Record<string, string> = { beaches: '16', gallinara: '03', walks: '10', daytrips: '15' };
+---
+<Base locale={locale} slug="alassio" title={fill(c.title)} description={fill(c.description)}>
+  <header class="page-head wrap">
+    <span class="kicker">{c.hero.kicker}</span>
+    <h1>{c.hero.title}</h1>
+    <p class="lead measure">{c.hero.sub}</p>
+  </header>
+  <Figure id="23" locale={locale} class="bleed" sizes="100vw" widths={[640, 960, 1280]} eager position="50% 55%" />
+
+  <section class="section" aria-labelledby="hl-h">
+    <div class="wrap split top">
+      <h2 id="hl-h" class="reveal">{tf(locale, location.area)}</h2>
+      <ul class="list-clean reveal">{location.highlights.map((h: string) => <li>{tf(locale, h)}</li>)}</ul>
+    </div>
+  </section>
+
+  {c.sections.map((s: any, i: number) => (
+    <section class:list={['section', { band: i % 2 === 0 }]} aria-labelledby={`${s.id}-h`}>
+      <div class:list={['wrap', photoFor[s.id] ? 'split' : 'measure-wrap', { reverse: i % 4 === 2 }]}>
+        <div class="reveal">
+          <h2 id={`${s.id}-h`} class="h-sm">{s.title}</h2>
+          <p>{s.text}</p>
+          {s.id === 'walks' && <p class="muted">{tf(locale, location.walks)}</p>}
+        </div>
+        {photoFor[s.id] && <Figure id={photoFor[s.id]} locale={locale} ratio="3 / 2" class="reveal" />}
+      </div>
+    </section>
+  ))}
+
+  <section class="section" aria-labelledby="eat-h">
+    <div class="wrap measure-wrap reveal">
+      <h2 id="eat-h" class="h-sm">{c.restaurants.title}</h2>
+      {verifiedRestaurants.length > 0 && (
+        <ul class="list-clean">{verifiedRestaurants.map((r: any) => <li><strong>{r.name}</strong>: {tf(locale, r.note)}</li>)}</ul>
+      )}
+      <p>{c.restaurants.text}</p>
+      <a class="link-arrow" href={`mailto:${contact.email}`}>{t(locale, 'services.ask')}</a>
+    </div>
+  </section>
+
+  <section class="section band" aria-labelledby="dist-h">
+    <div class="wrap split top">
+      <div class="reveal">
+        <span class="kicker">{c.distances.kicker}</span>
+        <h2 id="dist-h">{c.distances.title}</h2>
+        <p>{c.distances.text}</p>
+        <a class="btn btn-ghost" href={mapsUrl} rel="noopener">{t(locale, 'common.openMaps')}</a>
+      </div>
+      <div class="reveal"><DistanceTable locale={locale} /></div>
+    </div>
+  </section>
+
+  <section class="section cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <h2 id="cta-h" class="h-sm">{fill(t(locale, 'cta.fromNight'))}</h2>
+      <a class="btn btn-primary" href={lp(locale, 'book')} data-cta="book">{t(locale, 'cta.checkDates')}</a>
+    </div>
+  </section>
+</Base>
+<style>
+  .page-head { padding-block: var(--space-5) var(--space-4); }
+  .split.top { align-items: start; }
+  .measure-wrap > * { max-width: var(--measure); }
+  .h-sm { font-size: var(--step-2); }
+  .cta { text-align: center; }
+</style>

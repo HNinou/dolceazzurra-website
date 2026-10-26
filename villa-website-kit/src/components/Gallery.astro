@@ -1,0 +1,58 @@
+---
+import { Picture } from 'astro:assets';
+import { getImage } from 'astro:assets';
+import { alt as altFor, groups, photos } from '../lib/photos';
+import { t } from '../lib/i18n';
+import Lightbox from './Lightbox.astro';
+interface Props { locale: string }
+const { locale } = Astro.props;
+const shown = photos.filter((p) => ['gallery', 'feature', 'hero'].includes(p.role));
+const sections = await Promise.all(groups.map(async (g) => ({
+  g,
+  items: await Promise.all(shown.filter((p) => p.group === g).map(async (p) => ({
+    p, full: (await getImage({ src: p.src, width: Math.min(1600, p.src.width), format: 'webp' })).src,
+  }))),
+})));
+let index = 0;
+// Desktop column count per group, chosen so rows fill without orphan tiles (a portrait tile spans two rows).
+const colsFor = (items: { p: { src: { width: number; height: number } } }[]) => {
+  const cells = items.reduce((n, { p }) => n + (p.src.height > p.src.width ? 2 : 1), 0);
+  return [3, 4, 2].find((c) => cells % c === 0 && cells >= c) ?? 3;
+};
+---
+<div class="gallery" data-gallery>
+  {sections.filter((s) => s.items.length).map((s) => (
+    <section class="group" aria-labelledby={`g-${s.g}`}>
+      <h2 id={`g-${s.g}`} class="gh"><span class="kicker">{t(locale, `gallery.groups.${s.g}`)}</span></h2>
+      <ul class="grid" style={`--cols:${colsFor(s.items)}`}>
+        {s.items.map(({ p, full }) => {
+          const tall = p.src.height > p.src.width;
+          const a = altFor(locale, p);
+          return (
+            <li class:list={{ tall }}>
+              <button type="button" class="tile" data-index={index++} data-full={full} data-alt={a} data-w={p.src.width} data-h={p.src.height}>
+                <Picture src={p.src} alt={a} formats={['avif', 'webp']} fallbackFormat="webp" widths={[400, 700, 1000].filter((w) => w <= p.src.width)} sizes="(min-width: 60rem) 33vw, (min-width: 36rem) 50vw, 100vw" loading="lazy" />
+                <span class="sr-only">{t(locale, 'gallery.enlarge')}</span>
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  ))}
+</div>
+<Lightbox locale={locale} />
+<style>
+  .group + .group { margin-top: var(--space-5); }
+  .gh { margin: 0 0 var(--space-3); }
+  .gh .kicker { margin: 0; }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; grid-template-columns: 1fr; grid-auto-flow: dense; }
+  @media (min-width: 36rem) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 60rem) { .grid { grid-template-columns: repeat(var(--cols, 3), 1fr); gap: .9rem; } }
+  .grid li { aspect-ratio: 3 / 2; }
+  @media (min-width: 36rem) { .grid li.tall { grid-row: span 2; aspect-ratio: auto; } }
+  .tile { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: var(--c-surface); cursor: zoom-in; overflow: hidden; }
+  .tile :global(picture), .tile :global(img) { width: 100%; height: 100%; }
+  .tile :global(img) { object-fit: cover; transition: transform .8s var(--ease); }
+  .tile:hover :global(img) { transform: scale(1.025); }
+</style>

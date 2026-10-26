@@ -1,0 +1,93 @@
+{
+  "_reviewed": false,
+  "nav": {
+    "home": "Home",
+    "villa": "The Villa",
+    "gallery": "Gallery",
+    "alassio": "Alassio",
+    "services": "Services",
+    "book": "Book",
+    "legal": "Legal notice",
+    "privacy": "Privacy"
+  },
+  "header": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "close": "Close menu",
+    "language": "Language",
+    "navLabel": "Main",
+    "homeLabel": "Villa Dolce & Azzurra, home"
+  },
+  "cta": {
+    "checkDates": "Check dates",
+    "fromNight": "from €{priceLow}/night"
+  },
+  "common": {
+    "openMaps": "Open in Google Maps",
+    "decimal": ".",
+    "min": "min",
+    "seeGallery": "See the gallery",
+    "discoverVilla": "Discover the villa",
+    "discoverAlassio": "Alassio and around",
+    "allServices": "See the services"
+  },
+  "facts": {
+    "label": "The villa at a glance",
+    "guests": "guests",
+    "suites": "suites",
+    "bathrooms": "bathrooms",
+    "pool": "Infinity pool",
+    "view": "sea view"
+  },
+  "award": {
+    "longlisted": "Longlisted",
+    "category": "Small House of the Year (Rural)",
+    "designedBy": "Designed by"
+  },
+  "widget": {
+    "button": "Check availability",
+    "clear": "Clear dates",
+    "loading": "Loading the calendar…",
+    "fallback": "Open the booking page"
+  },
+  "gallery": {
+    "groups": {
+      "architecture": "Architecture",
+      "outdoors": "Outdoors",
+      "pool": "Pool",
+      "interiors": "Interiors",
+      "suites": "Suites"
+    },
+    "enlarge": "Enlarge photo",
+    "viewer": "Photo viewer",
+    "close": "Close",
+    "prev": "Previous photo",
+    "next": "Next photo"
+  },
+  "alassio": {
+    "distCaption": "Approximate travel times from the villa",
+    "distPlace": "From the villa to",
+    "distTime": "By car, approx.",
+    "distNote": "Times are approximate and depend on traffic, especially in July and August."
+  },
+  "services": {
+    "ask": "Ask us"
+  },
+  "footer": {
+    "tagline": "Life as it should be",
+    "contact": "Contact",
+    "address": "Address",
+    "info": "Information",
+    "country": "Italy",
+    "vat": "VAT",
+    "cinLong": "Codice Identificativo Nazionale (national rental code)",
+    "architecture": "Architecture:"
+  },
+  "amenityGroups": {
+    "comfort": "Comfort",
+    "kitchen": "Kitchen",
+    "tech": "Connectivity and sound",
+    "practical": "Practical",
+    "welcome": "On arrival"
+  }
+}

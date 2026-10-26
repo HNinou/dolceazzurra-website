@@ -1,0 +1,63 @@
+---
+import { t } from '../lib/i18n';
+interface Props { locale: string }
+const { locale } = Astro.props;
+---
+<dialog class="lightbox" data-lightbox aria-label={t(locale, 'gallery.viewer')}>
+  <figure data-lb-fig>
+    <figcaption><span data-lb-cap></span> <span class="count" data-lb-count></span></figcaption>
+  </figure>
+  <button type="button" class="lb-btn lb-close" data-lb-close><span class="sr-only">{t(locale, 'gallery.close')}</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+  <button type="button" class="lb-btn lb-prev" data-lb-prev><span class="sr-only">{t(locale, 'gallery.prev')}</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+  <button type="button" class="lb-btn lb-next" data-lb-next><span class="sr-only">{t(locale, 'gallery.next')}</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+</dialog>
+<script>
+  const dlg = document.querySelector<HTMLDialogElement>('[data-lightbox]');
+  const tiles = [...document.querySelectorAll<HTMLButtonElement>('[data-gallery] .tile')];
+  if (dlg && tiles.length) {
+    const img = document.createElement('img');
+    dlg.querySelector('[data-lb-fig]')!.prepend(img);
+    const cap = dlg.querySelector<HTMLElement>('[data-lb-cap]')!;
+    const count = dlg.querySelector<HTMLElement>('[data-lb-count]')!;
+    let i = 0;
+    const show = (n: number) => {
+      i = (n + tiles.length) % tiles.length;
+      const d = tiles[i].dataset;
+      img.src = d.full!; img.alt = d.alt!; img.width = +d.w!; img.height = +d.h!;
+      cap.textContent = d.alt!; count.textContent = `${i + 1} / ${tiles.length}`;
+    };
+    tiles.forEach((tile, n) => tile.addEventListener('click', () => { show(n); dlg.showModal(); }));
+    dlg.querySelector('[data-lb-close]')!.addEventListener('click', () => dlg.close());
+    dlg.querySelector('[data-lb-prev]')!.addEventListener('click', () => show(i - 1));
+    dlg.querySelector('[data-lb-next]')!.addEventListener('click', () => show(i + 1));
+    dlg.addEventListener('close', () => tiles[i]?.focus());
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') show(i - 1);
+      if (e.key === 'ArrowRight') show(i + 1);
+    });
+    let x0: number | null = null;
+    dlg.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+    dlg.addEventListener('touchend', (e) => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) show(dx < 0 ? i + 1 : i - 1);
+      x0 = null;
+    });
+  }
+</script>
+<style>
+  .lightbox { width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(244, 239, 232, .97); color: var(--c-ink); }
+  .lightbox::backdrop { background: rgba(244, 239, 232, .97); }
+  .lightbox[open] { display: grid; place-items: center; }
+  figure { margin: 0; padding: 4rem 1rem 3rem; max-width: 100%; max-height: 100%; display: flex; flex-direction: column; align-items: center; }
+  .lightbox :global(img) { max-width: min(100%, 1400px); max-height: calc(100svh - 9rem); width: auto; height: auto; object-fit: contain; }
+  figcaption { margin-top: .9rem; font-size: var(--step--1); color: var(--c-ink-soft); text-align: center; max-width: 40rem; }
+  .count { margin-left: .6rem; letter-spacing: .06em; }
+  .lb-btn { position: absolute; width: 48px; height: 48px; display: grid; place-items: center; background: transparent; border: 0; color: var(--c-ink); cursor: pointer; border-radius: 50%; }
+  .lb-btn:hover { background: var(--c-surface); }
+  .lb-close { top: .75rem; right: .75rem; }
+  .lb-prev, .lb-next { top: 50%; transform: translateY(-50%); }
+  .lb-prev { left: .5rem; } .lb-next { right: .5rem; }
+  @media (max-width: 40rem) { .lb-prev, .lb-next { top: auto; bottom: .5rem; transform: none; } }
+</style>

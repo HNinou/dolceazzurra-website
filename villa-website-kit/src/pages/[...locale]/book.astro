@@ -1,0 +1,80 @@
+---
+import Base from '../../layouts/Base.astro';
+import BookingWidget from '../../components/BookingWidget.astro';
+import Faq from '../../components/Faq.astro';
+import Figure from '../../components/Figure.astro';
+import { localePaths, localeFromParam, t, tf } from '../../lib/i18n';
+import { page } from '../../lib/content';
+import { cin, confirmedMinStays, contact, fill, house, known, legal } from '../../lib/villa';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParam(Astro.params.locale);
+const c = page(locale, 'book').frontmatter;
+// Owner-supplied terms only; TODO_OWNER values render nothing.
+const terms = [
+  ['depositTitle', legal.security_deposit],
+  ['cancellationTitle', legal.cancellation_policy],
+  ['paymentTitle', legal.payment_terms],
+  ['taxTitle', legal.tourist_tax],
+].filter(([, v]) => known(v));
+---
+<Base locale={locale} slug="book" title={fill(c.title)} description={fill(c.description)}>
+  <section class="book-top">
+    <div class="wrap book-grid">
+      <div class="intro">
+        <span class="kicker">{c.kicker}</span>
+        <h1>{c.heading}</h1>
+        <p class="lead">{fill(c.price)}</p>
+        <p class="muted">{c.priceNote}</p>
+      </div>
+      <div class="widget-box"><BookingWidget locale={locale} /></div>
+    </div>
+  </section>
+
+  <section class="section" aria-label={c.includedTitle}>
+    <div class="wrap info">
+      <div>
+        <h2 class="h-sm">{c.includedTitle}</h2>
+        <ul class="list-clean">{house.included.map((i: string) => <li>{tf(locale, i)}</li>)}</ul>
+      </div>
+      <div>
+        <h2 class="h-sm">{c.minStayTitle}</h2>
+        {confirmedMinStays.length
+          ? <ul class="list-clean">{confirmedMinStays.map((m: any) => <li>{fill(c.minStayItem, { nights: m.nights })}</li>)}</ul>
+          : <p>{c.minStayVaries}</p>}
+        <h2 class="h-sm">{c.arrivalTitle}</h2>
+        <ul class="list-clean">
+          <li>{fill(c.checkIn)}</li>
+          <li>{fill(c.checkOut)}</li>
+        </ul>
+        <h2 class="h-sm">{c.rulesTitle}</h2>
+        <ul class="list-clean">{house.rules.map((r: string) => <li>{tf(locale, r)}</li>)}</ul>
+        {terms.map(([k, v]) => <><h2 class="h-sm">{c[k]}</h2><p>{v}</p></>)}
+      </div>
+    </div>
+  </section>
+
+  <Figure id="05" locale={locale} class="bleed" sizes="100vw" widths={[640, 900]} position="50% 65%" />
+
+  <section class="section" aria-labelledby="faq-h">
+    <div class="wrap faq-wrap">
+      <h2 id="faq-h">{c.faqTitle}</h2>
+      <Faq items={c.faq.map((f: any) => ({ q: f.q, a: fill(f.a) }))} />
+      <p class="ask">{c.questions} <a href={`mailto:${contact.email}`}>{contact.email}</a>.</p>
+      <p class="small muted">CIN {cin}</p>
+    </div>
+  </section>
+</Base>
+<style>
+  .book-top { padding-block: var(--space-5); background: var(--c-surface); }
+  .book-grid { display: grid; gap: var(--space-4); }
+  @media (min-width: 60rem) { .book-grid { grid-template-columns: 4fr 7fr; gap: var(--space-5); align-items: start; } }
+  .widget-box { background: var(--c-bg); padding: var(--space-3); border-top: 4px solid var(--c-dusk); min-height: 22rem; }
+  .info { display: grid; gap: var(--space-4); }
+  @media (min-width: 48rem) { .info { grid-template-columns: 1fr 1fr; gap: var(--space-5); } }
+  .h-sm { font-size: var(--step-1); margin-top: var(--space-4); }
+  .info > div > .h-sm:first-child { margin-top: 0; }
+  .bleed :global(img) { height: clamp(16rem, 45vw, 32rem); }
+  .faq-wrap { max-width: calc(48rem + 2 * var(--gutter)); }
+  .ask { margin-top: var(--space-4); }
+</style>

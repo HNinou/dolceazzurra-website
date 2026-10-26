@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import { localePaths, localeFromParam, t } from '../../lib/i18n';
+import { page } from '../../lib/content';
+import { booking, cin, contact, fill, house, legal, telHref } from '../../lib/villa';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParam(Astro.params.locale);
+const c = page(locale, 'legal').frontmatter;
+const L = c.labels;
+const a = legal.address;
+---
+<Base locale={locale} slug="legal" title={fill(c.title)} description={fill(c.description)}>
+  <div class="wrap doc">
+    <span class="kicker">{c.kicker}</span>
+    <h1>{c.heading}</h1>
+    <dl>
+      <dt>{L.operator}</dt><dd>{legal.company}</dd>
+      <dt>{L.vat}</dt><dd>{legal.vat_id}</dd>
+      <dt>{L.address}</dt><dd>{a.street}, {a.locality}, {a.postal_code} {a.city} ({a.province}), {t(locale, 'footer.country')}</dd>
+      <dt>{L.cin}</dt><dd>{cin}</dd>
+      <dt>{L.contact}</dt><dd><a href={`mailto:${contact.email}`}>{contact.email}</a><br />{contact.phones.map((p: any, i: number) => <>{i > 0 && ' · '}<a href={telHref(p.number)}>{p.number}</a></>)}</dd>
+      <dt>{L.booking}</dt><dd>{L.bookingText} <a href={booking.base_url} rel="noopener">{new URL(booking.base_url).host}</a></dd>
+      <dt>{L.hosting}</dt><dd>{L.hostingText}</dd>
+      <dt>{L.architecture}</dt><dd><a href={house.architect.url} rel="noopener">{house.architect.name}</a></dd>
+      <dt>{L.photos}</dt><dd>{L.photosText}</dd>
+    </dl>
+  </div>
+</Base>
+<style>
+  .doc { padding-block: var(--space-5) var(--space-6); max-width: calc(48rem + 2 * var(--gutter)); }
+  h1 { font-size: var(--step-3); margin-bottom: var(--space-4); }
+  dl { margin: 0; display: grid; gap: 0; }
+  dt { font: 500 var(--step--1)/1.3 var(--font-text); letter-spacing: .08em; text-transform: uppercase; color: var(--c-ink-soft); padding-top: var(--space-3); border-top: 1px solid rgba(35, 37, 31, .14); }
+  dd { margin: .4rem 0 var(--space-3); }
+  @media (min-width: 48rem) { dl { grid-template-columns: 14rem 1fr; } dd { padding-top: var(--space-3); border-top: 1px solid rgba(35, 37, 31, .14); margin: 0; padding-bottom: var(--space-3); } dt { padding-bottom: var(--space-3); } }
+</style>

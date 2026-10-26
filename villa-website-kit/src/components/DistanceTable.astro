@@ -1,0 +1,24 @@
+---
+import { t, tf } from '../lib/i18n';
+import { location } from '../lib/villa';
+interface Props { locale: string }
+const { locale } = Astro.props;
+---
+<table class="dist">
+  <caption class="sr-only">{t(locale, 'alassio.distCaption')}</caption>
+  <thead><tr><th scope="col">{t(locale, 'alassio.distPlace')}</th><th scope="col">{t(locale, 'alassio.distTime')}</th></tr></thead>
+  <tbody>
+    {location.distances.map((d: any) => (
+      <tr><th scope="row">{tf(locale, d.place)}</th><td>{d.km ? `${String(d.km).replace('.', t(locale, 'common.decimal'))} km · ` : ''}{d.time.replace(/\bmin\b/, t(locale, 'common.min'))}</td></tr>
+    ))}
+  </tbody>
+</table>
+<p class="note small muted">{t(locale, 'alassio.distNote')}</p>
+<style>
+  .dist { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: .8rem 0; border-bottom: 1px solid rgba(35, 37, 31, .14); font-weight: 400; }
+  thead th { font: 500 var(--step--1)/1.2 var(--font-text); letter-spacing: .08em; text-transform: uppercase; color: var(--c-ink-soft); border-bottom-color: var(--c-oak); }
+  td { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  thead th:last-child { text-align: right; }
+  .note { margin-top: var(--space-2); }
+</style>

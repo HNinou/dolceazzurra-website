@@ -1,0 +1,21 @@
+---
+import { liveLocales, lp, t } from '../lib/i18n';
+interface Props { locale: string; slug: string }
+const { locale, slug } = Astro.props;
+---
+<ul class="langs" aria-label={t(locale, 'header.language')}>
+  {liveLocales.map((l) => (
+    <li>
+      {l.code === locale
+        ? <span aria-current="true" class="current" lang={l.code} title={l.name}>{l.code.toUpperCase()}</span>
+        : <a href={lp(l.code, slug)} hreflang={l.code} lang={l.code} title={l.name}><span class="sr-only">{l.name}</span><span aria-hidden="true">{l.code.toUpperCase()}</span></a>}
+    </li>
+  ))}
+</ul>
+<style>
+  .langs { list-style: none; display: flex; gap: .15rem; margin: 0; padding: 0; font: 500 var(--step--1)/1 var(--font-text); letter-spacing: .08em; }
+  .langs a, .langs .current { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; color: inherit; text-decoration: none; }
+  .langs a { opacity: .78; }
+  .langs a:hover { opacity: 1; text-decoration: underline; }
+  .langs .current { border-bottom: 1px solid var(--c-oak); min-height: 0; padding-block: .3rem; margin-block: auto; min-width: 0; padding-inline: .1rem; margin-inline: .7rem; }
+</style>

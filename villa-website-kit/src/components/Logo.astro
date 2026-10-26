@@ -1,0 +1,22 @@
+---
+// Sunset mark rebuilt from assets/brand/logo-sunset-sand.webp, plus spaced-caps wordmark.
+interface Props { withWord?: boolean; class?: string }
+const { withWord = true, class: cls = '' } = Astro.props;
+---
+<span class:list={['logo', cls]}>
+  <svg class="logo-mark" viewBox="0 0 64 40" width="44" height="28" aria-hidden="true" focusable="false">
+    <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+      <path d="M17 27.5a15 13 0 0 1 30 0" />
+      <path d="M8 28h48" />
+      <path d="M32 3v8M22.5 5.5l3 7.5M41.5 5.5l-3 7.5M14 11l5.5 5.5M50 11l-5.5 5.5M7 19.5l7 3M57 19.5l-7 3" />
+      <path d="M22 33h5M31 33h4M39 33h4M27 37h4M35 37h2" />
+    </g>
+  </svg>
+  {withWord && <span class="logo-word">Dolce&nbsp;&amp;&nbsp;Azzurra</span>}
+</span>
+<style>
+  .logo { display: inline-flex; align-items: center; gap: .7rem; color: inherit; }
+  .logo-mark { color: var(--c-oak); flex: none; }
+  .logo-word { font: 500 .8rem/1 var(--font-text); letter-spacing: .32em; text-transform: uppercase; white-space: nowrap; }
+  @media (min-width: 48rem) { .logo-word { font-size: .85rem; } }
+</style>

@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import { localePaths, localeFromParam } from '../../lib/i18n';
+import { page } from '../../lib/content';
+import { fill } from '../../lib/villa';
+
+export const getStaticPaths = localePaths;
+const locale = localeFromParam(Astro.params.locale);
+const { frontmatter: c, Content } = page(locale, 'privacy');
+---
+<Base locale={locale} slug="privacy" title={fill(c.title)} description={fill(c.description)}>
+  <div class="wrap doc">
+    <span class="kicker">{c.kicker}</span>
+    <h1>{c.heading}</h1>
+    <div class="prose"><Content /></div>
+  </div>
+</Base>
+<style>
+  .doc { padding-block: var(--space-5) var(--space-6); max-width: calc(var(--measure) + 2 * var(--gutter)); }
+  h1 { font-size: var(--step-3); margin-bottom: var(--space-4); }
+  .prose :global(h2) { font-size: var(--step-1); margin-top: var(--space-4); }
+</style>

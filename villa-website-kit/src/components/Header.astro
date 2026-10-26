@@ -1,0 +1,98 @@
+---
+import Logo from './Logo.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { lp, t } from '../lib/i18n';
+interface Props { locale: string; slug: string; overlay?: boolean }
+const { locale, slug, overlay = false } = Astro.props;
+const nav = ['villa', 'gallery', 'alassio', 'services'];
+---
+<header class:list={['site-header', { overlay }]} data-header>
+  <div class="bar wrap">
+    <a class="brand" href={lp(locale)} aria-label={t(locale, 'header.homeLabel')}><Logo /></a>
+    <nav class="nav" aria-label={t(locale, 'header.navLabel')}>
+      <ul>
+        {nav.map((n) => (
+          <li><a href={lp(locale, n)} aria-current={slug === n ? 'page' : undefined}>{t(locale, `nav.${n}`)}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <div class="tools">
+      <LanguageSwitcher locale={locale} slug={slug} />
+      <a class="btn btn-primary head-cta" href={lp(locale, 'book')} data-cta="book">{t(locale, 'cta.checkDates')}</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-open>
+        <span class="sr-only">{t(locale, 'header.menu')}</span>
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 8h18M3 16h18" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+      </button>
+    </div>
+  </div>
+  <dialog id="mobile-menu" class="mobile-menu" aria-label={t(locale, 'header.menu')}>
+    <div class="mm-top wrap">
+      <Logo />
+      <button type="button" class="menu-btn" data-menu-close>
+        <span class="sr-only">{t(locale, 'header.close')}</span>
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+      </button>
+    </div>
+    <nav class="wrap mm-nav" aria-label={t(locale, 'header.navLabel')}>
+      <ul>
+        <li><a href={lp(locale)}>{t(locale, 'nav.home')}</a></li>
+        {nav.map((n) => <li><a href={lp(locale, n)} aria-current={slug === n ? 'page' : undefined}>{t(locale, `nav.${n}`)}</a></li>)}
+        <li><a href={lp(locale, 'book')}>{t(locale, 'nav.book')}</a></li>
+      </ul>
+      <LanguageSwitcher locale={locale} slug={slug} />
+    </nav>
+  </dialog>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]');
+  if (header) {
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    const dlg = header.querySelector<HTMLDialogElement>('#mobile-menu');
+    const open = header.querySelector<HTMLButtonElement>('[data-menu-open]');
+    open?.addEventListener('click', () => { dlg?.showModal(); open.setAttribute('aria-expanded', 'true'); });
+    header.querySelector('[data-menu-close]')?.addEventListener('click', () => dlg?.close());
+    dlg?.addEventListener('close', () => open?.setAttribute('aria-expanded', 'false'));
+  }
+</script>
+
+<style>
+  .site-header {
+    position: sticky; top: 0; z-index: 50; height: var(--header-h);
+    background: var(--c-bg); color: var(--c-ink);
+    border-bottom: 1px solid rgba(35, 37, 31, .08);
+    transition: background-color .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
+  }
+  .site-header.overlay { position: fixed; inset: 0 0 auto; background: transparent; color: #fff; border-color: transparent; }
+  .site-header.overlay::before {
+    content: ""; position: absolute; inset: 0 0 -2rem; pointer-events: none;
+    background: linear-gradient(rgba(20, 22, 18, .45), rgba(20, 22, 18, 0)); transition: opacity .35s var(--ease);
+  }
+  .site-header.overlay.scrolled { background: var(--c-bg); color: var(--c-ink); border-color: rgba(35, 37, 31, .08); }
+  .site-header.overlay.scrolled::before { opacity: 0; }
+  .bar { position: relative; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+  .brand { color: inherit; text-decoration: none; display: inline-flex; min-height: 44px; align-items: center; }
+  .nav { display: none; }
+  .nav ul { list-style: none; display: flex; gap: var(--space-3); margin: 0; padding: 0; }
+  .nav a { color: inherit; text-decoration: none; font-size: .95rem; padding-block: .6rem; border-bottom: 1px solid transparent; }
+  .nav a:hover, .nav a[aria-current="page"] { border-color: var(--c-oak); }
+  .tools { display: flex; align-items: center; gap: var(--space-2); }
+  .tools :global(.langs), .head-cta { display: none; }
+  .menu-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-right: -10px; background: none; border: 0; color: inherit; cursor: pointer; }
+  @media (min-width: 60rem) {
+    .nav { display: block; }
+    .tools :global(.langs) { display: flex; }
+    .head-cta { display: inline-flex; }
+    .menu-btn { display: none; }
+  }
+  .mobile-menu { inset: 0; width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 0; border: 0; background: var(--c-bg); color: var(--c-ink); }
+  .mobile-menu::backdrop { background: var(--c-bg); }
+  .mm-top { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; }
+  .mm-nav { padding-top: var(--space-4); display: flex; flex-direction: column; gap: var(--space-4); }
+  .mm-nav ul { list-style: none; margin: 0; padding: 0; }
+  .mm-nav li a { display: block; padding: .55rem 0; font: 380 var(--step-3)/1.15 var(--font-display); color: var(--c-ink); text-decoration: none; }
+  .mm-nav li a[aria-current="page"] { color: var(--c-bay); }
+  .mm-nav :global(.langs) { margin-left: -.7rem; }
+</style>

@@ -1,0 +1,19 @@
+---
+interface Props { kicker?: string; title?: string; id?: string; band?: boolean; class?: string; level?: 2 | 3 }
+const { kicker, title, id, band = false, class: cls, level = 2 } = Astro.props;
+const H = `h${level}`;
+---
+<section class:list={['section', { band }, cls]} id={id} aria-labelledby={title && id ? `${id}-h` : undefined}>
+  <div class="wrap">
+    {(kicker || title) && (
+      <div class="head reveal">
+        {kicker && <span class="kicker">{kicker}</span>}
+        {title && <H id={id ? `${id}-h` : undefined}>{title}</H>}
+      </div>
+    )}
+    <slot />
+  </div>
+</section>
+<style>
+  .head { max-width: 44rem; margin-bottom: var(--space-4); }
+</style>

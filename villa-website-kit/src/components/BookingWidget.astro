@@ -1,0 +1,58 @@
+---
+// Hostaway calendar widget. One per page (Hostaway limit). Script loads only when the widget nears the viewport.
+import { t } from '../lib/i18n';
+import { booking } from '../lib/villa';
+interface Props { locale: string }
+const { locale } = Astro.props;
+// Localize the listing URL: /fr/listings/... -> /<locale>/listings/...
+const fallbackUrl = booking.listing_url.replace(/\/(en|fr|it|de|nl)\/listings\//, `/${locale}/listings/`);
+const config = {
+  baseUrl: booking.base_url,
+  listingId: booking.listing_id,
+  openInNewTab: false,
+  font: 'Open Sans',
+  rounded: false,
+  button: { action: booking.widget_button_action, text: t(locale, 'widget.button') },
+  clearButtonText: t(locale, 'widget.clear'),
+  color: { mainColor: '#2F5D7C', frameColor: '#E6DED3', textColor: '#23251F' },
+};
+---
+<div class="booking-widget" data-booking-widget data-config={JSON.stringify(config)}>
+  <div id="hostaway-calendar-widget"></div>
+  <p class="fallback" data-widget-fallback>
+    <span class="loading">{t(locale, 'widget.loading')}</span>
+    <a href={fallbackUrl} rel="noopener">{t(locale, 'widget.fallback')}</a>
+  </p>
+  <noscript><p><a href={fallbackUrl} rel="noopener">{t(locale, 'widget.fallback')}</a></p></noscript>
+</div>
+<script>
+  const host = document.querySelector<HTMLElement>('[data-booking-widget]');
+  if (host) {
+    const SRC = 'https://d2q3n06xhbi0am.cloudfront.net/calendar.js';
+    const cfg = JSON.parse(host.dataset.config || '{}');
+    const start = () => {
+      const s = document.createElement('script');
+      s.src = SRC; s.async = true;
+      s.onload = () => {
+        const w = window as any;
+        if (typeof w.hostawayCalendarWidget !== 'function') return;
+        w.hostawayCalendarWidget({ ...cfg, numberOfMonths: window.innerWidth < 700 ? 1 : 2 });
+        const target = document.getElementById('hostaway-calendar-widget');
+        const hide = () => { if (target && target.childElementCount) host.querySelector<HTMLElement>('[data-widget-fallback] .loading')?.remove(); };
+        if (target) new MutationObserver(hide).observe(target, { childList: true });
+      };
+      document.head.appendChild(s);
+    };
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) { io.disconnect(); start(); }
+      }, { rootMargin: '600px 0px' });
+      io.observe(host);
+    } else start();
+  }
+</script>
+<style>
+  .booking-widget { min-height: 6rem; }
+  .fallback { display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-size: var(--step--1); color: var(--c-ink-soft); margin-top: var(--space-2); }
+  .fallback a { display: inline-flex; min-height: 44px; align-items: center; }
+</style>
