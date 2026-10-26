@@ -46,7 +46,7 @@ Last run (2026-10-26): `npm run verify` 1145 checks passed, 52 warnings, 0 failu
 - Lighthouse was not run.
 
 ## Deploy blockers (phase 5)
-1. **Kit location.** The kit is in `villa-website-kit/` inside the repo, but GitHub Actions only reads `.github/workflows/` at the repository root. Either move the kit's contents to the repo root (what the kit README says to do) or adapt the workflow. Not done yet: the owner needs to decide.
+1. ~~**Kit location.**~~ Resolved: the kit's contents now sit at the repository root, so `.github/workflows/deploy.yml` will run on push. The kit README replaced the 2-line stub README, and `.DS_Store` files are no longer tracked. All checks re-run from the root and pass.
 2. **Proofreading.** CI runs `verify --strict`, which fails until every file below has `reviewed: true` (or `"_reviewed": true`):
    - `src/content/pages/{en,fr,it}/{home,villa,gallery,alassio,services,book,legal,privacy}.md`
    - `src/i18n/{en,fr,it}.json`
