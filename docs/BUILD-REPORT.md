@@ -47,7 +47,7 @@ Last run (2026-10-26): `npm run verify` 1145 checks passed, 52 warnings, 0 failu
 
 ## Deploy blockers (phase 5)
 1. ~~**Kit location.**~~ Resolved: the kit's contents now sit at the repository root, so `.github/workflows/deploy.yml` will run on push. The kit README replaced the 2-line stub README, and `.DS_Store` files are no longer tracked. All checks re-run from the root and pass.
-2. **Proofreading.** CI runs `verify --strict`, which fails until every file below has `reviewed: true` (or `"_reviewed": true`):
+2. **Proofreading.** *Temporarily relaxed (2026-10-27, owner's request, for a test deploy):* CI now runs `npm run verify` without `--strict`, so unreviewed pages only warn. The `reviewed: false` markers are kept. To restore the gate, put `-- --strict` back in `.github/workflows/deploy.yml`. Files still to proofread and mark `reviewed: true` (or `"_reviewed": true`):
    - `src/content/pages/{en,fr,it}/{home,villa,gallery,alassio,services,book,legal,privacy}.md`
    - `src/i18n/{en,fr,it}.json`
 3. GitHub → Settings → Pages → Source: GitHub Actions, then DNS at Nuxit (see `LAUNCH-CHECKLIST.md`).
