@@ -1,0 +1,25 @@
+:root {
+  --c-bg: #F4EFE8;        /* warm plaster: page background (never pure white) */
+  --c-surface: #EAE3D9;   /* slightly deeper plaster: cards, bands */
+  --c-ink: #23251F;       /* deep olive-black: text */
+  --c-ink-soft: #55574F;  /* secondary text (AA on --c-bg and --c-surface) */
+  --c-bay: #2F5D7C;       /* bay blue: links, primary button */
+  --c-bay-deep: #244A63;  /* bay blue, hover */
+  --c-oak: #C9A67C;       /* oak / logo sand: thin rules, small accents only */
+  --c-olive: #7D8461;     /* olive leaf: tags, icons */
+  --c-olive-deep: #5A6044; /* olive leaf for small text (AA) */
+  --c-dusk: #D9B7AE;      /* dusk rose: rare highlight (booking band) */
+  --font-display: "Fraunces Variable", Georgia, serif;
+  --font-text: "Inter Variable", system-ui, sans-serif;
+  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+  --step-0:  clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1:  clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --step-2:  clamp(1.6rem, 1.4rem + 1vw, 2.2rem);
+  --step-3:  clamp(2.1rem, 1.7rem + 2vw, 3.4rem);
+  --step-4:  clamp(2.6rem, 2rem + 3vw, 4.6rem);
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem; --space-6: 6.5rem;
+  --measure: 38rem;   --wide: 76rem;   --radius: 4px;   --ease: cubic-bezier(.2,.6,.2,1);
+  --gutter: 1rem;
+  --header-h: 4.25rem;
+}
+@media (min-width: 48rem) { :root { --gutter: 2.5rem; --header-h: 5rem; } }

@@ -1,0 +1,77 @@
+---
+import '@fontsource-variable/fraunces';
+import '@fontsource-variable/inter';
+import '../styles/global.css';
+import frauncesUrl from '@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2?url';
+import interUrl from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyCta from '../components/StickyCta.astro';
+import { defaultLocale, liveCodes, lp, ogLocale, t } from '../lib/i18n';
+import { domain, house } from '../lib/villa';
+
+interface Props {
+  locale: string;
+  slug: string;            // '' for home, 'villa', 'book' ...
+  title: string;
+  description: string;
+  overlayHeader?: boolean;
+  sticky?: boolean;
+  noindex?: boolean;
+  alternates?: boolean;
+}
+const { locale, slug, title, description, overlayHeader = false, sticky = slug !== 'book', noindex = false, alternates = true } = Astro.props;
+const canonical = domain + lp(locale, slug);
+const ogImage = `${domain}/og/${locale}.jpg`;
+---
+<!doctype html>
+<html lang={locale} class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    {alternates && liveCodes.map((c) => <link rel="alternate" hreflang={c} href={domain + lp(c, slug)} />)}
+    {alternates && <link rel="alternate" hreflang="x-default" href={domain + lp(defaultLocale, slug)} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href={frauncesUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={interUrl} as="font" type="font/woff2" crossorigin />
+    <meta name="theme-color" content="#F4EFE8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={house.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={ogLocale[locale]} />
+    {liveCodes.filter((c) => c !== locale).map((c) => <meta property="og:locale:alternate" content={ogLocale[c]} />)}
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline>document.documentElement.classList.remove('no-js');</script>
+    <slot name="head" />
+  </head>
+  <body class:list={{ 'has-sticky': sticky }}>
+    <a class="skip-link" href="#main">{t(locale, 'header.skip')}</a>
+    <Header locale={locale} slug={slug === "404" ? "" : slug} overlay={overlayHeader} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+    {sticky && <StickyCta locale={locale} />}
+    <script>
+      const els = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const io = new IntersectionObserver((entries) => {
+          for (const e of entries) if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+        }, { rootMargin: '0px 0px -8% 0px' });
+        els.forEach((el) => io.observe(el));
+      } else els.forEach((el) => el.classList.add('is-in'));
+    </script>
+  </body>
+</html>
+<style is:global>
+  main:focus { outline: none; }
+</style>
