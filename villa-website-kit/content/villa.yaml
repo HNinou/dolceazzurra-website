@@ -1,0 +1,199 @@
+# Villa Dolce & Azzurra: single source of truth for every fact on the site.
+# Rules:
+#   - Pages must read facts from this file, never retype them.
+#   - Values marked TODO_OWNER are unknown. Do NOT invent them: leave the feature out
+#     or render nothing, and list it in the build report for the owner.
+#   - `verified: false` means the fact comes from one source only; show it, but
+#     list it in the build report.
+
+site:
+  domain: "https://www.dolce-azzurra-alassio.com"   # canonical origin (www)
+  cname: "www.dolce-azzurra-alassio.com"            # content of public/CNAME
+  default_locale: en
+  locales:
+    # status: live  -> built, linked in the language switcher, in sitemap/hreflang
+    # status: draft -> NOT built. Flip to live only after a native speaker reviewed it.
+    - { code: en, name: English,    status: live,  reviewer: owner }
+    - { code: fr, name: Français,   status: live,  reviewer: owner }
+    - { code: it, name: Italiano,   status: live,  reviewer: owner }
+    - { code: de, name: Deutsch,    status: draft, reviewer: native-freelancer }
+    - { code: nl, name: Nederlands, status: draft, reviewer: native-freelancer }
+  legacy_lang_param: true   # old site used /?lang=fr etc. Root page must redirect these.
+
+legal:
+  cin: "IT009001B4PNT36KBS"          # Codice Identificativo Nazionale; must appear on EVERY page
+  company: "S.R.L. Dolce & Azzurra"
+  vat_id: "IT13146210961"             # P.IVA 13146210961
+  address:
+    street: "55b Strada Panoramica"
+    locality: "Solva Cavia"
+    postal_code: "17021"
+    city: "Alassio"
+    province: "SV"
+    region: "Liguria"
+    country: "IT"
+  geo: { lat: 44.0086, lng: 8.1731, verified: false }  # from old site; owner to confirm exact pin
+  tourist_tax: TODO_OWNER
+  security_deposit: TODO_OWNER
+  cancellation_policy: TODO_OWNER
+  payment_terms: TODO_OWNER
+
+contact:
+  email: "dolce.e.azzurra@gmail.com"   # owner plans a domain address (stay@...). Use this until then.
+  phones:
+    - { number: "+39 340 832 3475", label: "Italy", whatsapp: TODO_OWNER }
+    - { number: "+33 7 83 46 12 13", label: "France", whatsapp: TODO_OWNER }
+  instagram: "dolce.e.azzurra"          # existing account: https://www.instagram.com/dolce.e.azzurra/
+  languages_spoken: [fr, en, it]
+
+booking:
+  provider: hostaway
+  base_url: "https://dolceazzurra.holidayfuture.com/"   # published Hostaway booking website
+  listing_id: 572451
+  listing_url: "https://dolceazzurra.holidayfuture.com/fr/listings/572451"
+  widget_button_action: checkout        # 'checkout' or 'inquiry'
+  airbnb_url: "https://www.airbnb.fr/rooms/1731432793482049359"
+  # Only ONE booking path on the site: Hostaway. Never link Mantellassi or any agency.
+
+rates:
+  currency: EUR
+  all_inclusive: true
+  low_season_per_night: 856
+  high_season_per_night: 1427
+  season_dates: TODO_OWNER            # which months are low/high
+  minimum_stay:
+    peak: { months: [7, 8], nights: 7, changeover: saturday, status: proposed }
+    shoulder: { months: [4, 5, 6, 9, 10], nights: 3, status: proposed }
+    winter_monthly_rate: { status: proposed, price: TODO_OWNER }
+  # Always display rates as "from €X / night, everything included, up to 8 guests".
+  # The Hostaway widget is the source of truth for actual prices.
+
+house:
+  name: "Villa Dolce & Azzurra"
+  tagline: "Life as it should be"
+  architect:
+    name: "Giordano Hadamik Architects"
+    project_name: "Villa NN - Dolce & Azzurra"
+    url: "https://www.gha4u.com/villa-nn"
+  construction: { started: 2024, completed: 2026 }   # say "completed in 2026"
+  award:
+    name: "Archello Awards 2026"
+    category: "Small House of the Year (Rural)"
+    status: "Longlisted"                 # never say "winner" or "awarded"
+  capacity: { guests: 8, suites: 4, beds: "4 queen-size beds", bathrooms: 5 }
+  single_level: true
+  size_m2: { villa: 150, patio: 80, garden: 5000 }
+  altitude_m: 300
+  view: "180° view over the bay of Alassio"
+  check_in: "16:00"
+  check_out: "10:00"
+  rules:
+    - "No smoking indoors"
+    - "No parties or events"
+  pets: TODO_OWNER
+  children_policy: TODO_OWNER
+  sustainability:
+    # NOT Passivhaus-certified. No photovoltaics. Never claim either, in any language.
+    wording_en: "Designed on passive-house principles"
+    features:
+      - "Green roof"
+      - "Solar panels for hot water"
+      - "Natural cross-ventilation"
+      - "High thermal mass: cool in summer, mild in winter"
+      - "Building set into the hillside among olive trees"
+  materials: ["Local stone", "Warm-toned plaster", "Natural oak (custom furniture by Italian craftsmen)", "Timber pergola"]
+
+  spaces:
+    - id: living
+      en: "Open-plan living, dining and kitchen behind floor-to-ceiling glass facing the bay"
+    - id: suites
+      en: "Four double suites in a separate wing, each with private outdoor space facing morning sun"
+    - id: bathrooms
+      en: "Five tiled bathrooms with walk-in showers and opening skylights"
+    - id: courtyard
+      en: "Open-air courtyard under a timber pergola linking the two wings"
+    - id: patio
+      en: "80 m² covered patio with sea view and ENO outdoor kitchen (electric plancha, sink, fridge)"
+    - id: pool
+      en: "Infinity pool facing the bay, with a hidden retractable safety cover"
+      salt_water: TODO_OWNER          # Airbnb says salt water; old site doesn't. Omit until confirmed.
+    - id: olive-lounge
+      en: "Lounge with fireplace under the olive trees"
+    - id: games
+      en: "Bocce (pétanque) court with small bar and outdoor fridge; outdoor competition table-tennis table"
+    - id: roof-terrace
+      en: "Roof terrace among the olive trees for sunrise and sunset"
+      verified: false
+    - id: outdoor-shower
+      en: "Outdoor shower facing the garden"
+
+  amenities:
+    comfort:
+      - "Reversible air conditioning and underfloor heating"
+      - "Premium hotel bedding (30 cm mattress + 7 cm topper)"
+      - "Beds made on arrival, linen and towels included"
+      - "Professional hairdryer in every bathroom"
+      - "Geberit AquaClean shower toilets"
+    kitchen:
+      - "Kitchen island, 80 cm induction hob, two ovens (one combi microwave)"
+      - "Separate fridge and freezer, dishwasher"
+      - "Nespresso De'Longhi Lattissima One, capsules on arrival"
+    tech:
+      - "Starlink internet (about 100 Mbit/s) with Wi-Fi 7 mesh in villa, terraces and garden"
+      - "KEF multiroom hi-fi (WiiM app), Apple TV, wall iPad controller"
+    practical:
+      - "11 kg washing machine and 9 kg dryer"
+      - "Private parking for 2 cars and EV charging point"
+      - "Gas and carbon monoxide detectors, fire extinguishers"
+    welcome:
+      - "Local cold-pressed olive oil and a bottle of Alta Langa on arrival"
+      - "Private wine cellar (36 bottles) with Ligurian wines available to buy"
+
+  included:   # "everything included" list for the Book page
+    - "Final cleaning"
+    - "Bed linen and towels, beds made on arrival"
+    - "Personal welcome"
+    - "Starlink internet and Wi-Fi 7"
+    - "Pool, outdoor kitchen, bocce and table tennis"
+    - "Parking and EV charging"
+    - "Welcome gift"
+
+  reviews:
+    airbnb: { rating: 5.0, count: 8, label: "Guest Favourite", as_of: "2026-10-26" }
+    quotes: TODO_OWNER   # paste REAL guest quotes (first name + country + month). Never write invented reviews.
+
+location:
+  area: "Solva Cavia hillside above Alassio, Riviera di Ponente, Liguria"
+  distances:   # by car unless noted; all approximate
+    - { place: "Alassio beach and Budello", km: 3.7, time: "10 min" }
+    - { place: "Laigueglia", time: "10 min" }
+    - { place: "Albenga", time: "15 min" }
+    - { place: "Cervo", time: "15 min" }
+    - { place: "Garlenda Golf Club", time: "15 min" }
+    - { place: "Sanremo", time: "45 min" }
+    - { place: "Monaco", time: "1 h 15" }
+    - { place: "Genoa airport (GOA)", time: "1 h 20" }
+    - { place: "Nice airport (NCE)", time: "1 h 35" }
+  walks: "A footpath leads down to Alassio through Solva; hill trails (Solva, Cavia, Monte Castellaro) start from the villa."
+  highlights:
+    - "3 km of fine sand beach and bagni (beach clubs)"
+    - "The Budello (Via XX Settembre) and the Muretto di Alassio"
+    - "Gallinara Island marine reserve: boat trips, snorkelling"
+    - "Riviera cycle path from Alassio towards Andora"
+  restaurants:   # names from the old site; owner to confirm still current before publishing
+    - { name: "La Prua", note: "Seafront, catch of the day", verified: false }
+    - { name: "La Vigna", note: "Hillside, seasonal tasting menu, book ahead", verified: false }
+    - { name: "Ristorante Panama", note: "Budello institution, seafood and pasta", verified: false }
+    - { name: "La Lanterna", note: "Pizza by a medieval tower on the sea", verified: false }
+    - { name: "Sabbia Vino e Cucina", note: "Modern, short menu, Ligurian wines", verified: false }
+
+services:   # all on request, paid separately, booked through the owner ("ask us")
+  - { id: chef, en: "Private chef dinner on the terrace", partner: "TakeAChef" }
+  - { id: transfers, en: "Private van transfers from Nice, Monaco and Genoa airports" }
+  - { id: boat, en: "Private boat day around Gallinara Island with skipper" }
+  - { id: spa, en: "Massage and beauty treatments at the villa" }
+  - { id: yoga, en: "Sunrise yoga or personal training on the patio" }
+  - { id: bikes, en: "E-bikes and scooters delivered to the villa", partner: "ItalyRent71" }
+  - { id: apero, en: "Ligurian apero box: olive oil, local cheese and charcuterie" }
+# Phone numbers of third-party providers do NOT go on the public site (they change often).
+# They belong in the Hostaway digital guest guide.

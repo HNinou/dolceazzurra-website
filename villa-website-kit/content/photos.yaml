@@ -1,0 +1,77 @@
+# Photo catalogue. Files live in assets/photos/ (copy them to src/assets/photos/ during setup).
+# rights:
+#   owner        -> villa photos owned by the owner. OK to publish (credit photographer if known).
+#   unconfirmed  -> origin unknown (likely taken from the web). DO NOT PUBLISH until the owner
+#                   sets rights to owner/licensed. The verifier fails the build if one is used.
+# role: hero | feature | gallery | destination | map
+# alt_en: write FR/IT/DE/NL alts from this; keep them factual (what is in the frame).
+# Source sizes are 1280-1600 px wide; the owner will supply >= 2400 px originals for the hero later.
+
+photos:
+  - { file: 01-villa-dolce-azzurra-terrasse-avec-vue-mer.webp, w: 1600, h: 1066, rights: owner, role: hero,
+      group: outdoors, alt_en: "Covered patio under a timber pergola, framing the bay of Alassio and an old olive tree" }
+  - { file: 03-piscine-a-debordement-et-bains-de-soleil-dolce-azzurra.webp, w: 1280, h: 852, rights: owner, role: gallery,
+      group: pool, alt_en: "Infinity pool among lavender and palms, the sea and Capo Mele behind" }
+  - { file: 04-coucher-de-soleil-sur-la-baie-d-alassio-depuis-la-piscine.webp, w: 900, h: 1352, rights: owner, role: feature,
+      group: pool, alt_en: "Dusk over the bay of Alassio seen from a sunbed at the infinity pool" }
+  - { file: 05-petit-dejeuner-en-terrasse-avec-vue-mer-villa-dolce-azzurra.webp, w: 900, h: 1200, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Breakfast table on the patio with the sea below" }
+  - { file: 06-jardin-mediterraneen-et-piscine-villa-dolce-azzurra.webp, w: 1280, h: 854, rights: owner, role: gallery,
+      group: pool, alt_en: "Sunbeds and parasols along the infinity pool facing the bay" }
+  - { file: 07-vue-depuis-la-villa-la-baie-d-alassio-illuminee-la-nuit-vill.webp, w: 1280, h: 852, rights: owner, role: feature,
+      group: architecture, alt_en: "The villa and its pool lit at night among the olive terraces" }
+  - { file: 08-villa-dolce-azzurra-exterieur.webp, w: 1280, h: 852, rights: owner, role: feature,
+      group: architecture, alt_en: "Single-storey stone villa set into the hillside, with the infinity pool in front" }
+  - { file: 09-facade-villa-dolce-azzurra.webp, w: 1280, h: 853, rights: owner, role: gallery,
+      group: architecture, alt_en: "Glass facade of the living room opening onto the covered patio" }
+  - { file: 10-jardin-dolce-azzurra.webp, w: 1280, h: 853, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Garden of olive trees and Mediterranean shrubs sloping towards the sea" }
+  - { file: 11-vue-baie-alassio-depuis-oliviers.webp, w: 1280, h: 852, rights: owner, role: feature,
+      group: architecture, alt_en: "Aerial view of the villa's green roof, courtyard and pool among the olive trees" }
+  - { file: 12-terrasse-vue-mer.webp, w: 1280, h: 853, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Patio dining table laid for breakfast beside the outdoor kitchen" }
+  - { file: 13-patio-dolce-azzurra.webp, w: 1280, h: 853, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Patio lounge and dining table against a dry-stone wall, hills and sea beyond" }
+  - { file: 14-cuisine-exterieure-eno.webp, w: 1280, h: 853, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Outdoor kitchen and long table on the patio overlooking the coast" }
+  - { file: 15-jardin-mediterraneen.webp, w: 1280, h: 853, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Corner of the patio with sofa and stone wall, olive trees and the bay" }
+  - { file: 16-piscine-a-debordement-vue-sur-la-baie-d-alassio.webp, w: 1280, h: 853, rights: owner, role: feature,
+      group: pool, alt_en: "Infinity pool running towards the horizon over the bay of Alassio" }
+  - { file: 17-salon-mobilier-contemporain-chene-naturel-cuisine-ouverte.webp, w: 1280, h: 853, rights: owner, role: gallery,
+      group: interiors, alt_en: "Living room with linen sofa and oak shelving, kitchen and dining beyond" }
+  - { file: 18-sejour-cuisine-vue-mer-baie-vitree-panoramique.webp, w: 1280, h: 853, rights: owner, role: feature,
+      group: interiors, alt_en: "Kitchen island in front of a floor-to-ceiling window looking over the bay" }
+  - { file: 19-entree-boiseries-a-claire-voie-mobilier-sur-mesure.webp, w: 1280, h: 853, rights: owner, role: gallery,
+      group: interiors, alt_en: "Kitchen with custom oak cabinetry and stone island, glass doors to the garden" }
+  - { file: 20-suite-rangements-integres-chene-vue-jardin.webp, w: 1280, h: 853, rights: owner, role: gallery,
+      group: suites, alt_en: "Suite with large window onto the garden and hills" }
+  - { file: 21-couloir-boiseries-a-claire-voie-puit-de-lumiere-zenithal.webp, w: 1280, h: 853, rights: owner, role: gallery,
+      group: interiors, alt_en: "Open-plan living space with kitchen island, oak joinery and pendant lights" }
+  - { file: 22-chambre-etagere-bibliotheque-rangements-chene-naturel.webp, w: 1280, h: 853, rights: owner, role: gallery,
+      group: suites, alt_en: "Suite with oak slatted wall, built-in wardrobe and queen-size bed" }
+  - { file: 23-piscine-a-debordement-lumiere-du-matin.webp, w: 1280, h: 853, rights: owner, role: gallery,
+      group: pool, alt_en: "Infinity pool in morning light with the sea and coastline beyond" }
+
+  # Destination photos: origin unknown. Keep out of the build until rights are confirmed.
+  - { file: 24-baie-alassio-balcon.webp, w: 1100, h: 645, rights: unconfirmed, role: destination, alt_en: "Bay of Alassio seen from a balustrade" }
+  - { file: 25-alassio-panorama.webp, w: 1100, h: 589, rights: unconfirmed, role: destination, alt_en: "Panorama of the bay of Alassio" }
+  - { file: 26-baie-alassio-pins.webp, w: 992, h: 642, rights: unconfirmed, role: destination, alt_en: "The bay of Alassio through pine branches" }
+  - { file: 27-alassio-nuit-panorama.webp, w: 1100, h: 644, rights: unconfirmed, role: destination, alt_en: "Alassio at night from the hills" }
+  - { file: 28-pontile-alassio.webp, w: 1036, h: 616, rights: unconfirmed, role: destination, alt_en: "The Bestoso pier and colourful seafront of Alassio" }
+  - { file: 29-alassio-coucher-soleil.webp, w: 1100, h: 531, rights: unconfirmed, role: destination, alt_en: "Alassio seafront at sunset" }
+  - { file: 30-promenade-palmiers.webp, w: 1012, h: 664, rights: unconfirmed, role: destination, alt_en: "Palm-lined seaside promenade" }
+  - { file: 31-muretto-di-alassio.webp, w: 764, h: 758, rights: unconfirmed, role: destination, alt_en: "The Muretto di Alassio with signed ceramic tiles" }
+  - { file: 32-ile-gallinara.webp, w: 1072, h: 628, rights: unconfirmed, role: destination, alt_en: "Gallinara Island off the coast" }
+  - { file: 33-randonnee-gallinara.webp, w: 1078, h: 612, rights: unconfirmed, role: destination, alt_en: "Walkers on a coastal path facing Gallinara Island" }
+  - { file: 34-cappelletta-alassio-nuit.webp, w: 1100, h: 603, rights: unconfirmed, role: destination, alt_en: "The Cappelletta chapel above the sea at dusk" }
+  - { file: 35-restaurant-la-vigna-gallinara.webp, w: 986, h: 770, rights: unconfirmed, role: destination, alt_en: "Restaurant table with a view of Gallinara Island" }
+  - { file: 36-restaurant-bord-de-mer.webp, w: 1000, h: 770, rights: unconfirmed, role: destination, alt_en: "Fried seafood on a beachfront table" }
+  - { file: 37-centre-palmiers-alassio.webp, w: 984, h: 640, rights: unconfirmed, role: destination, alt_en: "Palms and old buildings in central Alassio" }
+  - { file: 38-tour-medievale-nuit.webp, w: 1100, h: 535, rights: unconfirmed, role: destination, alt_en: "Saracen tower on the seafront at night" }
+  - { file: 39-fritto-misto-ligure.webp, w: 1100, h: 527, rights: unconfirmed, role: destination, alt_en: "Ligurian fritto misto" }
+  - { file: 40-plage-coucher-soleil.webp, w: 1100, h: 904, rights: unconfirmed, role: destination, alt_en: "Beach at sunset" }
+  - { file: 41-carte-des-sentiers-de-randonnee-solva-cavia-monte-castellaro.webp, w: 1024, h: 768, rights: unconfirmed, role: map, alt_en: "Trail map: Solva, Cavia, Monte Castellaro" }
+
+brand:
+  - { file: assets/brand/logo-sunset-sand.webp, note: "Raster logo (sun over the sea + DOLCE & AZZURRA). Rebuild as an inline SVG for the header; owner may supply a vector original." }
