@@ -52,7 +52,8 @@ Last run (2026-10-26): `npm run verify` 1145 checks passed, 52 warnings, 0 failu
    - `src/i18n/{en,fr,it}.json`
 3. ~~**CI build failure (2026-10-27).**~~ Fixed: Astro 7 requires Node ≥ 22.23.4, but the workflow pinned Node 20, so `npm run build` failed on GitHub. The workflow now uses Node 24 (same as the owner's Mac), with `actions/checkout@v5` and `actions/setup-node@v5`. `package.json` engines are updated to match.
 4. **Domain.** Switched from `www.dolce-azzurra-alassio.com` (never registered) to the owner's domain, `www.dolceazzurra.com` (registered at Nuxit). Changed in `content/villa.yaml`, `public/CNAME`, `public/robots.txt`, `CLAUDE.md` and `docs/LAUNCH-CHECKLIST.md`. `reference/old-site.html` is left as it was.
-5. GitHub → Settings → Pages → Source: GitHub Actions, then DNS at Nuxit (see `LAUNCH-CHECKLIST.md`).
+5. **Booking subdomain (2026-10-27).** `villa.yaml` → `booking.base_url` and `listing_url` now point to `https://book.dolceazzurra.com/`. The Hostaway widget fetches its data from `booking-engine.hostaway.com/bookingEngines/<booking host>/…`, which returns 403 until the subdomain is saved in Hostaway (Booking Website → Settings → Domain & Security → Own subdomain). **Do not push this change before Hostaway is configured**, or the calendar stays empty. To roll back, put `dolceazzurra.holidayfuture.com` back in both URLs.
+6. GitHub → Settings → Pages → Source: GitHub Actions, then DNS at Nuxit (see `LAUNCH-CHECKLIST.md`).
 
 ## Remaining warnings
 - Translation review flags (27 files). These are expected until the owner proofreads.

@@ -48,9 +48,10 @@ contact:
 
 booking:
   provider: hostaway
-  base_url: "https://dolceazzurra.holidayfuture.com/"   # published Hostaway booking website
+  base_url: "https://book.dolceazzurra.com/"   # Hostaway booking website on our own subdomain
+  # Fallback if the subdomain ever breaks: https://dolceazzurra.holidayfuture.com/ (Hostaway's default address)
   listing_id: 572451
-  listing_url: "https://dolceazzurra.holidayfuture.com/fr/listings/572451"
+  listing_url: "https://book.dolceazzurra.com/fr/listings/572451"
   widget_button_action: checkout        # 'checkout' or 'inquiry'
   airbnb_url: "https://www.airbnb.fr/rooms/1731432793482049359"
   # Only ONE booking path on the site: Hostaway. Never link Mantellassi or any agency.

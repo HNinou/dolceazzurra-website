@@ -17,7 +17,7 @@ Things Claude Code cannot do for you. Tick them off as you go.
 ## Hostaway
 - [ ] Confirm the booking website `dolceazzurra.holidayfuture.com` is published and listing **572451** is the villa.
 - [ ] Style it with the site colours (`#2F5D7C` buttons, `#F4EFE8` background) and logo.
-- [ ] Optional: give it the address `book.dolceazzurra.com` (Hostaway custom domain + a CNAME at Nuxit).
+- [ ] Give it the address `book.dolceazzurra.com` (Hostaway: Booking Website → Settings → Domain & Security → Own subdomain; Nuxit: CNAME `book` → the proxy shown by Hostaway; reCAPTCHA v2 keys). The site already points there.
 - [ ] Turn on **Google Vacation Rentals** in Hostaway.
 - [ ] After launch: make a full test booking (or inquiry) from the live site, on a phone and a computer.
 

@@ -43,7 +43,7 @@ Never claim a step is done without running its check and reading the output.
 3. **One booking path: Hostaway.** Every page has a visible "Check dates" button (`data-cta="book"`) leading to the Book page with the Hostaway calendar widget.
 4. **The CIN `IT009001B4PNT36KBS` is visible on every page** (footer). Italian law.
 5. **Photo rights:** only photos with `rights: owner` (or `licensed`) in `content/photos.yaml` may be copied into `src/`. The 18 Alassio photos are `unconfirmed`: do not use them. Use villa photos for the Alassio page until the owner confirms.
-6. **No third-party requests** except the Hostaway widget (`d2q3n06xhbi0am.cloudfront.net`, `dolceazzurra.holidayfuture.com`). No Google Fonts, no Google Maps embeds, no analytics, no cookie banners, no tracking pixels. Fonts are self-hosted. Map = a plain "Open in Google Maps" link.
+6. **No third-party requests** except the Hostaway widget (`d2q3n06xhbi0am.cloudfront.net`, `book.dolceazzurra.com`, i.e. the host of `villa.yaml` → `booking.base_url`). No Google Fonts, no Google Maps embeds, no analytics, no cookie banners, no tracking pixels. Fonts are self-hosted. Map = a plain "Open in Google Maps" link.
 7. **No hidden text, no keyword lists, no `meta keywords`.** The old site had these. They are SEO spam.
 8. **Draft locales (`de`, `nl`) are not built** until `villa.yaml` marks them `live`. Do not link them anywhere.
 9. **The repo is public.** Never commit secrets, API keys, guest data, or anything the owner hasn't already published.
@@ -243,7 +243,7 @@ Content outlines and draft English headlines are in `content/copy-brief.md`. Str
 <script src="https://d2q3n06xhbi0am.cloudfront.net/calendar.js"></script>
 <script>
   window.hostawayCalendarWidget({
-    baseUrl: 'https://dolceazzurra.holidayfuture.com/',  // villa.yaml booking.base_url
+    baseUrl: 'https://book.dolceazzurra.com/',        // villa.yaml booking.base_url
     listingId: 572451,                                   // villa.yaml booking.listing_id
     numberOfMonths: 2,                                   // 1 on screens < 700px
     openInNewTab: false,
