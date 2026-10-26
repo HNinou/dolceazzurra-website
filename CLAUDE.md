@@ -1,7 +1,7 @@
 # CLAUDE.md: Villa Dolce & Azzurra website
 
 You are building the direct-booking website for **Villa Dolce & Azzurra**, an architect-designed holiday villa above Alassio (Liguria, Italy).
-It is a static site, hosted on **GitHub Pages** at **https://www.dolce-azzurra-alassio.com**. Bookings are handled by the owner's **Hostaway** account.
+It is a static site, hosted on **GitHub Pages** at **https://www.dolceazzurra.com**. Bookings are handled by the owner's **Hostaway** account.
 
 This file is the spec. Read it fully before writing code. When the spec and your instinct disagree, the spec wins. When the spec is silent, choose the simplest option that keeps every check green and note the decision in `docs/BUILD-REPORT.md`.
 
@@ -54,7 +54,7 @@ Never claim a step is done without running its check and reading the output.
 ## 3. Stack and setup
 
 - **Astro** (static output), plain CSS with custom properties (no Tailwind, no UI framework), minimal vanilla JS.
-- Node 20+.
+- Node 22.23+ (Astro 7 needs it; CI uses Node 24).
 - Images through `astro:assets` (`<Picture>`/`<Image>`) → AVIF + WebP, responsive `srcset`, explicit `width`/`height`.
 - Fonts via Fontsource (self-hosted): `@fontsource-variable/fraunces` (headings) and `@fontsource-variable/inter` (text).
 - Sitemap via `@astrojs/sitemap` with i18n.
@@ -86,12 +86,12 @@ cp assets/brand/logo-sunset-sand.webp src/assets/brand/
 
 ### `astro.config.mjs` (required settings)
 
-- `site: 'https://www.dolce-azzurra-alassio.com'`
+- `site: 'https://www.dolceazzurra.com'`
 - `trailingSlash: 'always'`, `build: { format: 'directory' }`
 - `i18n: { defaultLocale: 'en', locales: <live codes read from content/villa.yaml>, routing: { prefixDefaultLocale: false } }`
 - `integrations: [sitemap({ i18n: { defaultLocale: 'en', locales: { en: 'en', fr: 'fr', it: 'it' } } })]`. Build the `locales` map from `villa.yaml` too, so flipping `de` to `live` is a one-line change.
-- `public/CNAME` containing exactly `www.dolce-azzurra-alassio.com`.
-- `public/robots.txt`: allow all + `Sitemap: https://www.dolce-azzurra-alassio.com/sitemap-index.xml`.
+- `public/CNAME` containing exactly `www.dolceazzurra.com`.
+- `public/robots.txt`: allow all + `Sitemap: https://www.dolceazzurra.com/sitemap-index.xml`.
 
 ---
 
@@ -314,6 +314,6 @@ A FAIL must be fixed in the site, never by editing the checker. If a check is ge
 ## 12. Deployment
 
 - `.github/workflows/deploy.yml` builds, runs `verify --strict` and `check:visual --no-shots`, then deploys to GitHub Pages. Do not deploy by other means.
-- The owner sets **Settings → Pages → Source: GitHub Actions**, and the custom domain `www.dolce-azzurra-alassio.com` with "Enforce HTTPS".
+- The owner sets **Settings → Pages → Source: GitHub Actions**, and the custom domain `www.dolceazzurra.com` with "Enforce HTTPS".
 - DNS at Nuxit (owner): `CNAME www → <github-username>.github.io` and four `A` records for the apex (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`) so the bare domain redirects to `www`. Remove old records that conflict.
 - Until the owner has proofread, `--strict` fails in CI and nothing deploys. That is expected; tell the owner which files need `reviewed: true`.

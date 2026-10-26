@@ -50,7 +50,9 @@ Last run (2026-10-26): `npm run verify` 1145 checks passed, 52 warnings, 0 failu
 2. **Proofreading.** *Temporarily relaxed (2026-10-27, owner's request, for a test deploy):* CI now runs `npm run verify` without `--strict`, so unreviewed pages only warn. The `reviewed: false` markers are kept. To restore the gate, put `-- --strict` back in `.github/workflows/deploy.yml`. Files still to proofread and mark `reviewed: true` (or `"_reviewed": true`):
    - `src/content/pages/{en,fr,it}/{home,villa,gallery,alassio,services,book,legal,privacy}.md`
    - `src/i18n/{en,fr,it}.json`
-3. GitHub → Settings → Pages → Source: GitHub Actions, then DNS at Nuxit (see `LAUNCH-CHECKLIST.md`).
+3. ~~**CI build failure (2026-10-27).**~~ Fixed: Astro 7 requires Node ≥ 22.23.4, but the workflow pinned Node 20, so `npm run build` failed on GitHub. The workflow now uses Node 24 (same as the owner's Mac), with `actions/checkout@v5` and `actions/setup-node@v5`. `package.json` engines are updated to match.
+4. **Domain.** Switched from `www.dolce-azzurra-alassio.com` (never registered) to the owner's domain, `www.dolceazzurra.com` (registered at Nuxit). Changed in `content/villa.yaml`, `public/CNAME`, `public/robots.txt`, `CLAUDE.md` and `docs/LAUNCH-CHECKLIST.md`. `reference/old-site.html` is left as it was.
+5. GitHub → Settings → Pages → Source: GitHub Actions, then DNS at Nuxit (see `LAUNCH-CHECKLIST.md`).
 
 ## Remaining warnings
 - Translation review flags (27 files). These are expected until the owner proofreads.

@@ -7,8 +7,8 @@
 #     list it in the build report.
 
 site:
-  domain: "https://www.dolce-azzurra-alassio.com"   # canonical origin (www)
-  cname: "www.dolce-azzurra-alassio.com"            # content of public/CNAME
+  domain: "https://www.dolceazzurra.com"   # canonical origin (www)
+  cname: "www.dolceazzurra.com"            # content of public/CNAME
   default_locale: en
   locales:
     # status: live  -> built, linked in the language switcher, in sitemap/hreflang
