@@ -22,7 +22,7 @@
     "checkDates": "Check dates",
     "fromNight": "from €{priceLow}/night",
     "whatsapp": "Ask a question",
-    "invite": "Your dates, our view",
+    "invite": "Check availability",
     "inviteLine": "From €{priceLow} per night, everything included, up to {guests} guests."
   },
   "common": {

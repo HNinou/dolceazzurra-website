@@ -61,7 +61,7 @@ Implemented:
 - Photo 08 (house) now opens The Villa page and follows the Home intro, as a panoramic strip cropped from the bottom so the neighbouring houses drop out.
 - "Evening" moment uses the lit pool (52), with new text. The Home Alassio teaser and the Alassio page now show Alassio at night from the villa (51). The phone booking band shows the breakfast table over the sea (05), not the rosemary close-up. 04 is already the phone hero, so it wasn't reused there.
 - Gallery: 09, 13, 15 and 20 restored (owner's choice), 14 and 21 added. The gallery opens on 01, then pool, interiors, suites, architecture. Grid kept clean, with no captions under tiles (owner's choice); captions show in the full-screen viewer.
-- Alassio second heading rewritten. The price-only closing bands are now "Your dates, our view" + price + button.
+- Alassio second heading rewritten. The price-only closing bands are now "Check availability" + price + button (owner found "Your dates, our view" too much).
 - Minimum-stay line next to both calendars. After the 20th, the calendar opens on next month: the widget has no start-month setting, so the page clicks its "next" arrow once.
 - WhatsApp "Ask a question" (French number, owner's choice) in the hero, on the Book page and in the footer.
 - The rating links to the Airbnb listing so guests can check it (owner's choice; note this deliberately relaxes CLAUDE.md rule 3, "one booking path").
