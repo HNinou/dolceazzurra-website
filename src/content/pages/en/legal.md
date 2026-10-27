@@ -16,5 +16,6 @@ labels:
   bookingText: "Bookings are processed through our booking site, operated with Hostaway. The booking terms are shown there before you pay."
   architecture: "Architecture"
   photos: "Photographs"
+  photosCredit: "Aerial photograph: ©"
   photosText: "Photographs of the villa: © the owner, all rights reserved."
 ---

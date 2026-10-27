@@ -16,5 +16,6 @@ labels:
   bookingText: "Le prenotazioni passano dal nostro sito di prenotazione, gestito con Hostaway. Le condizioni di prenotazione sono indicate lì prima del pagamento."
   architecture: "Architettura"
   photos: "Fotografie"
+  photosCredit: "Fotografia aerea: ©"
   photosText: "Fotografie della villa: © il proprietario, tutti i diritti riservati."
 ---

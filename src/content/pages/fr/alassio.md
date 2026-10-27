@@ -4,7 +4,7 @@ description: "Plages, Budello, île Gallinara et randonnées : que faire autour 
 reviewed: false
 hero:
   kicker: "Alassio"
-  title: "La Riviera à vos pieds"
+  title: "Entre les oliviers et la mer"
   sub: "La villa se trouve sur la colline de Solva Cavia, au-dessus d'Alassio, sur la Riviera di Ponente en Ligurie."
 sections:
   - id: beaches

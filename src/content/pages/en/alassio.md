@@ -4,7 +4,7 @@ description: "Beaches, the Budello, Gallinara Island and hill walks: what to do 
 reviewed: false
 hero:
   kicker: "Alassio"
-  title: "The Riviera at your feet"
+  title: "Between the olive trees and the sea"
   sub: "The villa sits on the Solva Cavia hillside above Alassio, on the Riviera di Ponente in Liguria."
 sections:
   - id: beaches

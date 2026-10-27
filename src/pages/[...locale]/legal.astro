@@ -3,12 +3,14 @@ import Base from '../../layouts/Base.astro';
 import { localePaths, localeFromParam, t } from '../../lib/i18n';
 import { page } from '../../lib/content';
 import { booking, cin, contact, fill, house, legal, telHref } from '../../lib/villa';
+import { photos } from '../../lib/photos';
 
 export const getStaticPaths = localePaths;
 const locale = localeFromParam(Astro.params.locale);
 const c = page(locale, 'legal').frontmatter;
 const L = c.labels;
 const a = legal.address;
+const credits = [...new Set(photos.filter((p) => p.credit).map((p) => p.credit))];
 ---
 <Base locale={locale} slug="legal" title={fill(c.title)} description={fill(c.description)}>
   <div class="wrap doc">
@@ -23,7 +25,7 @@ const a = legal.address;
       <dt>{L.booking}</dt><dd>{L.bookingText} <a href={booking.base_url} rel="noopener">{new URL(booking.base_url).host}</a></dd>
       <dt>{L.hosting}</dt><dd>{L.hostingText}</dd>
       <dt>{L.architecture}</dt><dd><a href={house.architect.url} rel="noopener">{house.architect.name}</a></dd>
-      <dt>{L.photos}</dt><dd>{L.photosText}</dd>
+      <dt>{L.photos}</dt><dd>{L.photosText}{credits.map((c) => <><br />{L.photosCredit} {c}</>)}</dd>
     </dl>
   </div>
 </Base>

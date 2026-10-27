@@ -32,7 +32,8 @@ legal:
     province: "SV"
     region: "Liguria"
     country: "IT"
-  geo: { lat: 44.0086, lng: 8.1731, verified: false }  # from old site; owner to confirm exact pin
+  geo: { lat: 44.023165, lng: 8.177080, verified: true }  # pin confirmed by the owner
+  maps_url: "https://www.google.com/maps/place/DOLCE+%26+AZZURRA/@44.0230509,8.1776283,154m/data=!3m1!1e3!4m6!3m5!1s0x12d25d001ae65d7f:0x401144a80138c6f!8m2!3d44.022997!4d8.177775!16s%2Fg%2F11xgf8_tqb"   # the villa's Google Maps place
   tourist_tax: TODO_OWNER
   security_deposit: TODO_OWNER
   cancellation_policy: TODO_OWNER
@@ -91,8 +92,8 @@ house:
   rules:
     - "No smoking indoors"
     - "No parties or events"
-  pets: TODO_OWNER
-  children_policy: TODO_OWNER
+  pets: "not allowed"
+  children_policy: "children welcome"
   sustainability:
     # NOT Passivhaus-certified. No photovoltaics. Never claim either, in any language.
     wording_en: "Designed on passive-house principles"
@@ -117,7 +118,7 @@ house:
       en: "80 m² covered patio with sea view and ENO outdoor kitchen (electric plancha, sink, fridge)"
     - id: pool
       en: "Infinity pool facing the bay, with a hidden retractable safety cover"
-      salt_water: TODO_OWNER          # Airbnb says salt water; old site doesn't. Omit until confirmed.
+      salt_water: "yes" # Airbnb says salt water; old site doesn't. Omit until confirmed.
     - id: olive-lounge
       en: "Lounge with fireplace under the olive trees"
     - id: games

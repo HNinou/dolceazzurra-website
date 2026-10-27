@@ -20,7 +20,7 @@ export const rates = villa.rates;
 export const location = villa.location;
 export const services: any[] = villa.services;
 
-export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${legal.geo.lat},${legal.geo.lng}`;
+export const mapsUrl: string = legal.maps_url ?? `https://www.google.com/maps/search/?api=1&query=${legal.geo.lat},${legal.geo.lng}`;
 export const instagramUrl = `https://www.instagram.com/${contact.instagram}/`;
 export const telHref = (n: string) => 'tel:' + n.replace(/[^\d+]/g, '');
 

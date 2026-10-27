@@ -10,11 +10,11 @@ const byFile = new Map(Object.entries(modules).map(([k, m]) => [path.basename(k)
 
 const catalogue: any[] = YAML.parse(fs.readFileSync(path.join(process.cwd(), 'content', 'photos.yaml'), 'utf8')).photos;
 
-export type Photo = { id: string; file: string; src: ImageMetadata; group: string; role: string; altEn: string };
+export type Photo = { id: string; file: string; src: ImageMetadata; group: string; role: string; altEn: string; credit?: string };
 
 export const photos: Photo[] = catalogue
   .filter((p) => (p.rights === 'owner' || p.rights === 'licensed') && byFile.has(p.file))
-  .map((p) => ({ id: p.file.slice(0, 2), file: p.file, src: byFile.get(p.file)!, group: p.group, role: p.role, altEn: p.alt_en }));
+  .map((p) => ({ id: p.file.slice(0, 2), file: p.file, src: byFile.get(p.file)!, group: p.group, role: p.role, altEn: p.alt_en, credit: p.credit }));
 
 /** Photo by its two-digit number, e.g. photo('04'). */
 export function photo(id: string): Photo {
