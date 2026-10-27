@@ -4,8 +4,20 @@ description: "Verifica la disponibilità e prenota Villa Dolce & Azzurra diretta
 reviewed: false
 kicker: "Prenota"
 heading: "Verifica le date e prenota"
-price: "Da {priceLow} € a notte, tutto incluso, fino a {guests} ospiti."
+price: "Da {priceLow} € a notte, tutto incluso, fino a {guests} ospiti: circa {perPerson} € a persona."
 priceNote: "Le tariffe variano secondo la stagione. Il calendario mostra il prezzo esatto per le vostre date."
+reassure:
+  - "Check-in dalle {checkIn}, check-out entro le {checkOut}"
+  - "Tutto incluso: pulizia, biancheria, Wi-Fi, parcheggio"
+  - "Tutto su un unico livello, piscina con copertura di sicurezza"
+askLink: "Domande? Scriveteci"
+sleepTitle: "Posti letto"
+sleep:
+  - "{suites} suite matrimoniali uguali, in un'ala separata"
+  - "Un letto queen-size per suite, con biancheria da hotel"
+  - "Uno spazio esterno privato per ogni suite"
+  - "{bathrooms} bagni con doccia walk-in"
+  - "{guests} posti letto"
 minStayVaries: "Il soggiorno minimo varia secondo la stagione, vedi il calendario."
 minStayTitle: "Soggiorno minimo"
 minStayItem: "Minimo {nights} notti"

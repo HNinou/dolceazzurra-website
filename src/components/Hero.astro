@@ -5,8 +5,8 @@ import { lp, t } from '../lib/i18n';
 // textTop: headline over the top of the photo (e.g. trees); the photo is anchored to the top and
 // zoomed slightly so its subject (house, pool) sits in the lower part, clear of the text.
 // mobileId: a different (portrait) photo for phones and small tablets, below 60rem.
-interface Props { locale: string; id: string; mobileId?: string; title: string; sub?: string; position?: string; textTop?: boolean }
-const { locale, id, mobileId, title, sub, position = '50% 60%', textTop = false } = Astro.props;
+interface Props { locale: string; id: string; mobileId?: string; title: string; sub?: string; note?: string; position?: string; textTop?: boolean }
+const { locale, id, mobileId, title, sub, note, position = '50% 60%', textTop = false } = Astro.props;
 const p = photo(id);
 const m = mobileId ? photo(mobileId) : undefined;
 const SMALL = '(max-width: 59.99rem)';
@@ -30,6 +30,7 @@ const fallback = await getImage({ src: p.src, width: fw, format: 'webp', quality
       loading="eager" fetchpriority="high" decoding="sync" class="hero-img" style={`--pos:${position}`} />
   </picture>
   <div class="hero-text wrap">
+    {note && <p class="note">{note}</p>}
     <h1>{title}</h1>
     {sub && <p class="sub">{sub}</p>}
     <a class="btn btn-light" href={lp(locale, 'book')} data-cta="book">{t(locale, 'cta.checkDates')}</a>
@@ -43,6 +44,7 @@ const fallback = await getImage({ src: p.src, width: fw, format: 'webp', quality
   @media (min-width: 60rem) { .hero::after { background: linear-gradient(to top, rgba(18, 20, 16, .7) 0%, rgba(18, 20, 16, .25) 45%, rgba(18, 20, 16, 0) 70%), linear-gradient(to right, rgba(18, 20, 16, .5) 0%, rgba(18, 20, 16, .2) 45%, rgba(18, 20, 16, 0) 65%); } }
   .hero-text { padding-bottom: clamp(5.5rem, 10vh, 6.5rem); padding-top: 8rem; }
   @media (min-width: 60rem) { .hero-text { padding-bottom: var(--space-6); } }
+  .note { font: 500 var(--step--1)/1.4 var(--font-text); letter-spacing: .08em; text-transform: uppercase; margin: 0 0 var(--space-2); text-shadow: 0 1px 12px rgba(0, 0, 0, .35); }
   h1 { max-width: 19ch; margin-bottom: var(--space-2); text-shadow: 0 2px 30px rgba(0, 0, 0, .35); }
   .sub { max-width: 34rem; font-size: var(--step-1); line-height: 1.45; margin-bottom: var(--space-4); text-shadow: 0 1px 12px rgba(0, 0, 0, .3); }
   @media (min-width: 60rem) { .hero { min-height: 92svh; } }

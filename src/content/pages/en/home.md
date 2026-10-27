@@ -28,13 +28,23 @@ moments:
       time: "Evening"
       title: "Dinner under the pergola"
       text: "The outdoor kitchen is a few steps from the table. As the sun drops behind the cape, the lights of Alassio come on below."
+who:
+  kicker: "Who it's for"
+  title: "Made for eight"
+  items:
+    - title: "Families"
+      text: "Everything is on one level, the pool has a hidden safety cover and the beach is ten minutes away. The four suites are equal, so grandparents get the same comfort as everyone else."
+    - title: "Friends"
+      text: "Four equal double suites, an outdoor kitchen under the pergola, a bocce court and a table-tennis table. Nobody draws the short straw."
+    - title: "Winter and remote work"
+      text: "Starlink internet at about 100 Mbit/s, underfloor heating and the mild Riviera winter. Ask us about longer stays."
 strip:
   kicker: "Gallery"
   title: "Stone, oak, light and space"
 booking:
   kicker: "Book"
   title: "Check your dates"
-  price: "From €{priceLow} per night, everything included, up to {guests} guests."
+  price: "From €{priceLow} per night, everything included, up to {guests} guests: about €{perPerson} per person."
   includedTitle: "Included in every stay"
   more: "Rates, stays and house rules"
 alassio:

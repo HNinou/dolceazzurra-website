@@ -4,8 +4,20 @@ description: "Check availability and book Villa Dolce & Azzurra directly: from �
 reviewed: false
 kicker: "Book"
 heading: "Check dates and book"
-price: "From €{priceLow} per night, everything included, up to {guests} guests."
+price: "From €{priceLow} per night, everything included, up to {guests} guests: about €{perPerson} per person."
 priceNote: "Rates vary by season. The calendar shows the exact price for your dates."
+reassure:
+  - "Check-in from {checkIn}, check-out by {checkOut}"
+  - "Everything included: cleaning, linen, Wi-Fi, parking"
+  - "All on one level, pool with a safety cover"
+askLink: "Questions? Write to us"
+sleepTitle: "Sleeping arrangements"
+sleep:
+  - "{suites} equal double suites in their own wing"
+  - "One queen-size bed per suite, with hotel bedding"
+  - "Private outdoor space for each suite"
+  - "{bathrooms} bathrooms with walk-in showers"
+  - "Sleeps {guests}"
 minStayVaries: "Minimum stay varies by season, see the calendar."
 minStayTitle: "Minimum stay"
 minStayItem: "{nights} nights minimum"

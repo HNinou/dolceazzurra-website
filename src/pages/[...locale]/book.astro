@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import BookingWidget from '../../components/BookingWidget.astro';
 import Faq from '../../components/Faq.astro';
 import Figure from '../../components/Figure.astro';
+import Reviews from '../../components/Reviews.astro';
 import { localePaths, localeFromParam, t, tf } from '../../lib/i18n';
 import { page } from '../../lib/content';
 import { cin, confirmedMinStays, contact, fill, house, known, legal } from '../../lib/villa';
@@ -26,6 +27,8 @@ const terms = [
         <h1>{c.heading}</h1>
         <p class="lead">{fill(c.price)}</p>
         <p class="muted">{c.priceNote}</p>
+        <ul class="reassure">{c.reassure.map((r: string) => <li>{fill(r)}</li>)}</ul>
+        <a class="link-arrow" href={`mailto:${contact.email}`}>{c.askLink}</a>
       </div>
       <div class="widget-box"><BookingWidget locale={locale} /></div>
     </div>
@@ -34,6 +37,8 @@ const terms = [
   <section class="section" aria-label={c.includedTitle}>
     <div class="wrap info">
       <div>
+        <h2 class="h-sm">{c.sleepTitle}</h2>
+        <ul class="list-clean">{c.sleep.map((s: string) => <li>{fill(s)}</li>)}</ul>
         <h2 class="h-sm">{c.includedTitle}</h2>
         <ul class="list-clean">{house.included.map((i: string) => <li>{tf(locale, i)}</li>)}</ul>
       </div>
@@ -42,17 +47,14 @@ const terms = [
         {confirmedMinStays.length
           ? <ul class="list-clean">{confirmedMinStays.map((m: any) => <li>{fill(c.minStayItem, { nights: m.nights })}</li>)}</ul>
           : <p>{c.minStayVaries}</p>}
-        <h2 class="h-sm">{c.arrivalTitle}</h2>
-        <ul class="list-clean">
-          <li>{fill(c.checkIn)}</li>
-          <li>{fill(c.checkOut)}</li>
-        </ul>
         <h2 class="h-sm">{c.rulesTitle}</h2>
         <ul class="list-clean">{house.rules.map((r: string) => <li>{tf(locale, r)}</li>)}</ul>
         {terms.map(([k, v]) => <><h2 class="h-sm">{c[k]}</h2><p>{v}</p></>)}
       </div>
     </div>
   </section>
+
+  <Reviews locale={locale} id="book-reviews" />
 
   <Figure id="05" locale={locale} class="bleed" sizes="100vw" widths={[640, 900, 1280, 1920]} position="50% 65%" />
 
@@ -77,4 +79,7 @@ const terms = [
   .bleed :global(img) { height: clamp(16rem, 45vw, 32rem); }
   .faq-wrap { max-width: calc(48rem + 2 * var(--gutter)); }
   .ask { margin-top: var(--space-4); }
+  .reassure { list-style: none; padding: 0; margin: var(--space-3) 0 var(--space-2); }
+  .reassure li { padding: .45rem 0 .45rem 1.6rem; position: relative; }
+  .reassure li::before { content: ""; position: absolute; left: 0; top: .95rem; width: .9rem; border-top: 1px solid var(--c-oak); }
 </style>

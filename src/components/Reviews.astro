@@ -1,0 +1,51 @@
+---
+// Real guest reviews from villa.yaml -> house.reviews (quoted in the page language, marked when translated).
+import { t } from '../lib/i18n';
+import { house, known } from '../lib/villa';
+interface Props { locale: string; id?: string; band?: boolean }
+const { locale, id = 'reviews', band = true } = Astro.props;
+const r = house.reviews;
+const quotes = known(r.quotes) ? (r.quotes as any[]) : [];
+const rating = known(r.airbnb?.rating) ? Number(r.airbnb.rating).toFixed(1).replace('.', t(locale, 'common.decimal')) : null;
+const countryOf = (code?: string) => (code ? new Intl.DisplayNames([locale], { type: 'region' }).of(code) : undefined);
+const monthOf = (m: string) => new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' }).format(new Date(`${m}-15`));
+---
+{quotes.length > 0 && (
+  <section class:list={['section', 'reviews', { band }]} aria-labelledby={`${id}-h`}>
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="kicker">{t(locale, 'reviews.kicker')}</span>
+        <h2 id={`${id}-h`}>{t(locale, 'reviews.title')}</h2>
+        {rating && <p class="rating">{t(locale, 'reviews.rating').replace('{rating}', rating).replace('{count}', r.airbnb.count)}{known(r.airbnb.label) && <> · {t(locale, 'reviews.favourite')}</>}</p>}
+      </div>
+      <ul class="quotes">
+        {quotes.map((q) => {
+          const own = q.lang === locale;
+          const text = own ? q.text : q[locale];
+          return (
+            <li class="reveal">
+              <blockquote lang={own ? q.lang : locale}>
+                <p>{t(locale, 'reviews.open')}{text}{t(locale, 'reviews.close')}</p>
+                <footer>
+                  <span class="who">{q.name}</span>{q.place && <>, {q.place}</>}{q.country && <>, {countryOf(q.country)}</>} · {monthOf(String(q.month))} · {t(locale, 'reviews.source')}
+                  {!own && <span class="tr">{t(locale, `reviews.translatedFrom.${q.lang}`)}</span>}
+                </footer>
+              </blockquote>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </section>
+)}
+<style>
+  .head { max-width: 44rem; margin-bottom: var(--space-4); }
+  .rating { color: var(--c-ink-soft); margin: 0; }
+  .quotes { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4) var(--space-5); }
+  @media (min-width: 48rem) { .quotes { grid-template-columns: 1fr 1fr; } }
+  blockquote { margin: 0; padding-top: var(--space-3); border-top: 1px solid var(--c-oak); }
+  blockquote p { font: 350 var(--step-1)/1.45 var(--font-display); margin-bottom: var(--space-2); }
+  footer { font-size: var(--step--1); color: var(--c-ink-soft); }
+  .who { color: var(--c-ink); font-weight: 500; }
+  .tr { display: block; margin-top: .2rem; font-style: italic; }
+</style>

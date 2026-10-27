@@ -28,13 +28,23 @@ moments:
       time: "Sera"
       title: "Cena sotto la pergola"
       text: "La cucina esterna è a pochi passi dal tavolo. Quando il sole scende dietro il capo, sotto si accendono le luci di Alassio."
+who:
+  kicker: "Per chi"
+  title: "Pensata per otto"
+  items:
+    - title: "Famiglie"
+      text: "Tutto è su un unico livello, la piscina ha una copertura di sicurezza nascosta e la spiaggia è a dieci minuti. Le quattro suite si equivalgono: i nonni hanno lo stesso comfort di tutti."
+    - title: "Amici"
+      text: "Quattro suite matrimoniali uguali, una cucina esterna sotto la pergola, un campo da bocce e un tavolo da ping-pong. Nessuno resta penalizzato."
+    - title: "Inverno e smart working"
+      text: "Internet Starlink a circa 100 Mbit/s, riscaldamento a pavimento e l'inverno mite della Riviera. Chiedeteci per i soggiorni lunghi."
 strip:
   kicker: "Galleria"
   title: "Pietra, rovere, luce e spazio"
 booking:
   kicker: "Prenota"
   title: "Scegli le tue date"
-  price: "Da {priceLow} € a notte, tutto incluso, fino a {guests} ospiti."
+  price: "Da {priceLow} € a notte, tutto incluso, fino a {guests} ospiti: circa {perPerson} € a persona."
   includedTitle: "Incluso in ogni soggiorno"
   more: "Tariffe, soggiorni e regole della casa"
 alassio:

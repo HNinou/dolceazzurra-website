@@ -89,5 +89,25 @@
     "tech": "Connectivity and sound",
     "practical": "Practical",
     "welcome": "On arrival"
+  },
+  "reviews": {
+    "kicker": "Guests",
+    "title": "What guests say",
+    "rating": "Rated {rating} out of 5 by {count} guests on Airbnb",
+    "favourite": "Guest favourite",
+    "source": "Airbnb review",
+    "open": "“",
+    "close": "”",
+    "translatedFrom": {
+      "de": "Translated from German",
+      "fr": "Translated from French",
+      "en": "Translated from English"
+    }
+  },
+  "hero": {
+    "note": "Longlisted · {award}"
+  },
+  "home": {
+    "patioCaption": "The bay from the covered patio"
   }
 }

@@ -4,8 +4,20 @@ description: "Vérifiez les disponibilités et réservez Villa Dolce & Azzurra e
 reviewed: false
 kicker: "Réserver"
 heading: "Voir les dates et réserver"
-price: "À partir de {priceLow} € la nuit, tout compris, jusqu'à {guests} personnes."
+price: "À partir de {priceLow} € la nuit, tout compris, jusqu'à {guests} personnes : environ {perPerson} € par personne."
 priceNote: "Les tarifs varient selon la saison. Le calendrier indique le prix exact pour vos dates."
+reassure:
+  - "Arrivée à partir de {checkIn}, départ avant {checkOut}"
+  - "Tout compris : ménage, linge, Wi-Fi, parking"
+  - "Tout de plain-pied, piscine avec couverture de sécurité"
+askLink: "Une question ? Écrivez-nous"
+sleepTitle: "Couchages"
+sleep:
+  - "{suites} suites doubles équivalentes, dans une aile à part"
+  - "Un lit queen-size par suite, literie d'hôtel"
+  - "Un extérieur privé pour chaque suite"
+  - "{bathrooms} salles de bains avec douche à l'italienne"
+  - "{guests} couchages"
 minStayVaries: "La durée minimale de séjour varie selon la saison, voir le calendrier."
 minStayTitle: "Séjour minimum"
 minStayItem: "{nights} nuits minimum"

@@ -28,13 +28,23 @@ moments:
       time: "Soir"
       title: "Dîner sous la pergola"
       text: "La cuisine extérieure est à quelques pas de la table. Quand le soleil passe derrière le cap, les lumières d'Alassio s'allument en contrebas."
+who:
+  kicker: "Pour qui"
+  title: "Pensée pour huit"
+  items:
+    - title: "Familles"
+      text: "Tout est de plain-pied, la piscine a une couverture de sécurité invisible et la plage est à dix minutes. Les quatre suites sont équivalentes : les grands-parents ont le même confort que tout le monde."
+    - title: "Amis"
+      text: "Quatre suites doubles équivalentes, une cuisine extérieure sous la pergola, un terrain de pétanque et une table de ping-pong. Personne n'est lésé."
+    - title: "Hiver et télétravail"
+      text: "Internet Starlink à environ 100 Mbit/s, chauffage au sol et la douceur de l'hiver sur la Riviera. Interrogez-nous pour les longs séjours."
 strip:
   kicker: "Galerie"
   title: "Pierre, chêne, lumière et espace"
 booking:
   kicker: "Réserver"
   title: "Choisissez vos dates"
-  price: "À partir de {priceLow} € la nuit, tout compris, jusqu'à {guests} personnes."
+  price: "À partir de {priceLow} € la nuit, tout compris, jusqu'à {guests} personnes : environ {perPerson} € par personne."
   includedTitle: "Compris dans chaque séjour"
   more: "Tarifs, séjours et règlement intérieur"
 alassio:

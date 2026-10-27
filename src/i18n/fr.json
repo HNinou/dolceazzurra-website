@@ -189,5 +189,25 @@
     "Budello institution, seafood and pasta": "Une institution du Budello, poissons et pâtes",
     "Pizza by a medieval tower on the sea": "Pizzas au pied d'une tour médiévale face à la mer",
     "Modern, short menu, Ligurian wines": "Moderne, carte courte, vins de Ligurie"
+  },
+  "reviews": {
+    "kicker": "Voyageurs",
+    "title": "Ce qu'en disent les voyageurs",
+    "rating": "Noté {rating} sur 5 par {count} voyageurs sur Airbnb",
+    "favourite": "Coup de cœur voyageurs",
+    "source": "avis Airbnb",
+    "open": "« ",
+    "close": " »",
+    "translatedFrom": {
+      "de": "Traduit de l'allemand",
+      "fr": "Traduit du français",
+      "en": "Traduit de l'anglais"
+    }
+  },
+  "hero": {
+    "note": "Présélectionnée · {award}"
+  },
+  "home": {
+    "patioCaption": "La baie depuis le patio couvert"
   }
 }

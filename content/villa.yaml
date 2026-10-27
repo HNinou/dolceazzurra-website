@@ -161,8 +161,41 @@ house:
     - "Welcome gift"
 
   reviews:
-    airbnb: { rating: 5.0, count: 8, label: "Guest Favourite", as_of: "2026-10-26" }
-    quotes: TODO_OWNER   # paste REAL guest quotes (first name + country + month). Never write invented reviews.
+    airbnb: { rating: 5.0, count: 8, label: "Guest Favourite", as_of: "2026-10-27" }
+    # Real Airbnb reviews of this listing (collected 2026-10-27 at the owner's request). `text` is the guest's
+    # own words in `lang`; the other languages are translations (EN from Airbnb's translation, the rest by us).
+    # Excerpts only; nothing reworded beyond translation.
+    quotes:
+      - name: Delia
+        place: "Winterthur"
+        country: CH
+        month: 2026-10
+        lang: de
+        text: "Das Haus ist modern, architektonisch sehr stilvoll und durchdacht gestaltet und mit viel Liebe zum Detail eingerichtet."
+        en: "The house is modern, architecturally very stylish and thoughtfully designed, and furnished with a lot of love for detail."
+        fr: "La maison est moderne, très élégante sur le plan architectural, pensée avec soin et aménagée avec beaucoup d'amour du détail."
+        it: "La casa è moderna, architettonicamente molto elegante e progettata con cura, arredata con grande attenzione ai dettagli."
+      - name: Noé
+        month: 2026-08
+        lang: fr
+        text: "La maison offre un magnifique compromis entre une vue splendide et une excellente accessibilité à la mer : suffisamment en hauteur pour profiter d'une très belle vue, tout en étant à une distance idéale pour rejoindre facilement la plage et le centre."
+        en: "The house offers a wonderful balance between a splendid view and excellent access to the sea: high enough to enjoy a beautiful view, while being at an ideal distance to easily reach the beach and the center."
+        it: "La casa offre un magnifico equilibrio tra una vista splendida e un ottimo accesso al mare: abbastanza in alto per godersi una bellissima vista, ma alla distanza ideale per raggiungere facilmente la spiaggia e il centro."
+      - name: Philipp
+        place: "Ennetbaden"
+        country: CH
+        month: 2026-10
+        lang: en
+        text: "The view is just awesome and a swim in the pool in the mornings is sooo peaceful."
+        fr: "La vue est tout simplement superbe, et une baignade dans la piscine le matin est si paisible."
+        it: "La vista è davvero splendida e una nuotata in piscina al mattino è così rilassante."
+      - name: Martin
+        month: 2026-09
+        lang: de
+        text: "Konnten uns sehr gut als Familie erholen. Der Pool ist ein Highlight. Die Ausstattung extrem hochwertig."
+        en: "We were able to relax very well as a family. The pool is a highlight. The amenities are of extremely high quality."
+        fr: "Nous avons pu très bien nous reposer en famille. La piscine est un vrai point fort. Les équipements sont d'une qualité exceptionnelle."
+        it: "Abbiamo potuto riposarci molto bene in famiglia. La piscina è il punto forte. Le dotazioni sono di altissima qualità."
 
 location:
   area: "Solva Cavia hillside above Alassio, Riviera di Ponente, Liguria"
