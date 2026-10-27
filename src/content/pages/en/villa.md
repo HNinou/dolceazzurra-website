@@ -34,6 +34,15 @@ sustainability:
 amenities:
   kicker: "Amenities"
   title: "What you will find"
+hosts:
+  kicker: "Your hosts"
+  title: "Sylvie and Michel"
+  paragraphs:
+    - "We are Sylvie and Michel, in love with Italy, with fine stone, with architecture and with the dolce vita."
+    - "It took us six years of searching to find the right plot: facing due south, with nothing overlooking it, and a sweeping view over Alassio."
+    - "This Italian seaside town won us over at once: family-friendly and authentic, lively, with a taste for beautiful things and a touch of luxury that never shows off. Here the sea and the mild climate meet the warmth of the people and an Italian way of life you never tire of. It is the kind of place you never really want to leave."
+    - "This haven of peace is where we wanted to bring the project to life, surrounded by exceptional teams and people we met along the way, who shared the same high standards and the same passion. Together they made Dolce & Azzurra much more than a villa: a place that is truly ours."
+  signature: "Sylvie & Michel"
 cta:
   title: "See which dates are free"
 ---

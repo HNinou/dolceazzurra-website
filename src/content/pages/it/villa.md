@@ -34,6 +34,15 @@ sustainability:
 amenities:
   kicker: "Dotazioni"
   title: "Cosa troverete"
+hosts:
+  kicker: "I padroni di casa"
+  title: "Sylvie e Michel"
+  paragraphs:
+    - "Siamo Sylvie e Michel, innamorati dell'Italia, della bella pietra, dell'architettura e della dolce vita."
+    - "Ci sono voluti sei anni di ricerche per trovare il terreno giusto: esposto in pieno sud, senza nessuno di fronte, con una vista aperta su Alassio."
+    - "Questa affascinante cittadina di mare ci ha conquistati subito: familiare e autentica, vivace, con il gusto del bello e un tocco di lusso che non si ostenta mai. Qui il mare e la dolcezza del clima si uniscono al calore della gente e a un modo di vivere all'italiana di cui non ci si stanca mai. È il genere di posto da cui non si ha mai davvero voglia di ripartire."
+    - "È in questo vero angolo di pace che abbiamo voluto dare vita al progetto, circondati da squadre e persone eccezionali incontrate lungo il cammino, che hanno condiviso la stessa cura e la stessa passione per fare di Dolce & Azzurra molto più di una villa: un luogo che ci somiglia."
+  signature: "Sylvie & Michel"
 cta:
   title: "Scopri le date libere"
 ---

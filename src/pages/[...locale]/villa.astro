@@ -113,6 +113,18 @@ const outdoorIds = ['patio', 'pool', 'courtyard', 'olive-lounge', 'games', 'roof
     </div>
   </section>
 
+  <section class="section" aria-labelledby="hosts-h">
+    <div class="wrap split top hosts">
+      <Figure id="59" locale={locale} ratio="4 / 5" sizes="(min-width: 60rem) 34rem, 100vw" widths={[480, 800, 969]} position="50% 30%" class="reveal" />
+      <div class="reveal">
+        <span class="kicker">{c.hosts.kicker}</span>
+        <h2 id="hosts-h">{c.hosts.title}</h2>
+        {c.hosts.paragraphs.map((p: string) => <p>{p}</p>)}
+        <p class="signature">{c.hosts.signature}</p>
+      </div>
+    </div>
+  </section>
+
   <section class="section band cta" aria-labelledby="cta-h">
     <div class="wrap">
       <h2 id="cta-h">{t(locale, 'cta.invite')}</h2>
@@ -132,6 +144,8 @@ const outdoorIds = ['patio', 'pool', 'courtyard', 'olive-lounge', 'games', 'roof
   @media (min-width: 48rem) { .amen { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 72rem) { .amen { grid-template-columns: repeat(3, 1fr); } }
   .amen h3 { font-size: var(--step-1); }
+  @media (min-width: 60rem) { .hosts { grid-template-columns: 5fr 7fr; } }
+  .signature { font-family: var(--font-display); font-size: var(--step-1); font-style: italic; margin-top: var(--space-3); }
   .cta { text-align: center; }
   .cta .lead { margin-bottom: var(--space-3); }
 </style>

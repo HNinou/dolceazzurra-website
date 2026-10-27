@@ -81,6 +81,8 @@ photos:
       group: outdoors, alt_en: "The villa's covered patio behind lavender, an agave and an olive tree" }
   - { file: 58-lavande-devant-la-pergola.webp, w: 2560, h: 3846, rights: owner, role: gallery,
       group: outdoors, alt_en: "Lavender in flower in front of the timber pergola" }
+  - { file: 59-sylvie-et-michel-vos-hotes.webp, w: 969, h: 1211, rights: owner, role: page,
+      alt_en: "Sylvie and Michel, the owners, by the sea in front of a stone fort" }   # owners' own photo, 2026-10-27
 
   # Destination photos: origin unknown. Keep out of the build until rights are confirmed.
   - { file: 24-baie-alassio-balcon.webp, w: 1100, h: 645, rights: unconfirmed, role: destination, alt_en: "Bay of Alassio seen from a balustrade" }

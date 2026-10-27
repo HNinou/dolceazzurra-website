@@ -67,7 +67,9 @@ Implemented:
 - The rating links to the Airbnb listing so guests can check it (owner's choice; note this deliberately relaxes CLAUDE.md rule 3, "one booking path").
 - Phones: "Made for eight" is a swipeable row; reviews show two, then "More reviews". Fade-ins shortened to 0.25 s and started before elements reach the screen.
 
-Not done (needs the owner): photos of all four suites and more bathrooms; courtyard, fireplace lounge and roof terrace photos; floor plan; licensed Alassio photos; "Your hosts" paragraph and photo; deposit and cancellation terms; German then Dutch; domain email (owner chose to keep gmail for now); lifestyle shoot and film; Google reviews.
+- "Your hosts" (2026-10-27): the owners' own French text (Sylvie and Michel) sits on The Villa page before the closing band, translated into EN and IT, with their photo (59, cropped to 4:5 from IMG_4105.heic; the HEIC original stays out of git) beside it. "à couper le souffle" became "imprenable" (the verifier bans it as a hype word). "No vis-à-vis" is the owners' wording and holds: no other house is visible from the villa.
+
+Not done (needs the owner): photos of all four suites and more bathrooms; courtyard, fireplace lounge and roof terrace photos; floor plan; licensed Alassio photos; deposit and cancellation terms; German then Dutch; domain email (owner chose to keep gmail for now); lifestyle shoot and film; Google reviews.
 
 ## Remaining warnings
 - Translation review flags (27 files). These are expected until the owner proofreads.

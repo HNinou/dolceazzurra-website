@@ -34,6 +34,15 @@ sustainability:
 amenities:
   kicker: "Équipements"
   title: "Ce que vous trouverez"
+hosts:
+  kicker: "Vos hôtes"
+  title: "Sylvie et Michel"
+  paragraphs:
+    - "Nous sommes Sylvie et Michel, amoureux de l'Italie, des belles pierres, de l'architecture et de la dolce vita."
+    - "Il nous aura fallu six années de recherche pour trouver le terrain parfait : idéalement orienté plein sud, sans aucun vis-à-vis, avec une vue imprenable surplombant Alassio."
+    - "Cette charmante ville balnéaire italienne nous a immédiatement séduits : familiale et authentique, vivante, avec ce goût du beau et cette touche de luxe qui ne s'affiche jamais. Ici, la mer et la douceur du climat se mêlent à la chaleur des habitants et à un art de vivre à l'italienne dont on ne se lasse pas, le genre d'endroit que l'on n'a jamais vraiment envie de quitter."
+    - "C'est dans ce véritable havre de paix que nous avons eu envie de donner vie à ce projet, entourés d'équipes et de personnes exceptionnelles, rencontrées en chemin, qui ont partagé la même exigence et la même passion pour faire de Dolce & Azzurra bien plus qu'une villa : un lieu qui nous ressemble."
+  signature: "Sylvie & Michel"
 cta:
   title: "Voir les dates disponibles"
 ---
