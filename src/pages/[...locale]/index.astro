@@ -49,7 +49,6 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
 
   <figure class="patio">
     <Figure id="08" locale={locale} class="bleed pano" sizes="100vw" widths={[640, 960, 1280, 1920]} position="50% 100%" />
-    <figcaption class="wrap">{t(locale, 'home.patioCaption')}</figcaption>
   </figure>
 
   <section class="section band moments" aria-labelledby="moments-h">
@@ -170,7 +169,6 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
   .inc li { margin-bottom: .3rem; break-inside: avoid; }
   .teaser { padding-top: var(--space-6); }
   .patio { margin: 0 0 var(--space-5); }
-  .patio figcaption { margin-top: .6rem; font-size: var(--step--1); color: var(--c-ink-soft); }
   .who-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
   /* Phones: one row of cards to swipe through. */
   @media (max-width: 59.99rem) {
