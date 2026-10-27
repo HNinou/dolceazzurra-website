@@ -28,7 +28,8 @@ const c = page(locale, 'services').frontmatter;
   </section>
   <section class="section band cta" aria-labelledby="cta-h">
     <div class="wrap">
-      <h2 id="cta-h">{fill(t(locale, 'cta.fromNight'))}</h2>
+      <h2 id="cta-h">{t(locale, 'cta.invite')}</h2>
+      <p class="lead">{fill(t(locale, 'cta.inviteLine'))}</p>
       <a class="btn btn-primary" href={lp(locale, 'book')} data-cta="book">{t(locale, 'cta.checkDates')}</a>
     </div>
   </section>

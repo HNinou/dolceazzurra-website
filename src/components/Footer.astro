@@ -1,7 +1,7 @@
 ---
 import Logo from './Logo.astro';
 import { lp, t } from '../lib/i18n';
-import { cin, contact, legal, house, instagramUrl, telHref, mapsUrl } from '../lib/villa';
+import { cin, contact, legal, house, instagramUrl, telHref, mapsUrl, whatsappUrl } from '../lib/villa';
 interface Props { locale: string }
 const { locale } = Astro.props;
 const a = legal.address;
@@ -20,6 +20,7 @@ const year = new Date().getFullYear();
         <ul class="fl">
           <li><a href={`mailto:${contact.email}`}>{contact.email}</a></li>
           {contact.phones.map((p: any) => <li><a href={telHref(p.number)}>{p.number}</a></li>)}
+          {whatsappUrl(locale) && <li><a href={whatsappUrl(locale)} rel="noopener">{t(locale, 'footer.whatsapp')}</a></li>}
           <li><a href={instagramUrl} rel="noopener">Instagram @{contact.instagram}</a></li>
         </ul>
       </div>

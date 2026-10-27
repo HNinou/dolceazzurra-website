@@ -25,14 +25,20 @@ photos:
       group: architecture, alt_en: "The villa and its pool lit at night among the olive terraces" }
   - { file: 08-villa-dolce-azzurra-exterieur.webp, w: 2560, h: 1707, rights: owner, role: hero,
       group: architecture, alt_en: "Single-storey stone villa set into the hillside, with the infinity pool in front" }
+  - { file: 09-facade-villa-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Glass facade of the living room opening onto the covered patio" }
   - { file: 10-jardin-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Garden of olive trees and Mediterranean shrubs sloping towards the sea" }
   - { file: 11-vue-baie-alassio-depuis-oliviers.webp, w: 1280, h: 852, rights: owner, role: feature,
       group: architecture, alt_en: "Aerial view of the villa's green roof, courtyard and pool among the olive trees" }
   - { file: 12-terrasse-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Patio dining table laid for breakfast beside the outdoor kitchen" }
-  - { file: 14-cuisine-exterieure-eno.webp, w: 2560, h: 1708, rights: owner, role: page,
+  - { file: 13-patio-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Patio lounge and dining table against a dry-stone wall, hills and sea beyond" }
+  - { file: 14-cuisine-exterieure-eno.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Outdoor kitchen and long table on the patio overlooking the coast" }
+  - { file: 15-jardin-mediterraneen.webp, w: 1280, h: 853, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Corner of the patio with sofa and stone wall, olive trees and the bay" }
   - { file: 16-piscine-a-debordement-vue-sur-la-baie-d-alassio.webp, w: 2560, h: 1708, rights: owner, role: feature,
       group: pool, alt_en: "Infinity pool running towards the horizon over the bay of Alassio" }
   - { file: 17-salon-mobilier-contemporain-chene-naturel-cuisine-ouverte.webp, w: 2560, h: 1708, rights: owner, role: gallery,
@@ -41,7 +47,9 @@ photos:
       group: interiors, alt_en: "Kitchen island in front of a floor-to-ceiling window looking over the bay" }
   - { file: 19-entree-boiseries-a-claire-voie-mobilier-sur-mesure.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: interiors, alt_en: "Kitchen with custom oak cabinetry and stone island, glass doors to the garden" }
-  - { file: 21-couloir-boiseries-a-claire-voie-puit-de-lumiere-zenithal.webp, w: 2560, h: 1708, rights: owner, role: page,
+  - { file: 20-suite-rangements-integres-chene-vue-jardin.webp, w: 2560, h: 1708, rights: owner, role: gallery,
+      group: suites, alt_en: "Suite with large window onto the garden and hills" }
+  - { file: 21-couloir-boiseries-a-claire-voie-puit-de-lumiere-zenithal.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: interiors, alt_en: "Open-plan living space with kitchen island, oak joinery and pendant lights" }
   - { file: 22-chambre-etagere-bibliotheque-rangements-chene-naturel.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: suites, alt_en: "Suite with oak slatted wall, built-in wardrobe and queen-size bed" }

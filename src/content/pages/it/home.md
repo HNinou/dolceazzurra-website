@@ -24,10 +24,10 @@ moments:
       time: "Pomeriggio"
       title: "La piscina e l'orizzonte"
       text: "La piscina a sfioro corre verso il mare. Quando non si usa, una copertura di sicurezza scompare nel bordo."
-    - photo: "07"
+    - photo: "52"
       time: "Sera"
-      title: "Cena sotto la pergola"
-      text: "La cucina esterna è a pochi passi dal tavolo. Quando il sole scende dietro il capo, sotto si accendono le luci di Alassio."
+      title: "La piscina al tramonto"
+      text: "Quando il sole scende dietro il capo, la piscina si illumina e sotto compaiono le luci di Alassio. La cena è a pochi passi, sotto la pergola."
 who:
   kicker: "Per chi"
   title: "Pensata per otto"
@@ -45,6 +45,7 @@ booking:
   kicker: "Prenota"
   title: "Scegli le tue date"
   price: "Da {priceLow} € a notte, tutto incluso, fino a {guests} ospiti: circa {perPerson} € a persona."
+  minStay: "Il soggiorno minimo varia secondo la stagione, vedi il calendario."
   includedTitle: "Incluso in ogni soggiorno"
   more: "Tariffe, soggiorni e regole della casa"
 alassio:

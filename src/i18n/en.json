@@ -20,7 +20,10 @@
   },
   "cta": {
     "checkDates": "Check dates",
-    "fromNight": "from €{priceLow}/night"
+    "fromNight": "from €{priceLow}/night",
+    "whatsapp": "Ask a question",
+    "invite": "Your dates, our view",
+    "inviteLine": "From €{priceLow} per night, everything included, up to {guests} guests."
   },
   "common": {
     "openMaps": "Open in Google Maps",
@@ -81,7 +84,8 @@
     "country": "Italy",
     "vat": "VAT",
     "cinLong": "Codice Identificativo Nazionale (national rental code)",
-    "architecture": "Architecture:"
+    "architecture": "Architecture:",
+    "whatsapp": "WhatsApp"
   },
   "amenityGroups": {
     "comfort": "Comfort",
@@ -102,12 +106,13 @@
       "de": "Translated from German",
       "fr": "Translated from French",
       "en": "Translated from English"
-    }
+    },
+    "more": "More reviews"
   },
   "hero": {
-    "note": "Longlisted · {award}"
+    "alt": "The bay of Alassio seen from the villa"
   },
   "home": {
-    "patioCaption": "The bay from the covered patio"
+    "patioCaption": "The house among the olive trees"
   }
 }

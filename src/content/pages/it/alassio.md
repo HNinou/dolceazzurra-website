@@ -6,6 +6,7 @@ hero:
   kicker: "Alassio"
   title: "Tra gli ulivi e il mare"
   sub: "La villa si trova sulla collina di Solva Cavia, sopra Alassio, nella Riviera di Ponente in Liguria."
+areaHeading: "Sulla collina, sopra il paese"
 sections:
   - id: beaches
     title: "Spiagge e Budello"

@@ -18,7 +18,7 @@ const outdoorIds = ['patio', 'pool', 'courtyard', 'olive-lounge', 'games', 'roof
     <h1>{c.hero.title}</h1>
     <p class="lead measure">{fill(c.hero.sub)}</p>
   </header>
-  <Figure id="49" locale={locale} class="bleed" sizes="100vw" widths={[640, 960, 1280, 1920]} eager position="50% 60%" />
+  <Figure id="08" locale={locale} class="bleed pano" sizes="100vw" widths={[640, 960, 1280, 1920]} eager position="50% 100%" />
 
   <section class="section" aria-labelledby="arch-h">
     <div class="wrap split">
@@ -115,8 +115,8 @@ const outdoorIds = ['patio', 'pool', 'courtyard', 'olive-lounge', 'games', 'roof
 
   <section class="section band cta" aria-labelledby="cta-h">
     <div class="wrap">
-      <h2 id="cta-h">{c.cta.title}</h2>
-      <p class="lead">{fill(t(locale, 'cta.fromNight'))}</p>
+      <h2 id="cta-h">{t(locale, 'cta.invite')}</h2>
+      <p class="lead">{fill(t(locale, 'cta.inviteLine'))}</p>
       <a class="btn btn-primary" href={lp(locale, 'book')} data-cta="book">{t(locale, 'cta.checkDates')}</a>
     </div>
   </section>

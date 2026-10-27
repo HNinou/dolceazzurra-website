@@ -6,6 +6,7 @@ hero:
   kicker: "Alassio"
   title: "Between the olive trees and the sea"
   sub: "The villa sits on the Solva Cavia hillside above Alassio, on the Riviera di Ponente in Liguria."
+areaHeading: "On the hill, above the town"
 sections:
   - id: beaches
     title: "Beaches and the Budello"

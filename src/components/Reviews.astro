@@ -1,7 +1,7 @@
 ---
 // Real guest reviews from villa.yaml -> house.reviews (quoted in the page language, marked when translated).
 import { t } from '../lib/i18n';
-import { house, known } from '../lib/villa';
+import { booking, house, known } from '../lib/villa';
 interface Props { locale: string; id?: string; band?: boolean }
 const { locale, id = 'reviews', band = true } = Astro.props;
 const r = house.reviews;
@@ -16,14 +16,14 @@ const monthOf = (m: string) => new Intl.DateTimeFormat(locale, { month: 'long', 
       <div class="head reveal">
         <span class="kicker">{t(locale, 'reviews.kicker')}</span>
         <h2 id={`${id}-h`}>{t(locale, 'reviews.title')}</h2>
-        {rating && <p class="rating">{t(locale, 'reviews.rating').replace('{rating}', rating).replace('{count}', r.airbnb.count)}{known(r.airbnb.label) && <> · {t(locale, 'reviews.favourite')}</>}</p>}
+        {rating && <p class="rating"><a href={booking.airbnb_url} rel="noopener">{t(locale, 'reviews.rating').replace('{rating}', rating).replace('{count}', r.airbnb.count)}</a>{known(r.airbnb.label) && <> · {t(locale, 'reviews.favourite')}</>}</p>}
       </div>
-      <ul class="quotes">
-        {quotes.map((q) => {
+      <ul class="quotes" data-quotes>
+        {quotes.map((q, n) => {
           const own = q.lang === locale;
           const text = own ? q.text : q[locale];
           return (
-            <li class="reveal">
+            <li class:list={['reveal', { extra: n >= 2 }]}>
               <blockquote lang={own ? q.lang : locale}>
                 <p>{t(locale, 'reviews.open')}{text}{t(locale, 'reviews.close')}</p>
                 <footer>
@@ -35,9 +35,18 @@ const monthOf = (m: string) => new Intl.DateTimeFormat(locale, { month: 'long', 
           );
         })}
       </ul>
+      {quotes.length > 2 && <button type="button" class="btn btn-ghost more" data-more-reviews>{t(locale, 'reviews.more')}</button>}
     </div>
   </section>
 )}
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-more-reviews]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      btn.previousElementSibling?.classList.add('all');
+      btn.remove();
+    });
+  });
+</script>
 <style>
   .head { max-width: 44rem; margin-bottom: var(--space-4); }
   .rating { color: var(--c-ink-soft); margin: 0; }
@@ -47,5 +56,9 @@ const monthOf = (m: string) => new Intl.DateTimeFormat(locale, { month: 'long', 
   blockquote p { font: 350 var(--step-1)/1.45 var(--font-display); margin-bottom: var(--space-2); }
   footer { font-size: var(--step--1); color: var(--c-ink-soft); }
   .who { color: var(--c-ink); font-weight: 500; }
+  /* Phones: two quotes, the rest behind "More reviews". */
+  .more { margin-top: var(--space-4); }
+  @media (max-width: 47.99rem) { .quotes:not(.all) .extra { display: none; } }
+  @media (min-width: 48rem) { .more { display: none; } }
   .tr { display: block; margin-top: .2rem; font-style: italic; }
 </style>

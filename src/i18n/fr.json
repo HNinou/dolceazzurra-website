@@ -20,7 +20,10 @@
   },
   "cta": {
     "checkDates": "Voir les dates",
-    "fromNight": "à partir de {priceLow} €/nuit"
+    "fromNight": "à partir de {priceLow} €/nuit",
+    "whatsapp": "Poser une question",
+    "invite": "Vos dates, notre vue",
+    "inviteLine": "À partir de {priceLow} € la nuit, tout compris, jusqu'à {guests} personnes."
   },
   "common": {
     "openMaps": "Ouvrir dans Google Maps",
@@ -81,7 +84,8 @@
     "country": "Italie",
     "vat": "TVA",
     "cinLong": "Codice Identificativo Nazionale (code national de location)",
-    "architecture": "Architecture :"
+    "architecture": "Architecture :",
+    "whatsapp": "WhatsApp"
   },
   "amenityGroups": {
     "comfort": "Confort",
@@ -98,14 +102,18 @@
     "06": "Bains de soleil et parasols le long de la piscine à débordement face à la baie",
     "07": "La villa et sa piscine éclairées la nuit parmi les terrasses d'oliviers",
     "08": "Villa de plain-pied en pierre, encastrée dans la colline, la piscine à débordement devant",
+    "09": "Façade vitrée du séjour ouvrant sur le patio couvert",
     "10": "Jardin d'oliviers et d'arbustes méditerranéens descendant vers la mer",
     "11": "Vue aérienne du toit végétalisé, de la cour et de la piscine parmi les oliviers",
     "12": "Table du patio dressée pour le petit-déjeuner, à côté de la cuisine extérieure",
+    "13": "Salon et table du patio contre un mur en pierre sèche, collines et mer au-delà",
     "14": "Cuisine extérieure et grande table sur le patio face à la côte",
+    "15": "Coin du patio avec canapé et mur en pierre, oliviers et baie",
     "16": "Piscine à débordement filant vers l'horizon au-dessus de la baie d'Alassio",
     "17": "Séjour avec canapé en lin et étagères en chêne, cuisine et salle à manger au fond",
     "18": "Îlot de cuisine devant une baie vitrée toute hauteur donnant sur la baie",
     "19": "Cuisine avec meubles en chêne sur mesure et îlot en pierre, portes vitrées sur le jardin",
+    "20": "Suite avec grande fenêtre sur le jardin et les collines",
     "21": "Espace de vie ouvert avec îlot de cuisine, menuiseries en chêne et suspensions",
     "22": "Suite avec mur à claire-voie en chêne, placard intégré et lit queen-size",
     "23": "Piscine à débordement dans la lumière du matin, la mer et la côte au loin",
@@ -202,12 +210,13 @@
       "de": "Traduit de l'allemand",
       "fr": "Traduit du français",
       "en": "Traduit de l'anglais"
-    }
+    },
+    "more": "Plus d'avis"
   },
   "hero": {
-    "note": "Présélectionnée · {award}"
+    "alt": "La baie d'Alassio vue depuis la villa"
   },
   "home": {
-    "patioCaption": "La baie depuis le patio couvert"
+    "patioCaption": "La maison parmi les oliviers"
   }
 }

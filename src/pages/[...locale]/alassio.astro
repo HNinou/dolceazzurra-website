@@ -19,11 +19,11 @@ const photoFor: Record<string, string> = { beaches: '16', gallinara: '03', walks
     <h1>{c.hero.title}</h1>
     <p class="lead measure">{c.hero.sub}</p>
   </header>
-  <Figure id="23" locale={locale} class="bleed" sizes="100vw" widths={[640, 960, 1280, 1920]} eager position="50% 55%" />
+  <Figure id="51" locale={locale} class="bleed" sizes="100vw" widths={[640, 960, 1280, 1920]} eager position="50% 60%" />
 
   <section class="section" aria-labelledby="hl-h">
     <div class="wrap split top">
-      <h2 id="hl-h" class="reveal">{tf(locale, location.area)}</h2>
+      <h2 id="hl-h" class="reveal">{c.areaHeading}</h2>
       <ul class="list-clean reveal">{location.highlights.map((h: string) => <li>{tf(locale, h)}</li>)}</ul>
     </div>
   </section>
@@ -66,7 +66,8 @@ const photoFor: Record<string, string> = { beaches: '16', gallinara: '03', walks
 
   <section class="section cta" aria-labelledby="cta-h">
     <div class="wrap">
-      <h2 id="cta-h" class="h-sm">{fill(t(locale, 'cta.fromNight'))}</h2>
+      <h2 id="cta-h">{t(locale, 'cta.invite')}</h2>
+      <p class="lead">{fill(t(locale, 'cta.inviteLine'))}</p>
       <a class="btn btn-primary" href={lp(locale, 'book')} data-cta="book">{t(locale, 'cta.checkDates')}</a>
     </div>
   </section>

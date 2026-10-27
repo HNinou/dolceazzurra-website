@@ -24,10 +24,10 @@ moments:
       time: "Afternoon"
       title: "The pool and the horizon"
       text: "The infinity pool runs out towards the sea. A safety cover hides in the deck when it is not in use."
-    - photo: "07"
+    - photo: "52"
       time: "Evening"
-      title: "Dinner under the pergola"
-      text: "The outdoor kitchen is a few steps from the table. As the sun drops behind the cape, the lights of Alassio come on below."
+      title: "The pool at dusk"
+      text: "As the sun drops behind the cape, the pool lights come on and the lights of Alassio appear below. Dinner is a few steps away, under the pergola."
 who:
   kicker: "Who it's for"
   title: "Made for eight"
@@ -45,6 +45,7 @@ booking:
   kicker: "Book"
   title: "Check your dates"
   price: "From €{priceLow} per night, everything included, up to {guests} guests: about €{perPerson} per person."
+  minStay: "Minimum stay varies by season, see the calendar."
   includedTitle: "Included in every stay"
   more: "Rates, stays and house rules"
 alassio:

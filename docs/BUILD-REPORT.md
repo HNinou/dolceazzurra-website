@@ -55,6 +55,20 @@ Last run (2026-10-26): `npm run verify` 1145 checks passed, 52 warnings, 0 failu
 5. **Booking subdomain (2026-10-27).** `villa.yaml` → `booking.base_url` and `listing_url` now point to `https://book.dolceazzurra.com/`. The Hostaway widget fetches its data from `booking-engine.hostaway.com/bookingEngines/<booking host>/…`, which returns 403 until the subdomain is saved in Hostaway (Booking Website → Settings → Domain & Security → Own subdomain). **Do not push this change before Hostaway is configured**, or the calendar stays empty. To roll back, put `dolceazzurra.holidayfuture.com` back in both URLs.
 6. GitHub → Settings → Pages → Source: GitHub Actions, then DNS at Nuxit (see `LAUNCH-CHECKLIST.md`).
 
+## Website review (27 Oct 2026, "dolceazzurra.com — Website Review", 68/100)
+Implemented:
+- Desktop hero: pergola over the bay (01); phones keep the dusk photo (04). Both share one description ("The bay of Alassio seen from the villa"). Award line removed from the hero.
+- Photo 08 (house) now opens The Villa page and follows the Home intro, as a panoramic strip cropped from the bottom so the neighbouring houses drop out.
+- "Evening" moment uses the lit pool (52), with new text. The Home Alassio teaser and the Alassio page now show Alassio at night from the villa (51). The phone booking band shows the breakfast table over the sea (05), not the rosemary close-up. 04 is already the phone hero, so it wasn't reused there.
+- Gallery: 09, 13, 15 and 20 restored (owner's choice), 14 and 21 added. The gallery opens on 01, then pool, interiors, suites, architecture. Grid kept clean, with no captions under tiles (owner's choice); captions show in the full-screen viewer.
+- Alassio second heading rewritten. The price-only closing bands are now "Your dates, our view" + price + button.
+- Minimum-stay line next to both calendars. After the 20th, the calendar opens on next month: the widget has no start-month setting, so the page clicks its "next" arrow once.
+- WhatsApp "Ask a question" (French number, owner's choice) in the hero, on the Book page and in the footer.
+- The rating links to the Airbnb listing so guests can check it (owner's choice; note this deliberately relaxes CLAUDE.md rule 3, "one booking path").
+- Phones: "Made for eight" is a swipeable row; reviews show two, then "More reviews". Fade-ins shortened to 0.25 s and started before elements reach the screen.
+
+Not done (needs the owner): photos of all four suites and more bathrooms; courtyard, fireplace lounge and roof terrace photos; floor plan; licensed Alassio photos; "Your hosts" paragraph and photo; deposit and cancellation terms; German then Dutch; domain email (owner chose to keep gmail for now); lifestyle shoot and film; Google reviews.
+
 ## Remaining warnings
 - Translation review flags (27 files). These are expected until the owner proofreads.
 - The gmail address shows on every page (`contact.email`). Switch it when the domain address exists.

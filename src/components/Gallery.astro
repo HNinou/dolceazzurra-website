@@ -24,9 +24,12 @@ const cellsOf = <T extends { p: { small?: boolean } }>(items: T[]) => {
   }
   return out;
 };
-// Portrait tiles first, so the grid packs into full rows.
-const tallFirst = <T extends { p: { src: { width: number; height: number } } }>(cells: T[][]) =>
-  [...cells.filter((c) => tall(c)), ...cells.filter((c) => !tall(c))];
+// The group's first photo stays first (the gallery opens on the view); portrait tiles come
+// next so the grid packs into full rows.
+const tallFirst = <T extends { p: { src: { width: number; height: number } } }>(cells: T[][]) => {
+  const [lead, ...rest] = cells;
+  return lead ? [lead, ...rest.filter((c) => tall(c)), ...rest.filter((c) => !tall(c))] : cells;
+};
 let index = 0;
 // Desktop columns per group: 2 for groups of 2 or 4 tiles, otherwise 3. In a 3-column group
 // whose tiles don't fill the last row, the last one or two tiles widen to fill it.

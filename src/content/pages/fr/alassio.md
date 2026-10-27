@@ -6,6 +6,7 @@ hero:
   kicker: "Alassio"
   title: "Entre les oliviers et la mer"
   sub: "La villa se trouve sur la colline de Solva Cavia, au-dessus d'Alassio, sur la Riviera di Ponente en Ligurie."
+areaHeading: "Sur la colline, au-dessus de la ville"
 sections:
   - id: beaches
     title: "Les plages et le Budello"

@@ -43,7 +43,7 @@ contact:
   email: "dolce.e.azzurra@gmail.com"   # owner plans a domain address (stay@...). Use this until then.
   phones:
     - { number: "+39 340 832 3475", label: "Italy", whatsapp: TODO_OWNER }
-    - { number: "+33 7 83 46 12 13", label: "France", whatsapp: TODO_OWNER }
+    - { number: "+33 7 83 46 12 13", label: "France", whatsapp: true }   # owner, 2026-10-27
   instagram: "dolce.e.azzurra"          # existing account: https://www.instagram.com/dolce.e.azzurra/
   languages_spoken: [fr, en, it]
 

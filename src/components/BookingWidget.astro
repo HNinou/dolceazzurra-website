@@ -38,8 +38,18 @@ const config = {
         if (typeof w.hostawayCalendarWidget !== 'function') return;
         w.hostawayCalendarWidget({ ...cfg, numberOfMonths: window.innerWidth < 700 ? 1 : 2 });
         const target = document.getElementById('hostaway-calendar-widget');
-        const hide = () => { if (target && target.childElementCount) host.querySelector<HTMLElement>('[data-widget-fallback] .loading')?.remove(); };
-        if (target) new MutationObserver(hide).observe(target, { childList: true });
+        let advanced = false;
+        const onRender = () => {
+          if (!target || !target.childElementCount) return;
+          host.querySelector<HTMLElement>('[data-widget-fallback] .loading')?.remove();
+          // Late in the month the current month is mostly past: show next month first.
+          // The widget's first two text-less buttons are its previous/next arrows.
+          if (!advanced && new Date().getDate() > 20) {
+            const arrows = [...target.querySelectorAll<HTMLButtonElement>('button')].filter((b) => !b.textContent?.trim());
+            if (arrows.length >= 2) { arrows[1].click(); advanced = true; }
+          }
+        };
+        if (target) new MutationObserver(onRender).observe(target, { childList: true, subtree: true });
       };
       document.head.appendChild(s);
     };

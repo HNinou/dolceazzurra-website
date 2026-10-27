@@ -7,6 +7,7 @@ heading: "Verifica le date e prenota"
 price: "Da {priceLow} € a notte, tutto incluso, fino a {guests} ospiti: circa {perPerson} € a persona."
 priceNote: "Le tariffe variano secondo la stagione. Il calendario mostra il prezzo esatto per le vostre date."
 reassure:
+  - "Il soggiorno minimo varia secondo la stagione, vedi il calendario."
   - "Check-in dalle {checkIn}, check-out entro le {checkOut}"
   - "Tutto incluso: pulizia, biancheria, Wi-Fi, parcheggio"
   - "Tutto su un unico livello, piscina con copertura di sicurezza"

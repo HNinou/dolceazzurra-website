@@ -7,6 +7,7 @@ heading: "Check dates and book"
 price: "From €{priceLow} per night, everything included, up to {guests} guests: about €{perPerson} per person."
 priceNote: "Rates vary by season. The calendar shows the exact price for your dates."
 reassure:
+  - "Minimum stay varies by season, see the calendar."
   - "Check-in from {checkIn}, check-out by {checkOut}"
   - "Everything included: cleaning, linen, Wi-Fi, parking"
   - "All on one level, pool with a safety cover"

@@ -24,10 +24,10 @@ moments:
       time: "Après-midi"
       title: "La piscine et l'horizon"
       text: "La piscine à débordement file vers la mer. Une couverture de sécurité se range dans la plage quand on ne s'en sert pas."
-    - photo: "07"
+    - photo: "52"
       time: "Soir"
-      title: "Dîner sous la pergola"
-      text: "La cuisine extérieure est à quelques pas de la table. Quand le soleil passe derrière le cap, les lumières d'Alassio s'allument en contrebas."
+      title: "La piscine au crépuscule"
+      text: "Quand le soleil passe derrière le cap, la piscine s'éclaire et les lumières d'Alassio apparaissent en contrebas. Le dîner est à quelques pas, sous la pergola."
 who:
   kicker: "Pour qui"
   title: "Pensée pour huit"
@@ -45,6 +45,7 @@ booking:
   kicker: "Réserver"
   title: "Choisissez vos dates"
   price: "À partir de {priceLow} € la nuit, tout compris, jusqu'à {guests} personnes : environ {perPerson} € par personne."
+  minStay: "La durée minimale de séjour varie selon la saison, voir le calendrier."
   includedTitle: "Compris dans chaque séjour"
   more: "Tarifs, séjours et règlement intérieur"
 alassio:

@@ -6,7 +6,7 @@ import Figure from '../../components/Figure.astro';
 import Reviews from '../../components/Reviews.astro';
 import { localePaths, localeFromParam, t, tf } from '../../lib/i18n';
 import { page } from '../../lib/content';
-import { cin, confirmedMinStays, contact, fill, house, known, legal } from '../../lib/villa';
+import { cin, confirmedMinStays, contact, fill, house, known, legal, whatsappUrl } from '../../lib/villa';
 
 export const getStaticPaths = localePaths;
 const locale = localeFromParam(Astro.params.locale);
@@ -28,7 +28,10 @@ const terms = [
         <p class="lead">{fill(c.price)}</p>
         <p class="muted">{c.priceNote}</p>
         <ul class="reassure">{c.reassure.map((r: string) => <li>{fill(r)}</li>)}</ul>
-        <a class="link-arrow" href={`mailto:${contact.email}`}>{c.askLink}</a>
+        <div class="asks">
+          <a class="link-arrow" href={`mailto:${contact.email}`}>{c.askLink}</a>
+          {whatsappUrl(locale) && <a class="btn btn-ghost" href={whatsappUrl(locale)} rel="noopener">WhatsApp · {t(locale, 'cta.whatsapp')}</a>}
+        </div>
       </div>
       <div class="widget-box"><BookingWidget locale={locale} /></div>
     </div>
@@ -79,6 +82,7 @@ const terms = [
   .bleed :global(img) { height: clamp(16rem, 45vw, 32rem); }
   .faq-wrap { max-width: calc(48rem + 2 * var(--gutter)); }
   .ask { margin-top: var(--space-4); }
+  .asks { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem; }
   .reassure { list-style: none; padding: 0; margin: var(--space-3) 0 var(--space-2); }
   .reassure li { padding: .45rem 0 .45rem 1.6rem; position: relative; }
   .reassure li::before { content: ""; position: absolute; left: 0; top: .95rem; width: .9rem; border-top: 1px solid var(--c-oak); }

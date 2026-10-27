@@ -24,6 +24,16 @@ export const mapsUrl: string = legal.maps_url ?? `https://www.google.com/maps/se
 export const instagramUrl = `https://www.instagram.com/${contact.instagram}/`;
 export const telHref = (n: string) => 'tel:' + n.replace(/[^\d+]/g, '');
 
+/** WhatsApp link to the first number marked whatsapp: true, with a greeting in the page language. */
+const waMessage: Record<string, string> = {
+  en: 'Hello, I have a question about Villa Dolce & Azzurra.',
+  fr: "Bonjour, j'ai une question sur la Villa Dolce & Azzurra.",
+  it: 'Buongiorno, ho una domanda sulla Villa Dolce & Azzurra.',
+};
+export const whatsappNumber: string | undefined = contact.phones.find((p: any) => p.whatsapp === true)?.number;
+export const whatsappUrl = (locale: string) =>
+  whatsappNumber ? `https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(waMessage[locale] ?? waMessage.en)}` : undefined;
+
 /** Values available to copy as {token}. Copy never retypes a number. */
 export const tokens: Record<string, string | number> = {
   guests: house.capacity.guests,

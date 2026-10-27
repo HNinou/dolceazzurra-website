@@ -25,7 +25,7 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
     <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   </Fragment>
 
-  <Hero locale={locale} id="08" mobileId="04" title={c.hero.title} sub={c.hero.sub} note={t(locale, 'hero.note').replace('{award}', house.award.name)} position="50% 0%" textTop />
+  <Hero locale={locale} id="01" mobileId="04" title={c.hero.title} sub={c.hero.sub} alt={t(locale, 'hero.alt')} position="50% 55%" whatsapp />
 
   <div class="wrap facts-wrap"><FactsStrip locale={locale} /></div>
 
@@ -48,7 +48,7 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
   </section>
 
   <figure class="patio">
-    <Figure id="01" locale={locale} class="bleed" sizes="100vw" widths={[640, 960, 1280, 1920]} position="50% 58%" />
+    <Figure id="08" locale={locale} class="bleed pano" sizes="100vw" widths={[640, 960, 1280, 1920]} position="50% 100%" />
     <figcaption class="wrap">{t(locale, 'home.patioCaption')}</figcaption>
   </figure>
 
@@ -102,12 +102,13 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
   <section class="booking-band" aria-labelledby="book-h">
     <div class="bb-photo">
       <Figure id="04" locale={locale} sizes="40vw" widths={[480, 900]} position="50% 70%" class="bb-wide" />
-      <Figure id="55" locale={locale} sizes="100vw" widths={[480, 900]} position="50% 60%" class="bb-small" />
+      <Figure id="05" locale={locale} sizes="100vw" widths={[480, 900]} position="50% 55%" class="bb-small" />
     </div>
     <div class="bb-body">
       <span class="kicker">{c.booking.kicker}</span>
       <h2 id="book-h">{c.booking.title}</h2>
       <p class="lead">{fill(c.booking.price)}</p>
+      <p class="muted small minstay">{c.booking.minStay}</p>
       <BookingWidget locale={locale} />
       <h3 class="inc-h">{c.booking.includedTitle}</h3>
       <ul class="inc">{house.included.map((i: string) => <li>{tf(locale, i)}</li>)}</ul>
@@ -123,7 +124,7 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
         <p>{c.alassio.text}</p>
         <a class="link-arrow" href={lp(locale, 'alassio')}>{t(locale, 'common.discoverAlassio')}</a>
       </div>
-      <Figure id="23" locale={locale} ratio="3 / 2" class="reveal" />
+      <Figure id="51" locale={locale} ratio="3 / 2" class="reveal" />
     </div>
   </section>
 </Base>
@@ -163,6 +164,7 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
   }
   .bb-body { border-top: 4px solid var(--c-dusk); }
   @media (min-width: 60rem) { .bb-body { border-top: 0; border-left: 4px solid var(--c-dusk); } }
+  .minstay { margin-top: calc(-1 * var(--space-1)); }
   .inc-h { margin-top: var(--space-4); font-size: var(--step-0); font-family: var(--font-text); font-weight: 500; }
   .inc { columns: 2 14rem; column-gap: var(--space-4); padding-left: 1.1rem; margin: 0 0 var(--space-3); color: var(--c-ink-soft); }
   .inc li { margin-bottom: .3rem; break-inside: avoid; }
@@ -170,6 +172,11 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
   .patio { margin: 0 0 var(--space-5); }
   .patio figcaption { margin-top: .6rem; font-size: var(--step--1); color: var(--c-ink-soft); }
   .who-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
+  /* Phones: one row of cards to swipe through. */
+  @media (max-width: 59.99rem) {
+    .who-list { grid-auto-flow: column; grid-auto-columns: 82%; gap: var(--space-2); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--space-2); }
+    .who-list li { scroll-snap-align: start; background: var(--c-surface); padding: var(--space-3); }
+  }
   @media (min-width: 60rem) { .who-list { grid-template-columns: repeat(3, 1fr); gap: var(--space-5); } }
   .who-list li { border-top: 1px solid var(--c-oak); padding-top: var(--space-3); }
   .who-list h3 { font-size: var(--step-2); }

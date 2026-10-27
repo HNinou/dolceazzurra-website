@@ -20,7 +20,10 @@
   },
   "cta": {
     "checkDates": "Verifica le date",
-    "fromNight": "da {priceLow} €/notte"
+    "fromNight": "da {priceLow} €/notte",
+    "whatsapp": "Fai una domanda",
+    "invite": "Le vostre date, la nostra vista",
+    "inviteLine": "Da {priceLow} € a notte, tutto incluso, fino a {guests} ospiti."
   },
   "common": {
     "openMaps": "Apri in Google Maps",
@@ -81,7 +84,8 @@
     "country": "Italia",
     "vat": "P.IVA",
     "cinLong": "Codice Identificativo Nazionale",
-    "architecture": "Architettura:"
+    "architecture": "Architettura:",
+    "whatsapp": "WhatsApp"
   },
   "amenityGroups": {
     "comfort": "Comfort",
@@ -98,14 +102,18 @@
     "06": "Lettini e ombrelloni lungo la piscina a sfioro di fronte alla baia",
     "07": "La villa e la piscina illuminate di notte tra le fasce di ulivi",
     "08": "Villa in pietra su un unico livello inserita nella collina, con la piscina a sfioro davanti",
+    "09": "Facciata vetrata del soggiorno che si apre sul patio coperto",
     "10": "Giardino di ulivi e arbusti mediterranei che scende verso il mare",
     "11": "Vista aerea del tetto verde, della corte e della piscina tra gli ulivi",
     "12": "Tavolo del patio apparecchiato per la colazione accanto alla cucina esterna",
+    "13": "Salotto e tavolo del patio contro un muro a secco, colline e mare sullo sfondo",
     "14": "Cucina esterna e lungo tavolo sul patio affacciato sulla costa",
+    "15": "Angolo del patio con divano e muro in pietra, ulivi e baia",
     "16": "Piscina a sfioro che corre verso l'orizzonte sopra la baia di Alassio",
     "17": "Soggiorno con divano in lino e librerie in rovere, cucina e zona pranzo sullo sfondo",
     "18": "Isola della cucina davanti a una vetrata a tutta altezza sulla baia",
     "19": "Cucina con mobili su misura in rovere e isola in pietra, porte vetrate sul giardino",
+    "20": "Suite con grande finestra sul giardino e sulle colline",
     "21": "Zona giorno open space con isola, falegnameria in rovere e lampade a sospensione",
     "22": "Suite con parete a listelli in rovere, armadio a muro e letto queen-size",
     "23": "Piscina a sfioro nella luce del mattino, con il mare e la costa all'orizzonte",
@@ -202,12 +210,13 @@
       "de": "Tradotto dal tedesco",
       "fr": "Tradotto dal francese",
       "en": "Tradotto dall'inglese"
-    }
+    },
+    "more": "Altre recensioni"
   },
   "hero": {
-    "note": "Nella longlist · {award}"
+    "alt": "La baia di Alassio vista dalla villa"
   },
   "home": {
-    "patioCaption": "La baia dal patio coperto"
+    "patioCaption": "La casa tra gli ulivi"
   }
 }
