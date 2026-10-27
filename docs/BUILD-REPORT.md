@@ -63,7 +63,7 @@ Implemented:
 - Gallery: 09, 13, 15 and 20 restored (owner's choice), 14 and 21 added. The gallery opens on 01, then pool, interiors, suites, architecture. Grid kept clean, with no captions under tiles (owner's choice); captions show in the full-screen viewer.
 - Alassio second heading rewritten. The price-only closing bands are now "Check availability" + price + button (owner found "Your dates, our view" too much).
 - Minimum-stay line next to both calendars. After the 20th, the calendar opens on next month: the widget has no start-month setting, so the page clicks its "next" arrow once.
-- WhatsApp "Ask a question" (French number, owner's choice) in the hero, on the Book page and in the footer.
+- WhatsApp "Ask a question" (Italian number +39 340 832 3475; the French one does not work on WhatsApp) in the hero, on the Book page and in the footer.
 - The rating links to the Airbnb listing so guests can check it (owner's choice; note this deliberately relaxes CLAUDE.md rule 3, "one booking path").
 - Phones: "Made for eight" is a swipeable row; reviews show two, then "More reviews". Fade-ins shortened to 0.25 s and started before elements reach the screen.
 
