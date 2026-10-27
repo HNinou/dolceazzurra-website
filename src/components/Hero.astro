@@ -1,18 +1,34 @@
 ---
-import { Picture } from 'astro:assets';
-import { alt as altFor, photo } from '../lib/photos';
+import { getImage } from 'astro:assets';
+import { alt as altFor, photo, type Photo } from '../lib/photos';
 import { lp, t } from '../lib/i18n';
 // textTop: headline over the top of the photo (e.g. trees); the photo is anchored to the top and
 // zoomed slightly so its subject (house, pool) sits in the lower part, clear of the text.
-interface Props { locale: string; id: string; title: string; sub?: string; position?: string; textTop?: boolean }
-const { locale, id, title, sub, position = '50% 60%', textTop = false } = Astro.props;
+// mobileId: a different (portrait) photo for phones and small tablets, below 60rem.
+interface Props { locale: string; id: string; mobileId?: string; title: string; sub?: string; position?: string; textTop?: boolean }
+const { locale, id, mobileId, title, sub, position = '50% 60%', textTop = false } = Astro.props;
 const p = photo(id);
+const m = mobileId ? photo(mobileId) : undefined;
+const SMALL = '(max-width: 59.99rem)';
+
+async function srcset(ph: Photo, widths: number[], format: 'avif' | 'webp') {
+  const ws = widths.filter((w) => w <= ph.src.width);
+  const imgs = await Promise.all(ws.map((w) => getImage({ src: ph.src, width: w, format, quality: 72 })));
+  return imgs.map((img, i) => `${img.src} ${ws[i]}w`).join(', ');
+}
+const formats = ['avif', 'webp'] as const;
+const mobileSources = m ? await Promise.all(formats.map(async (f) => ({ type: `image/${f}`, srcset: await srcset(m, [480, 720, 960, 1280], f) }))) : [];
+const mainSources = await Promise.all(formats.map(async (f) => ({ type: `image/${f}`, srcset: await srcset(p, [640, 960, 1280, 1600, 2048], f) })));
+const fw = Math.min(2048, p.src.width);
+const fallback = await getImage({ src: p.src, width: fw, format: 'webp', quality: 72 });
 ---
-<section class:list={['hero', { 'text-top': textTop }]}>
-  <Picture
-    src={p.src} alt={altFor(locale, p)} formats={['avif', 'webp']} fallbackFormat="webp" quality={72} widths={[640, 960, 1280, 1600, 2048].filter((w) => w <= p.src.width)} width={Math.min(2048, p.src.width)} height={Math.round(Math.min(2048, p.src.width) * p.src.height / p.src.width)}
-    sizes="100vw" loading="eager" fetchpriority="high" decoding="sync" class="hero-img" style={`object-position:${position}`}
-  />
+<section class:list={['hero', { 'text-top': textTop, 'has-mobile': !!m }]}>
+  <picture>
+    {mobileSources.map((s) => <source media={SMALL} type={s.type} srcset={s.srcset} sizes="100vw" />)}
+    {mainSources.map((s) => <source type={s.type} srcset={s.srcset} sizes="100vw" />)}
+    <img src={fallback.src} alt={altFor(locale, p)} width={fw} height={Math.round(fw * p.src.height / p.src.width)}
+      loading="eager" fetchpriority="high" decoding="sync" class="hero-img" style={`--pos:${position}`} />
+  </picture>
   <div class="hero-text wrap">
     <h1>{title}</h1>
     {sub && <p class="sub">{sub}</p>}
@@ -22,7 +38,7 @@ const p = photo(id);
 <style>
   .hero { position: relative; min-height: 88svh; display: flex; align-items: flex-end; color: #fff; overflow: hidden; isolation: isolate; }
   .hero :global(picture) { position: absolute; inset: 0; z-index: -2; }
-  .hero :global(.hero-img) { width: 100%; height: 100%; object-fit: cover; }
+  .hero :global(.hero-img) { width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 60%); }
   .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(18, 20, 16, .78) 0%, rgba(18, 20, 16, .5) 38%, rgba(18, 20, 16, .12) 72%, rgba(18, 20, 16, 0) 100%); }
   @media (min-width: 60rem) { .hero::after { background: linear-gradient(to top, rgba(18, 20, 16, .7) 0%, rgba(18, 20, 16, .25) 45%, rgba(18, 20, 16, 0) 70%), linear-gradient(to right, rgba(18, 20, 16, .5) 0%, rgba(18, 20, 16, .2) 45%, rgba(18, 20, 16, 0) 65%); } }
   .hero-text { padding-bottom: clamp(5.5rem, 10vh, 6.5rem); padding-top: 8rem; }
@@ -36,4 +52,13 @@ const p = photo(id);
   .hero.text-top .hero-text { padding-top: calc(var(--header-h) + var(--space-4)); padding-bottom: var(--space-4); }
   .hero.text-top h1 { margin-bottom: var(--space-1); }
   .hero.text-top .sub { margin-bottom: var(--space-3); }
+  /* Phone photo: shown whole (portrait fits the screen), no extra zoom; text back at the bottom
+     over the darker foreground, so the sky and the bay stay clear. */
+  @media (max-width: 59.99rem) {
+    .hero.has-mobile { align-items: flex-end; }
+    .hero.has-mobile :global(picture) { height: 100%; }
+    .hero.has-mobile :global(.hero-img) { object-position: 50% 50%; }
+    .hero.has-mobile::after { background: linear-gradient(to top, rgba(18, 20, 16, .78) 0%, rgba(18, 20, 16, .5) 38%, rgba(18, 20, 16, 0) 65%); }
+    .hero.has-mobile .hero-text { padding-top: 8rem; padding-bottom: clamp(5.5rem, 10vh, 6.5rem); }
+  }
 </style>

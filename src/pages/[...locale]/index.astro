@@ -24,7 +24,7 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
     <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   </Fragment>
 
-  <Hero locale={locale} id="08" title={c.hero.title} sub={c.hero.sub} position="50% 0%" textTop />
+  <Hero locale={locale} id="08" mobileId="04" title={c.hero.title} sub={c.hero.sub} position="50% 0%" textTop />
 
   <div class="wrap facts-wrap"><FactsStrip locale={locale} /></div>
 
@@ -78,7 +78,10 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
   </section>
 
   <section class="booking-band" aria-labelledby="book-h">
-    <div class="bb-photo"><Figure id="04" locale={locale} sizes="(min-width: 60rem) 40vw, 100vw" widths={[480, 900]} position="50% 70%" /></div>
+    <div class="bb-photo">
+      <Figure id="04" locale={locale} sizes="40vw" widths={[480, 900]} position="50% 70%" class="bb-wide" />
+      <Figure id="55" locale={locale} sizes="100vw" widths={[480, 900]} position="50% 60%" class="bb-small" />
+    </div>
     <div class="bb-body">
       <span class="kicker">{c.booking.kicker}</span>
       <h2 id="book-h">{c.booking.title}</h2>
@@ -126,6 +129,9 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
   .strip-grid a { display: block; }
   .booking-band { display: grid; background: var(--c-surface); }
   .bb-photo :global(img) { width: 100%; height: 60svh; object-fit: cover; }
+  /* Phones already see photo 04 in the hero, so the booking band uses another portrait photo there. */
+  .bb-photo :global(.bb-wide) { display: none; }
+  @media (min-width: 60rem) { .bb-photo :global(.bb-wide) { display: block; } .bb-photo :global(.bb-small) { display: none; } }
   .bb-body { padding: var(--space-5) var(--gutter); max-width: 44rem; }
   @media (min-width: 60rem) {
     .booking-band { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
