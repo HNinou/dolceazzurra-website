@@ -5,13 +5,13 @@ interface Props {
   id: string; locale: string; sizes?: string; widths?: number[]; eager?: boolean;
   caption?: string; position?: string; class?: string; ratio?: string;
 }
-const { id, locale, sizes = '(min-width: 60rem) 50vw, 100vw', widths = [480, 800, 1280], eager = false, caption, position = 'center', class: cls, ratio } = Astro.props;
+const { id, locale, sizes = '(min-width: 60rem) 50vw, 100vw', widths = [480, 800, 1280, 1600], eager = false, caption, position = 'center', class: cls, ratio } = Astro.props;
 const p = photo(id);
 const ws = widths.filter((w) => w <= p.src.width);
 ---
 <figure class:list={['fig', cls]} style={ratio ? `--ratio:${ratio}` : undefined}>
   <Picture
-    src={p.src} alt={altFor(locale, p)} formats={['avif', 'webp']} fallbackFormat="webp" widths={ws.length ? ws : [p.src.width]} sizes={sizes}
+    src={p.src} alt={altFor(locale, p)} formats={['avif', 'webp']} fallbackFormat="webp" quality={72} widths={ws.length ? ws : [p.src.width]} width={Math.max(...(ws.length ? ws : [p.src.width]))} height={Math.round(Math.max(...(ws.length ? ws : [p.src.width])) * p.src.height / p.src.width)} sizes={sizes}
     loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding={eager ? 'sync' : 'async'}
     style={`object-position:${position}`}
   />

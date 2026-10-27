@@ -8,7 +8,7 @@ const p = photo(id);
 ---
 <section class="hero">
   <Picture
-    src={p.src} alt={altFor(locale, p)} formats={['avif', 'webp']} fallbackFormat="webp" widths={[640, 960, 1280, 1600].filter((w) => w <= p.src.width)}
+    src={p.src} alt={altFor(locale, p)} formats={['avif', 'webp']} fallbackFormat="webp" quality={72} widths={[640, 960, 1280, 1600, 2048].filter((w) => w <= p.src.width)} width={Math.min(2048, p.src.width)} height={Math.round(Math.min(2048, p.src.width) * p.src.height / p.src.width)}
     sizes="100vw" loading="eager" fetchpriority="high" decoding="sync" class="hero-img" style={`object-position:${position}`}
   />
   <div class="hero-text wrap">

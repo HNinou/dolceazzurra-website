@@ -10,28 +10,25 @@ const shown = photos.filter((p) => ['gallery', 'feature', 'hero'].includes(p.rol
 const sections = await Promise.all(groups.map(async (g) => ({
   g,
   items: await Promise.all(shown.filter((p) => p.group === g).map(async (p) => ({
-    p, full: (await getImage({ src: p.src, width: Math.min(1600, p.src.width), format: 'webp' })).src,
+    // Viewer image: longest side at most 2048 px.
+    p, full: (await getImage({ src: p.src, width: Math.round(Math.min(p.src.width, 2048 * p.src.width / Math.max(p.src.width, p.src.height))), format: 'webp', quality: 72 })).src,
   }))),
 })));
 let index = 0;
-// Desktop column count per group, chosen so rows fill without orphan tiles (a portrait tile spans two rows).
-const colsFor = (items: { p: { src: { width: number; height: number } } }[]) => {
-  const cells = items.reduce((n, { p }) => n + (p.src.height > p.src.width ? 2 : 1), 0);
-  return [3, 4, 2].find((c) => cells % c === 0 && cells >= c) ?? 3;
-};
+// Masonry columns: 3 by default; 2 for groups of 2 or 4 so they stay even.
+const colsFor = (n: number) => (n === 2 || n === 4 ? 2 : Math.min(3, n));
 ---
 <div class="gallery" data-gallery>
   {sections.filter((s) => s.items.length).map((s) => (
     <section class="group" aria-labelledby={`g-${s.g}`}>
       <h2 id={`g-${s.g}`} class="gh"><span class="kicker">{t(locale, `gallery.groups.${s.g}`)}</span></h2>
-      <ul class="grid" style={`--cols:${colsFor(s.items)}`}>
+      <ul class="grid" style={`--cols:${colsFor(s.items.length)}`}>
         {s.items.map(({ p, full }) => {
-          const tall = p.src.height > p.src.width;
-          const a = altFor(locale, p);
+                    const a = altFor(locale, p);
           return (
-            <li class:list={{ tall }}>
+            <li>
               <button type="button" class="tile" data-index={index++} data-full={full} data-alt={a} data-w={p.src.width} data-h={p.src.height}>
-                <Picture src={p.src} alt={a} formats={['avif', 'webp']} fallbackFormat="webp" widths={[400, 700, 1000].filter((w) => w <= p.src.width)} sizes="(min-width: 60rem) 33vw, (min-width: 36rem) 50vw, 100vw" loading="lazy" />
+                <Picture src={p.src} alt={a} formats={['avif', 'webp']} fallbackFormat="webp" quality={72} widths={[400, 700, 1000, 1400].filter((w) => w <= p.src.width)} width={Math.min(1400, p.src.width)} height={Math.round(Math.min(1400, p.src.width) * p.src.height / p.src.width)} sizes="(min-width: 60rem) 33vw, (min-width: 36rem) 50vw, 100vw" loading="lazy" />
                 <span class="sr-only">{t(locale, 'gallery.enlarge')}</span>
               </button>
             </li>
@@ -46,13 +43,14 @@ const colsFor = (items: { p: { src: { width: number; height: number } } }[]) => 
   .group + .group { margin-top: var(--space-5); }
   .gh { margin: 0 0 var(--space-3); }
   .gh .kicker { margin: 0; }
-  .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; grid-template-columns: 1fr; grid-auto-flow: dense; }
-  @media (min-width: 36rem) { .grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 60rem) { .grid { grid-template-columns: repeat(var(--cols, 3), 1fr); gap: .9rem; } }
-  .grid li { aspect-ratio: 3 / 2; }
-  @media (min-width: 36rem) { .grid li.tall { grid-row: span 2; aspect-ratio: auto; } }
-  .tile { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: var(--c-surface); cursor: zoom-in; overflow: hidden; }
-  .tile :global(picture), .tile :global(img) { width: 100%; height: 100%; }
-  .tile :global(img) { object-fit: cover; transition: transform .8s var(--ease); }
+  /* Masonry: CSS columns, every photo at its own proportions (no cropping). */
+  .grid { list-style: none; margin: 0; padding: 0; column-gap: .6rem; columns: 1; }
+  @media (min-width: 36rem) { .grid { columns: min(2, var(--cols)); } }
+  @media (min-width: 60rem) { .grid { columns: var(--cols); column-gap: .9rem; } }
+  .grid li { break-inside: avoid; margin-bottom: .6rem; }
+  @media (min-width: 60rem) { .grid li { margin-bottom: .9rem; } }
+  .tile { display: block; width: 100%; padding: 0; border: 0; background: var(--c-surface); cursor: zoom-in; overflow: hidden; }
+  .tile :global(picture), .tile :global(img) { display: block; width: 100%; height: auto; }
+  .tile :global(img) { transition: transform .8s var(--ease); }
   .tile:hover :global(img) { transform: scale(1.025); }
 </style>

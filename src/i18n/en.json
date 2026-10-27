@@ -56,7 +56,8 @@
       "outdoors": "Outdoors",
       "pool": "Pool",
       "interiors": "Interiors",
-      "suites": "Suites"
+      "suites": "Suites",
+      "bathrooms": "Bathrooms"
     },
     "enlarge": "Enlarge photo",
     "viewer": "Photo viewer",

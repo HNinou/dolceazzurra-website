@@ -3,60 +3,83 @@
 #   owner        -> villa photos owned by the owner. OK to publish (credit photographer if known).
 #   unconfirmed  -> origin unknown (likely taken from the web). DO NOT PUBLISH until the owner
 #                   sets rights to owner/licensed. The verifier fails the build if one is used.
-# role: hero | feature | gallery | destination | map
+# role: hero | feature | gallery | destination | map | page (used on a page, left out of the gallery)
 # alt_en: write FR/IT/DE/NL alts from this; keep them factual (what is in the frame).
-# Source sizes are 1280-1600 px wide; the owner will supply >= 2400 px originals for the hero later.
+# Villa photos 01-23 and 43-54 come from the owner's Airbnb listing at 2560 px (2026-10-27); the
+# originals in assets/photos stay as an archive (11, 15, 18 have no Airbnb version and keep their size).
+# Note: the site reads the files in src/assets/photos.
 
 photos:
-  - { file: 01-villa-dolce-azzurra-terrasse-avec-vue-mer.webp, w: 1600, h: 1066, rights: owner, role: hero,
+  - { file: 01-villa-dolce-azzurra-terrasse-avec-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: hero,
       group: outdoors, alt_en: "Covered patio under a timber pergola, framing the bay of Alassio and an old olive tree" }
-  - { file: 03-piscine-a-debordement-et-bains-de-soleil-dolce-azzurra.webp, w: 1280, h: 852, rights: owner, role: gallery,
+  - { file: 03-piscine-a-debordement-et-bains-de-soleil-dolce-azzurra.webp, w: 2560, h: 1704, rights: owner, role: gallery,
       group: pool, alt_en: "Infinity pool among lavender and palms, the sea and Capo Mele behind" }
-  - { file: 04-coucher-de-soleil-sur-la-baie-d-alassio-depuis-la-piscine.webp, w: 900, h: 1352, rights: owner, role: feature,
+  - { file: 04-coucher-de-soleil-sur-la-baie-d-alassio-depuis-la-piscine.webp, w: 2560, h: 3846, rights: owner, role: feature,
       group: pool, alt_en: "Dusk over the bay of Alassio seen from a sunbed at the infinity pool" }
-  - { file: 05-petit-dejeuner-en-terrasse-avec-vue-mer-villa-dolce-azzurra.webp, w: 900, h: 1200, rights: owner, role: gallery,
+  - { file: 05-petit-dejeuner-en-terrasse-avec-vue-mer-villa-dolce-azzurra.webp, w: 2560, h: 3413, rights: owner, role: gallery,
       group: outdoors, alt_en: "Breakfast table on the patio with the sea below" }
-  - { file: 06-jardin-mediterraneen-et-piscine-villa-dolce-azzurra.webp, w: 1280, h: 854, rights: owner, role: gallery,
+  - { file: 06-jardin-mediterraneen-et-piscine-villa-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: pool, alt_en: "Sunbeds and parasols along the infinity pool facing the bay" }
-  - { file: 07-vue-depuis-la-villa-la-baie-d-alassio-illuminee-la-nuit-vill.webp, w: 1280, h: 852, rights: owner, role: feature,
+  - { file: 07-vue-depuis-la-villa-la-baie-d-alassio-illuminee-la-nuit-vill.webp, w: 2560, h: 1706, rights: owner, role: feature,
       group: architecture, alt_en: "The villa and its pool lit at night among the olive terraces" }
-  - { file: 08-villa-dolce-azzurra-exterieur.webp, w: 1280, h: 852, rights: owner, role: feature,
+  - { file: 08-villa-dolce-azzurra-exterieur.webp, w: 2560, h: 1707, rights: owner, role: feature,
       group: architecture, alt_en: "Single-storey stone villa set into the hillside, with the infinity pool in front" }
-  - { file: 09-facade-villa-dolce-azzurra.webp, w: 1280, h: 853, rights: owner, role: gallery,
-      group: architecture, alt_en: "Glass facade of the living room opening onto the covered patio" }
-  - { file: 10-jardin-dolce-azzurra.webp, w: 1280, h: 853, rights: owner, role: gallery,
+  - { file: 09-facade-villa-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Glass facade of the living room opening onto the covered patio" }
+  - { file: 10-jardin-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Garden of olive trees and Mediterranean shrubs sloping towards the sea" }
   - { file: 11-vue-baie-alassio-depuis-oliviers.webp, w: 1280, h: 852, rights: owner, role: feature,
       group: architecture, alt_en: "Aerial view of the villa's green roof, courtyard and pool among the olive trees" }
-  - { file: 12-terrasse-vue-mer.webp, w: 1280, h: 853, rights: owner, role: gallery,
+  - { file: 12-terrasse-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Patio dining table laid for breakfast beside the outdoor kitchen" }
-  - { file: 13-patio-dolce-azzurra.webp, w: 1280, h: 853, rights: owner, role: gallery,
+  - { file: 13-patio-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Patio lounge and dining table against a dry-stone wall, hills and sea beyond" }
-  - { file: 14-cuisine-exterieure-eno.webp, w: 1280, h: 853, rights: owner, role: gallery,
+  - { file: 14-cuisine-exterieure-eno.webp, w: 2560, h: 1708, rights: owner, role: page,
       group: outdoors, alt_en: "Outdoor kitchen and long table on the patio overlooking the coast" }
   - { file: 15-jardin-mediterraneen.webp, w: 1280, h: 853, rights: owner, role: gallery,
       group: outdoors, alt_en: "Corner of the patio with sofa and stone wall, olive trees and the bay" }
-  - { file: 16-piscine-a-debordement-vue-sur-la-baie-d-alassio.webp, w: 1280, h: 853, rights: owner, role: feature,
+  - { file: 16-piscine-a-debordement-vue-sur-la-baie-d-alassio.webp, w: 2560, h: 1708, rights: owner, role: feature,
       group: pool, alt_en: "Infinity pool running towards the horizon over the bay of Alassio" }
-  - { file: 17-salon-mobilier-contemporain-chene-naturel-cuisine-ouverte.webp, w: 1280, h: 853, rights: owner, role: gallery,
+  - { file: 17-salon-mobilier-contemporain-chene-naturel-cuisine-ouverte.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: interiors, alt_en: "Living room with linen sofa and oak shelving, kitchen and dining beyond" }
   - { file: 18-sejour-cuisine-vue-mer-baie-vitree-panoramique.webp, w: 1280, h: 853, rights: owner, role: feature,
       group: interiors, alt_en: "Kitchen island in front of a floor-to-ceiling window looking over the bay" }
-  - { file: 19-entree-boiseries-a-claire-voie-mobilier-sur-mesure.webp, w: 1280, h: 853, rights: owner, role: gallery,
+  - { file: 19-entree-boiseries-a-claire-voie-mobilier-sur-mesure.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: interiors, alt_en: "Kitchen with custom oak cabinetry and stone island, glass doors to the garden" }
-  - { file: 20-suite-rangements-integres-chene-vue-jardin.webp, w: 1280, h: 853, rights: owner, role: gallery,
+  - { file: 20-suite-rangements-integres-chene-vue-jardin.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: suites, alt_en: "Suite with large window onto the garden and hills" }
-  - { file: 21-couloir-boiseries-a-claire-voie-puit-de-lumiere-zenithal.webp, w: 1280, h: 853, rights: owner, role: gallery,
+  - { file: 21-couloir-boiseries-a-claire-voie-puit-de-lumiere-zenithal.webp, w: 2560, h: 1708, rights: owner, role: page,
       group: interiors, alt_en: "Open-plan living space with kitchen island, oak joinery and pendant lights" }
-  - { file: 22-chambre-etagere-bibliotheque-rangements-chene-naturel.webp, w: 1280, h: 853, rights: owner, role: gallery,
+  - { file: 22-chambre-etagere-bibliotheque-rangements-chene-naturel.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: suites, alt_en: "Suite with oak slatted wall, built-in wardrobe and queen-size bed" }
-  - { file: 23-piscine-a-debordement-lumiere-du-matin.webp, w: 1280, h: 853, rights: owner, role: gallery,
+  - { file: 23-piscine-a-debordement-lumiere-du-matin.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: pool, alt_en: "Infinity pool in morning light with the sea and coastline beyond" }
-  # From the architects' project page (https://www.gha4u.com/villa-nn, "© All Rights Reserved"), added at the owner's request.
-  # Owner: get written permission from Giordano Hadamik Architects before this goes live, or set rights: unconfirmed.
-  - { file: 42-vue-aerienne-villa-piscine-oliviers-baie-alassio.webp, w: 1312, h: 815, rights: licensed, role: feature,
-      group: architecture, credit: "Giordano Hadamik Architects",
-      alt_en: "Aerial view at dusk of the villa's green roof and pool among old olive trees, with Alassio and the bay beyond" }
+
+  # Added from the owner's Airbnb listing (2026-10-27).
+  - { file: 43-salle-de-bain-douche-italienne-puits-de-lumiere.webp, w: 2560, h: 1708, rights: owner, role: gallery,
+      group: bathrooms, alt_en: "Suite bathroom with walk-in shower, opening skylights and oak cabinet" }
+  - { file: 44-salle-de-bain-vasque-suite.webp, w: 2560, h: 1708, rights: owner, role: gallery,
+      group: bathrooms, alt_en: "Bathroom washbasin opening onto the suite and its bed" }
+  - { file: 45-suite-mur-chene-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: gallery,
+      group: suites, alt_en: "Suite with oak slatted wall and a sliding window onto the terrace and the bay" }
+  - { file: 46-suite-crepuscule-vue-piscine.webp, w: 2560, h: 1708, rights: owner, role: gallery,
+      group: suites, alt_en: "Suite at dusk, its glass doors looking out to the lit pool" }
+  - { file: 47-table-a-manger-chene-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: gallery,
+      group: interiors, alt_en: "Long oak dining table between two glass walls, with the hills and sea beyond" }
+  - { file: 48-villa-et-piscine-au-crepuscule.webp, w: 2560, h: 1708, rights: owner, role: feature,
+      group: architecture, alt_en: "The villa lit at dusk behind the pool and its sunbeds" }
+  - { file: 49-facade-en-pierre-et-piscine.webp, w: 2560, h: 1707, rights: owner, role: gallery,
+      group: architecture, alt_en: "Stone facade of the villa reflected in the pool, sunbeds and parasols in front" }
+  - { file: 50-toit-vegetalise-vue-baie-alassio.webp, w: 2560, h: 1708, rights: owner, role: gallery,
+      group: architecture, alt_en: "Green roof with skylights at dusk, the bay of Alassio beyond" }
+  - { file: 51-alassio-la-nuit-depuis-la-villa.webp, w: 2560, h: 1920, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Alassio and its bay lit at night, seen from the villa" }
+  - { file: 52-piscine-eclairee-au-crepuscule.webp, w: 2560, h: 1546, rights: owner, role: gallery,
+      group: pool, alt_en: "Infinity pool lit at dusk, sunbeds along the villa" }
+  - { file: 53-terrain-de-petanque-la-nuit.webp, w: 2560, h: 3412, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Bocce court lit at night by string lights under the olive trees" }
+  - { file: 54-table-de-ping-pong-sous-les-oliviers.webp, w: 2560, h: 3412, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Outdoor table-tennis table on gravel under the olive trees" }
 
   # Destination photos: origin unknown. Keep out of the build until rights are confirmed.
   - { file: 24-baie-alassio-balcon.webp, w: 1100, h: 645, rights: unconfirmed, role: destination, alt_en: "Bay of Alassio seen from a balustrade" }

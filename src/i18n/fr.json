@@ -56,7 +56,8 @@
       "outdoors": "Extérieurs",
       "pool": "Piscine",
       "interiors": "Intérieurs",
-      "suites": "Suites"
+      "suites": "Suites",
+      "bathrooms": "Salles de bains"
     },
     "enlarge": "Agrandir la photo",
     "viewer": "Visionneuse de photos",
@@ -113,7 +114,18 @@
     "21": "Espace de vie ouvert avec îlot de cuisine, menuiseries en chêne et suspensions",
     "22": "Suite avec mur à claire-voie en chêne, placard intégré et lit queen-size",
     "23": "Piscine à débordement dans la lumière du matin, la mer et la côte au loin",
-    "42": "Vue aérienne au crépuscule du toit végétalisé et de la piscine parmi de vieux oliviers, avec Alassio et la baie au loin"
+    "43": "Salle de bains de suite avec douche à l'italienne, puits de lumière ouvrants et meuble en chêne",
+    "44": "Vasque de la salle de bains ouverte sur la suite et son lit",
+    "45": "Suite avec mur à claire-voie en chêne et baie coulissante sur la terrasse et la baie",
+    "46": "Suite au crépuscule, ses portes vitrées donnant sur la piscine éclairée",
+    "47": "Longue table en chêne entre deux baies vitrées, collines et mer au-delà",
+    "48": "La villa éclairée au crépuscule derrière la piscine et ses bains de soleil",
+    "49": "Façade en pierre de la villa se reflétant dans la piscine, bains de soleil et parasols devant",
+    "50": "Toit végétalisé avec puits de lumière au crépuscule, la baie d'Alassio au loin",
+    "51": "Alassio et sa baie illuminées la nuit, vues depuis la villa",
+    "52": "Piscine à débordement éclairée au crépuscule, bains de soleil le long de la villa",
+    "53": "Terrain de pétanque éclairé la nuit par une guirlande sous les oliviers",
+    "54": "Table de ping-pong en extérieur sur gravier, sous les oliviers"
   },
   "yaml": {
     "Final cleaning": "Ménage de fin de séjour",
