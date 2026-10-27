@@ -11,7 +11,7 @@
 # Note: the site reads the files in src/assets/photos.
 
 photos:
-  - { file: 01-villa-dolce-azzurra-terrasse-avec-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: hero,
+  - { file: 01-villa-dolce-azzurra-terrasse-avec-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: feature,
       group: outdoors, alt_en: "Covered patio under a timber pergola, framing the bay of Alassio and an old olive tree" }
   - { file: 03-piscine-a-debordement-et-bains-de-soleil-dolce-azzurra.webp, w: 2560, h: 1704, rights: owner, role: gallery,
       group: pool, alt_en: "Infinity pool among lavender and palms, the sea and Capo Mele behind" }
@@ -23,6 +23,8 @@ photos:
       group: pool, alt_en: "Sunbeds and parasols along the infinity pool facing the bay" }
   - { file: 07-vue-depuis-la-villa-la-baie-d-alassio-illuminee-la-nuit-vill.webp, w: 2560, h: 1706, rights: owner, role: feature,
       group: architecture, alt_en: "The villa and its pool lit at night among the olive terraces" }
+  - { file: 08-villa-dolce-azzurra-exterieur.webp, w: 2560, h: 1707, rights: owner, role: hero,
+      group: architecture, alt_en: "Single-storey stone villa set into the hillside, with the infinity pool in front" }
   - { file: 10-jardin-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Garden of olive trees and Mediterranean shrubs sloping towards the sea" }
   - { file: 11-vue-baie-alassio-depuis-oliviers.webp, w: 1280, h: 852, rights: owner, role: feature,

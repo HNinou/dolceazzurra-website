@@ -2,11 +2,13 @@
 import { Picture } from 'astro:assets';
 import { alt as altFor, photo } from '../lib/photos';
 import { lp, t } from '../lib/i18n';
-interface Props { locale: string; id: string; title: string; sub?: string; position?: string }
-const { locale, id, title, sub, position = '50% 60%' } = Astro.props;
+// textTop: headline over the top of the photo (e.g. trees); the photo is anchored to the top and
+// zoomed slightly so its subject (house, pool) sits in the lower part, clear of the text.
+interface Props { locale: string; id: string; title: string; sub?: string; position?: string; textTop?: boolean }
+const { locale, id, title, sub, position = '50% 60%', textTop = false } = Astro.props;
 const p = photo(id);
 ---
-<section class="hero">
+<section class:list={['hero', { 'text-top': textTop }]}>
   <Picture
     src={p.src} alt={altFor(locale, p)} formats={['avif', 'webp']} fallbackFormat="webp" quality={72} widths={[640, 960, 1280, 1600, 2048].filter((w) => w <= p.src.width)} width={Math.min(2048, p.src.width)} height={Math.round(Math.min(2048, p.src.width) * p.src.height / p.src.width)}
     sizes="100vw" loading="eager" fetchpriority="high" decoding="sync" class="hero-img" style={`object-position:${position}`}
@@ -28,4 +30,10 @@ const p = photo(id);
   h1 { max-width: 19ch; margin-bottom: var(--space-2); text-shadow: 0 2px 30px rgba(0, 0, 0, .35); }
   .sub { max-width: 34rem; font-size: var(--step-1); line-height: 1.45; margin-bottom: var(--space-4); text-shadow: 0 1px 12px rgba(0, 0, 0, .3); }
   @media (min-width: 60rem) { .hero { min-height: 92svh; } }
+  .hero.text-top { align-items: flex-start; }
+  .hero.text-top :global(picture) { bottom: auto; height: 140%; }
+  .hero.text-top::after { background: linear-gradient(to bottom, rgba(18, 20, 16, .62) 0%, rgba(18, 20, 16, .35) 38%, rgba(18, 20, 16, 0) 60%); }
+  .hero.text-top .hero-text { padding-top: calc(var(--header-h) + var(--space-4)); padding-bottom: var(--space-4); }
+  .hero.text-top h1 { margin-bottom: var(--space-1); }
+  .hero.text-top .sub { margin-bottom: var(--space-3); }
 </style>
