@@ -78,7 +78,7 @@ Adapt freely, but keep facts tied to `content/villa.yaml`.
 - One card per service in `villa.yaml` → `services`. Each ends with "Ask us" (mailto/WhatsApp). No third-party phone numbers.
 
 ### Book
-- Calendar widget, "from €856 / night, everything included, up to 8 guests", minimum stays, what's included, check-in/out, house rules,
+- Calendar widget, "from €700 / night, everything included, up to 8 guests", minimum stays, what's included, check-in/out, house rules,
   deposit/cancellation (only when the owner fills them in), FAQ, CIN.
 - Direct-booking advantage line: "Book direct: no platform fees, and a Ligurian apero box on arrival." (Owner to confirm the gift.)
 
