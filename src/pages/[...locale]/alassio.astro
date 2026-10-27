@@ -11,7 +11,7 @@ const locale = localeFromParam(Astro.params.locale);
 const c = page(locale, 'alassio').frontmatter;
 const verifiedRestaurants = location.restaurants.filter((r: any) => r.verified === true);
 // Villa photos only until the Alassio photos' rights are confirmed.
-const photoFor: Record<string, string> = { beaches: '16', gallinara: '03', walks: '10', daytrips: '15' };
+const photoFor: Record<string, string> = { beaches: '16', gallinara: '03', walks: '10', daytrips: '56' };
 ---
 <Base locale={locale} slug="alassio" title={fill(c.title)} description={fill(c.description)}>
   <header class="page-head wrap">

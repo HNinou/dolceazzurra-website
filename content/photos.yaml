@@ -4,6 +4,7 @@
 #   unconfirmed  -> origin unknown (likely taken from the web). DO NOT PUBLISH until the owner
 #                   sets rights to owner/licensed. The verifier fails the build if one is used.
 # role: hero | feature | gallery | destination | map | page (used on a page, left out of the gallery)
+# display: small -> shown at half width in the gallery (two side by side)
 # alt_en: write FR/IT/DE/NL alts from this; keep them factual (what is in the frame).
 # Villa photos 01-23 and 43-54 come from the owner's Airbnb listing at 2560 px (2026-10-27); the
 # originals in assets/photos stay as an archive (11, 15, 18 have no Airbnb version and keep their size).
@@ -22,8 +23,6 @@ photos:
       group: pool, alt_en: "Sunbeds and parasols along the infinity pool facing the bay" }
   - { file: 07-vue-depuis-la-villa-la-baie-d-alassio-illuminee-la-nuit-vill.webp, w: 2560, h: 1706, rights: owner, role: feature,
       group: architecture, alt_en: "The villa and its pool lit at night among the olive terraces" }
-  - { file: 08-villa-dolce-azzurra-exterieur.webp, w: 2560, h: 1707, rights: owner, role: feature,
-      group: architecture, alt_en: "Single-storey stone villa set into the hillside, with the infinity pool in front" }
   - { file: 09-facade-villa-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Glass facade of the living room opening onto the covered patio" }
   - { file: 10-jardin-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
@@ -32,12 +31,8 @@ photos:
       group: architecture, alt_en: "Aerial view of the villa's green roof, courtyard and pool among the olive trees" }
   - { file: 12-terrasse-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Patio dining table laid for breakfast beside the outdoor kitchen" }
-  - { file: 13-patio-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
-      group: outdoors, alt_en: "Patio lounge and dining table against a dry-stone wall, hills and sea beyond" }
   - { file: 14-cuisine-exterieure-eno.webp, w: 2560, h: 1708, rights: owner, role: page,
       group: outdoors, alt_en: "Outdoor kitchen and long table on the patio overlooking the coast" }
-  - { file: 15-jardin-mediterraneen.webp, w: 1280, h: 853, rights: owner, role: gallery,
-      group: outdoors, alt_en: "Corner of the patio with sofa and stone wall, olive trees and the bay" }
   - { file: 16-piscine-a-debordement-vue-sur-la-baie-d-alassio.webp, w: 2560, h: 1708, rights: owner, role: feature,
       group: pool, alt_en: "Infinity pool running towards the horizon over the bay of Alassio" }
   - { file: 17-salon-mobilier-contemporain-chene-naturel-cuisine-ouverte.webp, w: 2560, h: 1708, rights: owner, role: gallery,
@@ -62,12 +57,8 @@ photos:
       group: bathrooms, alt_en: "Bathroom washbasin opening onto the suite and its bed" }
   - { file: 45-suite-mur-chene-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: suites, alt_en: "Suite with oak slatted wall and a sliding window onto the terrace and the bay" }
-  - { file: 46-suite-crepuscule-vue-piscine.webp, w: 2560, h: 1708, rights: owner, role: gallery,
-      group: suites, alt_en: "Suite at dusk, its glass doors looking out to the lit pool" }
   - { file: 47-table-a-manger-chene-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: interiors, alt_en: "Long oak dining table between two glass walls, with the hills and sea beyond" }
-  - { file: 48-villa-et-piscine-au-crepuscule.webp, w: 2560, h: 1708, rights: owner, role: feature,
-      group: architecture, alt_en: "The villa lit at dusk behind the pool and its sunbeds" }
   - { file: 49-facade-en-pierre-et-piscine.webp, w: 2560, h: 1707, rights: owner, role: gallery,
       group: architecture, alt_en: "Stone facade of the villa reflected in the pool, sunbeds and parasols in front" }
   - { file: 50-toit-vegetalise-vue-baie-alassio.webp, w: 2560, h: 1708, rights: owner, role: gallery,
@@ -75,11 +66,21 @@ photos:
   - { file: 51-alassio-la-nuit-depuis-la-villa.webp, w: 2560, h: 1920, rights: owner, role: gallery,
       group: outdoors, alt_en: "Alassio and its bay lit at night, seen from the villa" }
   - { file: 52-piscine-eclairee-au-crepuscule.webp, w: 2560, h: 1546, rights: owner, role: gallery,
-      group: pool, alt_en: "Infinity pool lit at dusk, sunbeds along the villa" }
+      group: outdoors, alt_en: "Infinity pool lit at dusk, sunbeds along the villa" }
   - { file: 53-terrain-de-petanque-la-nuit.webp, w: 2560, h: 3412, rights: owner, role: gallery,
-      group: outdoors, alt_en: "Bocce court lit at night by string lights under the olive trees" }
+      group: outdoors, display: small, alt_en: "Bocce court lit at night by string lights under the olive trees" }
   - { file: 54-table-de-ping-pong-sous-les-oliviers.webp, w: 2560, h: 3412, rights: owner, role: gallery,
-      group: outdoors, alt_en: "Outdoor table-tennis table on gravel under the olive trees" }
+      group: outdoors, display: small, alt_en: "Outdoor table-tennis table on gravel under the olive trees" }
+
+  # From the listing's "Additional photos" (2026-10-27).
+  - { file: 55-jardin-mediterraneen-le-long-de-la-villa.webp, w: 2560, h: 3846, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Mediterranean planting along the stone wall of the villa, an olive tree and the sea beyond" }
+  - { file: 56-salon-exterieur-mur-en-pierre.webp, w: 2560, h: 1704, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Outdoor sofa against a dry-stone wall, lavender and green hills behind" }
+  - { file: 57-villa-agave-et-lavande.webp, w: 2560, h: 1704, rights: owner, role: gallery,
+      group: outdoors, alt_en: "The villa's covered patio behind lavender, an agave and an olive tree" }
+  - { file: 58-lavande-devant-la-pergola.webp, w: 2560, h: 3846, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Lavender in flower in front of the timber pergola" }
 
   # Destination photos: origin unknown. Keep out of the build until rights are confirmed.
   - { file: 24-baie-alassio-balcon.webp, w: 1100, h: 645, rights: unconfirmed, role: destination, alt_en: "Bay of Alassio seen from a balustrade" }
