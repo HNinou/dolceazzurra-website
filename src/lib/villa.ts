@@ -29,6 +29,7 @@ const waMessage: Record<string, string> = {
   en: 'Hello, I have a question about Villa Dolce & Azzurra.',
   fr: "Bonjour, j'ai une question sur la Villa Dolce & Azzurra.",
   it: 'Buongiorno, ho una domanda sulla Villa Dolce & Azzurra.',
+  de: 'Guten Tag, ich habe eine Frage zur Villa Dolce & Azzurra.',
 };
 export const whatsappNumber: string | undefined = contact.phones.find((p: any) => p.whatsapp === true)?.number;
 export const whatsappUrl = (locale: string) =>

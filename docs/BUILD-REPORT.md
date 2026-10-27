@@ -79,6 +79,13 @@ Not done (needs the owner): photos of all four suites and more bathrooms; courty
 - **Floor plan:** a simplified SVG (`src/components/FloorPlan.astro`) traced from the architects' drawings, numbered with a legend, on The Villa page after the suites. Rooms, the hallway behind the suites, the entrance and its passage into the living room, the guest WC and the service strip follow "FLOOR PLAN_POTENTIAL"; the pool follows "FLOOR PLAN_PLANNING" (owner asked for it), scaled to its labelled 10 × 3 m, with its terrace. The guest WC (about 2 × 2 m, full depth of the service strip) follows the owners' later 3D render, which differs from the PDF. The storage room at the far end of the suites hallway is drawn as hallway (owner's request). No dimensions.
 - **Hero film (owner's request; the spec said no autoplay video):** `public/video/villa-dolce-azzurra-1920.mp4` (3.9 MB) and `-1280.mp4` (2.1 MB), H.264, no sound, from the owner's 39 MB file. Only on screens from 60rem, chosen by screen width × pixel density; not downloaded on phones, with reduced motion or Save-Data. Muted, looped, with a pause button (WCAG 2.2.2). The pergola photo stays underneath until the film plays.
 
+## German version (27 Oct 2026)
+- `de` is `live` in `villa.yaml` (owner's request): 8 pages in `src/content/pages/de/`, `src/i18n/de.json` (UI strings, photo descriptions, translated villa.yaml facts), German review texts for Noé and Philipp (Delia's and Martin's are already German, shown in the original), German WhatsApp greeting, „…“ quotation marks, calendar fallback link to `book.dolceazzurra.com/de/…`.
+- Formal "Sie", standard German spelling (ß), so it reads naturally in Germany and Switzerland.
+- The spec says draft locales go live only after a native speaker has reviewed them. The owner chose to publish first: every German file is still `reviewed: false`, so a native proofread is the next step.
+- The Hostaway calendar's own labels ("Select check-in and check-out dates", weekday names) stay in English in every language; they come from Hostaway's script, not from the site.
+- Dutch (`nl`) stays a draft.
+
 ## Remaining warnings
 - Translation review flags (27 files). These are expected until the owner proofreads.
 - Small tap targets inside the Hostaway widget (third-party).

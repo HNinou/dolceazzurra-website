@@ -16,7 +16,7 @@ site:
     - { code: en, name: English,    status: live,  reviewer: owner }
     - { code: fr, name: Français,   status: live,  reviewer: owner }
     - { code: it, name: Italiano,   status: live,  reviewer: owner }
-    - { code: de, name: Deutsch,    status: draft, reviewer: native-freelancer }
+    - { code: de, name: Deutsch,    status: live,  reviewer: native-freelancer }   # live 2026-10-27 (owner), not yet reviewed by a native speaker
     - { code: nl, name: Nederlands, status: draft, reviewer: native-freelancer }
   legacy_lang_param: true   # old site used /?lang=fr etc. Root page must redirect these.
 
@@ -175,6 +175,7 @@ house:
         lang: fr
         text: "La maison offre un magnifique compromis entre une vue splendide et une excellente accessibilité à la mer : suffisamment en hauteur pour profiter d'une très belle vue, tout en étant à une distance idéale pour rejoindre facilement la plage et le centre."
         en: "The house offers a wonderful balance between a splendid view and excellent access to the sea: high enough to enjoy a beautiful view, while being at an ideal distance to easily reach the beach and the center."
+        de: "Das Haus bietet eine wunderbare Balance zwischen einer herrlichen Aussicht und einem sehr guten Zugang zum Meer: hoch genug für einen schönen Blick und doch ideal gelegen, um Strand und Zentrum leicht zu erreichen."
         it: "La casa offre un magnifico equilibrio tra una vista splendida e un ottimo accesso al mare: abbastanza in alto per godersi una bellissima vista, ma alla distanza ideale per raggiungere facilmente la spiaggia e il centro."
       - name: Philipp
         place: "Ennetbaden"
@@ -183,6 +184,7 @@ house:
         lang: en
         text: "The view is just awesome and a swim in the pool in the mornings is sooo peaceful."
         fr: "La vue est tout simplement superbe, et une baignade dans la piscine le matin est si paisible."
+        de: "Die Aussicht ist einfach großartig, und ein Bad im Pool am Morgen ist so friedlich."
         it: "La vista è davvero splendida e una nuotata in piscina al mattino è così rilassante."
       - name: Martin
         month: 2026-09

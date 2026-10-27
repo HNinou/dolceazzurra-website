@@ -1,9 +1,10 @@
 import en from '../i18n/en.json';
 import fr from '../i18n/fr.json';
 import it from '../i18n/it.json';
+import de from '../i18n/de.json';
 import { villa } from './villa';
 
-const dicts: Record<string, any> = { en, fr, it };
+const dicts: Record<string, any> = { en, fr, it, de };
 
 export const defaultLocale: string = villa.site.default_locale;
 export const liveLocales: { code: string; name: string }[] = villa.site.locales.filter((l: any) => l.status === 'live');
