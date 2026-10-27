@@ -8,6 +8,9 @@
 # alt_en: write FR/IT/DE/NL alts from this; keep them factual (what is in the frame).
 # Villa photos 01-23 and 43-54 come from the owner's Airbnb listing at 2560 px (2026-10-27); the
 # originals in assets/photos stay as an archive (11, 15, 18 have no Airbnb version and keep their size).
+# HD update (2026-10-27): 01, 06-23, 43, 47, 49, 52 and the new 60-62 are now made from the owner's
+# professional HD shoot (UMDC_VILLA_DOLCE_&_AZZURRA-*.jpg, 5000 px), resized to 2560 px. 03-05, 51,
+# 53-59 are the owner's own photos and were not in that shoot.
 # Note: the site reads the files in src/assets/photos.
 
 photos:
@@ -23,13 +26,13 @@ photos:
       group: pool, alt_en: "Sunbeds and parasols along the infinity pool facing the bay" }
   - { file: 07-vue-depuis-la-villa-la-baie-d-alassio-illuminee-la-nuit-vill.webp, w: 2560, h: 1706, rights: owner, role: feature,
       group: architecture, alt_en: "The villa and its pool lit at night among the olive terraces" }
-  - { file: 08-villa-dolce-azzurra-exterieur.webp, w: 2560, h: 1707, rights: owner, role: hero,
+  - { file: 08-villa-dolce-azzurra-exterieur.webp, w: 2560, h: 1706, rights: owner, role: hero,
       group: architecture, alt_en: "Single-storey stone villa set into the hillside, with the infinity pool in front" }
   - { file: 09-facade-villa-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Glass facade of the living room opening onto the covered patio" }
   - { file: 10-jardin-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Garden of olive trees and Mediterranean shrubs sloping towards the sea" }
-  - { file: 11-vue-baie-alassio-depuis-oliviers.webp, w: 1280, h: 852, rights: owner, role: feature,
+  - { file: 11-vue-baie-alassio-depuis-oliviers.webp, w: 2560, h: 1706, rights: owner, role: feature,
       group: architecture, alt_en: "Aerial view of the villa's green roof, courtyard and pool among the olive trees" }
   - { file: 12-terrasse-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Patio dining table laid for breakfast beside the outdoor kitchen" }
@@ -37,13 +40,13 @@ photos:
       group: outdoors, alt_en: "Patio lounge and dining table against a dry-stone wall, hills and sea beyond" }
   - { file: 14-cuisine-exterieure-eno.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Outdoor kitchen and long table on the patio overlooking the coast" }
-  - { file: 15-jardin-mediterraneen.webp, w: 1280, h: 853, rights: owner, role: gallery,
+  - { file: 15-jardin-mediterraneen.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Corner of the patio with sofa and stone wall, olive trees and the bay" }
   - { file: 16-piscine-a-debordement-vue-sur-la-baie-d-alassio.webp, w: 2560, h: 1708, rights: owner, role: feature,
       group: pool, alt_en: "Infinity pool running towards the horizon over the bay of Alassio" }
   - { file: 17-salon-mobilier-contemporain-chene-naturel-cuisine-ouverte.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: interiors, alt_en: "Living room with linen sofa and oak shelving, kitchen and dining beyond" }
-  - { file: 18-sejour-cuisine-vue-mer-baie-vitree-panoramique.webp, w: 1280, h: 853, rights: owner, role: feature,
+  - { file: 18-sejour-cuisine-vue-mer-baie-vitree-panoramique.webp, w: 2560, h: 1708, rights: owner, role: feature,
       group: interiors, alt_en: "Kitchen island in front of a floor-to-ceiling window looking over the bay" }
   - { file: 19-entree-boiseries-a-claire-voie-mobilier-sur-mesure.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: interiors, alt_en: "Kitchen with custom oak cabinetry and stone island, glass doors to the garden" }
@@ -61,11 +64,11 @@ photos:
       group: suites, alt_en: "Suite bathroom with walk-in shower, opening skylights and oak cabinet" }
   - { file: 47-table-a-manger-chene-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: interiors, alt_en: "Long oak dining table between two glass walls, with the hills and sea beyond" }
-  - { file: 49-facade-en-pierre-et-piscine.webp, w: 2560, h: 1707, rights: owner, role: gallery,
+  - { file: 49-facade-en-pierre-et-piscine.webp, w: 2560, h: 1706, rights: owner, role: gallery,
       group: architecture, alt_en: "Stone facade of the villa reflected in the pool, sunbeds and parasols in front" }
   - { file: 51-alassio-la-nuit-depuis-la-villa.webp, w: 2560, h: 1920, rights: owner, role: gallery,
       group: outdoors, alt_en: "Alassio and its bay lit at night, seen from the villa" }
-  - { file: 52-piscine-eclairee-au-crepuscule.webp, w: 2560, h: 1546, rights: owner, role: gallery,
+  - { file: 52-piscine-eclairee-au-crepuscule.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Infinity pool lit at dusk, sunbeds along the villa" }
   - { file: 53-terrain-de-petanque-la-nuit.webp, w: 2560, h: 3412, rights: owner, role: gallery,
       group: outdoors, display: small, alt_en: "Bocce court lit at night by string lights under the olive trees" }
@@ -81,7 +84,13 @@ photos:
       group: outdoors, alt_en: "The villa's covered patio behind lavender, an agave and an olive tree" }
   - { file: 58-lavande-devant-la-pergola.webp, w: 2560, h: 3846, rights: owner, role: gallery,
       group: outdoors, alt_en: "Lavender in flower in front of the timber pergola" }
-  - { file: 59-sylvie-et-michel-vos-hotes.webp, w: 969, h: 1211, rights: owner, role: page,
+  - { file: 60-suite-vue-sur-la-baie.webp, w: 2560, h: 1708, rights: owner, role: gallery,
+      group: suites, alt_en: "Suite with an oak slatted wall and a glass door onto its terrace, the bay beyond" }
+  - { file: 61-suite-au-crepuscule.webp, w: 2560, h: 1708, rights: owner, role: gallery,
+      group: suites, alt_en: "Suite at dusk, its glass doors looking onto the lit pool terrace" }
+  - { file: 62-salle-de-bains-ouverte-sur-la-suite.webp, w: 2560, h: 1708, rights: owner, role: gallery,
+      group: suites, alt_en: "Bathroom washbasin, with the suite and its terrace through the open door" }
+  - { file: 59-sylvie-et-michel-vos-hotes.webp, w: 743, h: 929, rights: owner, role: page,
       alt_en: "Sylvie and Michel, the owners, by the sea in front of a stone fort" }   # owners' own photo, 2026-10-27
 
   # Destination photos: origin unknown. Keep out of the build until rights are confirmed.

@@ -8,8 +8,10 @@ import { whatsappUrl } from '../lib/villa';
 // mobileId: a different (portrait) photo for phones and small tablets, below 60rem.
 // alt: one description for both photos when mobileId is set (a single <img> serves both).
 // whatsapp: show the 'Ask a question' WhatsApp button next to 'Check dates'.
-interface Props { locale: string; id: string; mobileId?: string; title: string; sub?: string; note?: string; alt?: string; position?: string; textTop?: boolean; whatsapp?: boolean }
-const { locale, id, mobileId, title, sub, note, alt, position = '50% 60%', textTop = false, whatsapp = false } = Astro.props;
+// video: muted looping film over the photo, on screens from 60rem only. Nothing is downloaded on phones,
+// with reduced motion or Save-Data; the photo stays underneath until the film plays, then fades out.
+interface Props { locale: string; id: string; mobileId?: string; title: string; sub?: string; note?: string; alt?: string; position?: string; textTop?: boolean; whatsapp?: boolean; video?: boolean }
+const { locale, id, mobileId, title, sub, note, alt, position = '50% 60%', textTop = false, whatsapp = false, video = false } = Astro.props;
 const p = photo(id);
 const m = mobileId ? photo(mobileId) : undefined;
 const SMALL = '(max-width: 59.99rem)';
@@ -32,6 +34,11 @@ const fallback = await getImage({ src: p.src, width: fw, format: 'webp', quality
     <img src={fallback.src} alt={alt ?? altFor(locale, p)} width={fw} height={Math.round(fw * p.src.height / p.src.width)}
       loading="eager" fetchpriority="high" decoding="sync" class="hero-img" style={`--pos:${position}`} />
   </picture>
+  {video && (
+    <video class="hero-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"
+      data-src-lg="/video/villa-dolce-azzurra-1920.mp4" data-src-sm="/video/villa-dolce-azzurra-1280.mp4"></video>
+  )}
+  {video && <button type="button" class="hero-pause" hidden aria-pressed="false" data-pause={t(locale, 'hero.pauseVideo')} data-play={t(locale, 'hero.playVideo')} aria-label={t(locale, 'hero.pauseVideo')}><span aria-hidden="true"></span></button>}
   <div class="hero-text wrap">
     {note && <p class="note">{note}</p>}
     <h1>{title}</h1>
@@ -42,10 +49,36 @@ const fallback = await getImage({ src: p.src, width: fw, format: 'webp', quality
     </div>
   </div>
 </section>
+{video && (
+  <script>
+    const v = document.querySelector<HTMLVideoElement>('.hero-video');
+    const b = document.querySelector<HTMLButtonElement>('.hero-pause');
+    const ok = matchMedia('(min-width: 60rem)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches
+      && !(navigator as any).connection?.saveData;
+    if (v && b && ok) {
+      v.src = (innerWidth * devicePixelRatio > 1600 ? v.dataset.srcLg : v.dataset.srcSm)!;
+      v.addEventListener('playing', () => { v.classList.add('on'); b.hidden = false; }, { once: true });
+      v.play().catch(() => {});
+      b.addEventListener('click', () => {
+        const pause = !v.paused;
+        if (pause) v.pause(); else v.play().catch(() => {});
+        b.setAttribute('aria-pressed', String(pause));
+        b.setAttribute('aria-label', (pause ? b.dataset.play : b.dataset.pause)!);
+      });
+    }
+  </script>
+)}
 <style>
   .hero { position: relative; min-height: 88svh; display: flex; align-items: flex-end; color: #fff; overflow: hidden; isolation: isolate; }
   .hero :global(picture) { position: absolute; inset: 0; z-index: -2; }
   .hero :global(.hero-img) { width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 60%); }
+  .hero-video { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s var(--ease); }
+  .hero-video.on { opacity: 1; }
+  .hero-pause { position: absolute; right: var(--space-3); bottom: var(--space-3); z-index: 1; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .7); background: rgba(18, 20, 16, .35); color: #fff; cursor: pointer; display: grid; place-items: center; }
+  .hero-pause span { width: 12px; height: 14px; border-inline: 4px solid currentColor; box-sizing: border-box; }
+  .hero-pause[aria-pressed="true"] span { border: 0; width: 0; height: 0; border-block: 8px solid transparent; border-left: 13px solid currentColor; margin-left: 4px; }
+  .hero-pause:hover { background: rgba(18, 20, 16, .6); }
+  .hero-pause[hidden] { display: none; }
   .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(18, 20, 16, .78) 0%, rgba(18, 20, 16, .5) 38%, rgba(18, 20, 16, .12) 72%, rgba(18, 20, 16, 0) 100%); }
   @media (min-width: 60rem) { .hero::after { background: linear-gradient(to top, rgba(18, 20, 16, .7) 0%, rgba(18, 20, 16, .25) 45%, rgba(18, 20, 16, 0) 70%), linear-gradient(to right, rgba(18, 20, 16, .5) 0%, rgba(18, 20, 16, .2) 45%, rgba(18, 20, 16, 0) 65%); } }
   .hero-text { padding-bottom: clamp(5.5rem, 10vh, 6.5rem); padding-top: 8rem; }

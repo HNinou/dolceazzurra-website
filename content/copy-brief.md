@@ -62,7 +62,7 @@ Adapt freely, but keep facts tied to `content/villa.yaml`.
 - Architecture: the idea, the materials, the courtyard linking two wings, the green roof (from `reference/architect-notes.md`).
 - The suites: 4 equal double suites, queen beds, private outdoor space, 5 bathrooms with skylights.
 - Living: open-plan kitchen and living behind glass; custom oak furniture by Italian craftsmen.
-- Outdoors: patio + ENO kitchen, pool with safety cover, olive-tree lounge with fireplace, bocce and bar, table tennis, outdoor shower.
+- Outdoors: patio + ENO kitchen, pool with safety cover, bocce and bar, table tennis, outdoor shower.
 - Sustainability: passive-house principles, the feature list from `villa.yaml`. No certifications, no numbers.
 - Amenities: tidy grouped list from `villa.yaml` → `amenities`.
 

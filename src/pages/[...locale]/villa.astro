@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Figure from '../../components/Figure.astro';
 import AwardLine from '../../components/AwardLine.astro';
+import FloorPlan from '../../components/FloorPlan.astro';
 import { localePaths, localeFromParam, lp, t, tf } from '../../lib/i18n';
 import { page } from '../../lib/content';
 import { fill, house } from '../../lib/villa';
@@ -10,7 +11,7 @@ export const getStaticPaths = localePaths;
 const locale = localeFromParam(Astro.params.locale);
 const c = page(locale, 'villa').frontmatter;
 const space = (id: string) => tf(locale, house.spaces.find((s: any) => s.id === id).en);
-const outdoorIds = ['patio', 'pool', 'courtyard', 'olive-lounge', 'games', 'roof-terrace', 'outdoor-shower'];
+const outdoorIds = ['patio', 'pool', 'courtyard', 'games', 'roof-terrace', 'outdoor-shower'];
 ---
 <Base locale={locale} slug="villa" title={fill(c.title)} description={fill(c.description)}>
   <header class="page-head wrap">
@@ -52,6 +53,22 @@ const outdoorIds = ['patio', 'pool', 'courtyard', 'olive-lounge', 'games', 'roof
           <li>{space('bathrooms')}</li>
         </ul>
       </div>
+    </div>
+    <div class="wrap trio">
+      <Figure id="60" locale={locale} ratio="3 / 2" sizes="(min-width: 48rem) 33vw, 100vw" widths={[480, 800, 1280]} class="reveal" />
+      <Figure id="20" locale={locale} ratio="3 / 2" sizes="(min-width: 48rem) 33vw, 100vw" widths={[480, 800, 1280]} class="reveal" />
+      <Figure id="61" locale={locale} ratio="3 / 2" sizes="(min-width: 48rem) 33vw, 100vw" widths={[480, 800, 1280]} class="reveal" />
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="plan-h">
+    <div class="wrap">
+      <div class="measure reveal">
+        <span class="kicker">{t(locale, 'plan.kicker')}</span>
+        <h2 id="plan-h">{t(locale, 'plan.heading')}</h2>
+        <p>{t(locale, 'plan.intro')}</p>
+      </div>
+      <div class="reveal"><FloorPlan locale={locale} /></div>
     </div>
   </section>
 
@@ -115,7 +132,7 @@ const outdoorIds = ['patio', 'pool', 'courtyard', 'olive-lounge', 'games', 'roof
 
   <section class="section" aria-labelledby="hosts-h">
     <div class="wrap split top hosts">
-      <Figure id="59" locale={locale} ratio="4 / 5" sizes="(min-width: 60rem) 34rem, 100vw" widths={[480, 800, 969]} position="50% 30%" class="reveal" />
+      <Figure id="59" locale={locale} ratio="4 / 5" sizes="(min-width: 60rem) 34rem, 100vw" widths={[480, 743]} class="reveal" />
       <div class="reveal">
         <span class="kicker">{c.hosts.kicker}</span>
         <h2 id="hosts-h">{c.hosts.title}</h2>
@@ -140,6 +157,8 @@ const outdoorIds = ['patio', 'pool', 'courtyard', 'olive-lounge', 'games', 'roof
   .split.top { align-items: start; }
   .pair { display: grid; gap: var(--space-2); margin-top: var(--space-4); }
   @media (min-width: 48rem) { .pair { grid-template-columns: 1fr 1fr; } }
+  .trio { display: grid; gap: var(--space-2); margin-top: var(--space-4); }
+  @media (min-width: 48rem) { .trio { grid-template-columns: repeat(3, 1fr); } }
   .amen { display: grid; gap: var(--space-4); }
   @media (min-width: 48rem) { .amen { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 72rem) { .amen { grid-template-columns: repeat(3, 1fr); } }

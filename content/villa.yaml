@@ -40,7 +40,7 @@ legal:
   payment_terms: TODO_OWNER
 
 contact:
-  email: "dolce.e.azzurra@gmail.com"   # owner plans a domain address (stay@...). Use this until then.
+  email: "stay@dolceazzurra.com"   # owner, 2026-10-27 (was dolce.e.azzurra@gmail.com)
   phones:
     - { number: "+39 340 832 3475", label: "Italy", whatsapp: true }   # owner, 2026-10-27
     - { number: "+33 7 83 46 12 13", label: "France", whatsapp: false }  # owner, 2026-10-27: not on WhatsApp
@@ -119,8 +119,6 @@ house:
     - id: pool
       en: "Infinity pool facing the bay, with a hidden retractable safety cover"
       salt_water: "yes" # Airbnb says salt water; old site doesn't. Omit until confirmed.
-    - id: olive-lounge
-      en: "Lounge with fireplace under the olive trees"
     - id: games
       en: "Bocce (pétanque) court with small bar and outdoor fridge; outdoor competition table-tennis table"
     - id: roof-terrace
@@ -140,6 +138,7 @@ house:
       - "Kitchen island, 80 cm induction hob, two ovens (one combi microwave)"
       - "Separate fridge and freezer, dishwasher"
       - "Nespresso De'Longhi Lattissima One, capsules on arrival"
+      - "Private wine cellar (36 bottles) with Ligurian wines available to buy"
     tech:
       - "Starlink internet (about 100 Mbit/s) with Wi-Fi 7 mesh in villa, terraces and garden"
       - "KEF multiroom hi-fi (WiiM app), Apple TV, wall iPad controller"
@@ -147,9 +146,6 @@ house:
       - "11 kg washing machine and 9 kg dryer"
       - "Private parking for 2 cars and EV charging point"
       - "Gas and carbon monoxide detectors, fire extinguishers"
-    welcome:
-      - "Local cold-pressed olive oil and a bottle of Alta Langa on arrival"
-      - "Private wine cellar (36 bottles) with Ligurian wines available to buy"
 
   included:   # "everything included" list for the Book page
     - "Final cleaning"
@@ -158,7 +154,6 @@ house:
     - "Starlink internet and Wi-Fi 7"
     - "Pool, outdoor kitchen, bocce and table tennis"
     - "Parking and EV charging"
-    - "Welcome gift"
 
   reviews:
     airbnb: { rating: 5.0, count: 8, label: "Guest Favourite", as_of: "2026-10-27" }

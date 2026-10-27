@@ -67,13 +67,20 @@ Implemented:
 - The rating links to the Airbnb listing so guests can check it (owner's choice; note this deliberately relaxes CLAUDE.md rule 3, "one booking path").
 - Phones: "Made for eight" is a swipeable row; reviews show two, then "More reviews". Fade-ins shortened to 0.25 s and started before elements reach the screen.
 
-- "Your hosts" (2026-10-27): the owners' own French text (Sylvie and Michel) sits on The Villa page before the closing band, translated into EN and IT, with their photo (59, cropped to 4:5 from IMG_4105.heic; the HEIC original stays out of git) beside it. "à couper le souffle" became "imprenable" (the verifier bans it as a hype word). "No vis-à-vis" is the owners' wording and holds: no other house is visible from the villa.
+- "Your hosts" (2026-10-27): the owners' own French text (Sylvie and Michel) sits on The Villa page before the closing band, translated into EN and IT, with their photo (59, cropped tight to 4:5 from IMG_4105.heic; the HEIC original stays out of git) beside it. "à couper le souffle" became "imprenable" (the verifier bans it as a hype word). "No vis-à-vis" is the owners' wording and holds: no other house is visible from the villa.
 
-Not done (needs the owner): photos of all four suites and more bathrooms; courtyard, fireplace lounge and roof terrace photos; floor plan; licensed Alassio photos; deposit and cancellation terms; German then Dutch; domain email (owner chose to keep gmail for now); lifestyle shoot and film; Google reviews.
+Not done (needs the owner): photos of all four suites and more bathrooms; courtyard and roof terrace photos; licensed Alassio photos; deposit and cancellation terms; German then Dutch; lifestyle shoot; Google reviews.
+
+## Owner material, 27 Oct 2026 (evening)
+- **Email:** `contact.email` is now `stay@dolceazzurra.com` (MX at ImprovMX, so mail is forwarded; the owner should send a test message).
+- **Removed, not true:** the fireplace lounge under the olives (villa.yaml space, translations, copy brief) and the welcome gift (olive oil and Alta Langa, "Welcome gift" in the included list). The wine cellar line moved to the Kitchen amenities. The "Ligurian apero box" stays: it is a paid service on request, not a gift.
+- **Booking address:** book.dolceazzurra.com now has a valid Let's Encrypt certificate (issued 27 Oct 2026, expires 25 Jan 2027; Hostaway renews it).
+- **HD photos:** the owner's professional shoot (110 files, `UMDC_VILLA_DOLCE_&_AZZURRA-*.jpg`, 5000 px) replaced the Airbnb copies of 01, 06-23, 43, 47, 49 and 52 (11, 15 and 18 were only 1280 px). Masters are resized to 2560 px in `src/assets/photos`; Astro makes the AVIF/WebP sizes for each screen as before. New: 60 and 61 (two more suites) and 62 (a second bathroom). The Villa page now shows all four suites (22, then 60, 20, 61). Photographer credit for "UMDC" not added: name unknown.
+- **Floor plan:** a simplified SVG (`src/components/FloorPlan.astro`) traced from the architects' "FLOOR PLAN_PLANNING" drawing, numbered with a legend, on The Villa page after the suites. No dimensions and no pool: the drawings show an earlier 10 × 3 m pool, not the one that was built, and the room areas differ between the two PDFs.
+- **Hero film (owner's request; the spec said no autoplay video):** `public/video/villa-dolce-azzurra-1920.mp4` (3.9 MB) and `-1280.mp4` (2.1 MB), H.264, no sound, from the owner's 39 MB file. Only on screens from 60rem, chosen by screen width × pixel density; not downloaded on phones, with reduced motion or Save-Data. Muted, looped, with a pause button (WCAG 2.2.2). The pergola photo stays underneath until the film plays.
 
 ## Remaining warnings
 - Translation review flags (27 files). These are expected until the owner proofreads.
-- The gmail address shows on every page (`contact.email`). Switch it when the domain address exists.
 - Small tap targets inside the Hostaway widget (third-party).
 
 ## Owner to-do

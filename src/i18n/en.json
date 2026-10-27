@@ -109,7 +109,22 @@
     },
     "more": "More reviews"
   },
+  "plan": {
+      "kicker": "Layout",
+      "heading": "Everything on one level",
+      "intro": "The suites have their own wing, the living space the other; the covered patio under the pergola links the two. Every suite opens onto the terrace.",
+      "title": "Ground plan of the villa: four suites with bathrooms in one wing, the living space in the other, the covered patio between them",
+      "suites": "Four double suites, each with its own bathroom",
+      "living": "Living room, dining table and kitchen",
+      "entrance": "Entrance and sitting room",
+      "patio": "Covered patio under the pergola, with the outdoor kitchen",
+      "wc": "Guest WC",
+      "bay": "The bay of Alassio",
+      "note": "Simplified from the architects' plan, not to scale."
+  },
   "hero": {
+    "pauseVideo": "Pause the film",
+    "playVideo": "Play the film",
     "alt": "The bay of Alassio seen from the villa"
   },
   "home": {

@@ -1,0 +1,75 @@
+---
+// Simplified ground plan, traced from the architects' planning drawing (not to scale, no dimensions).
+// Numbered markers in the drawing, labels in the legend below, so it stays readable on phones.
+import { t } from '../lib/i18n';
+interface Props { locale: string }
+const { locale } = Astro.props;
+const suites: [string, number, number][] = [['1', 606.6, 364.4], ['2', 419.6, 293.4], ['3', 315.7, 254.1], ['4', 138.5, 186.9]];
+const marks: [string, number, number][] = [['5', 1150, 330], ['6', 818, 240], ['7', 812, 400], ['8', 1000, 240]];
+const legend = ['suites', 'living', 'entrance', 'patio', 'wc'];
+---
+<figure class="plan">
+  <svg viewBox="0 60 1400 590" role="img" aria-labelledby="plan-title">
+    <title id="plan-title">{t(locale, 'plan.title')}</title>
+    <defs>
+      <pattern id="slats" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-70)">
+        <line x1="0" y1="0" x2="0" y2="14" class="slat" />
+      </pattern>
+    </defs>
+    <!-- terraces -->
+    <polygon class="terrace" points="55,250 635,470 616.8,516.2 19.4,289.6" />
+    <polygon class="terrace" points="640,478 985,480 1000,500 1345,375 1395,415 1010,548 810,632 616,516" />
+    <!-- covered patio and pergola -->
+    <polygon class="patio" points="700,312 930,302 985,480 640,478" />
+    <polygon class="pergola" points="700,312 930,302 985,480 640,478" />
+    <!-- suites wing -->
+    <polygon class="room" points="120,85 700,305 635,470 55,250" />
+    <polygon class="bath" points="218.8,132.0 294.8,160.8 267.5,230.1 191.5,201.3" />
+    <polygon class="bath" points="187.6,211.2 263.6,240.0 236.3,309.3 160.3,280.5" />
+    <polygon class="bath" points="496.7,237.3 575.0,267.1 547.7,336.4 469.4,306.6" />
+    <polygon class="bath" points="465.5,316.6 543.8,346.2 516.5,415.6 438.2,385.9" />
+    <line class="wall-in" x1="222.1" y1="123.7" x2="157.1" y2="288.7" />
+    <line class="wall-in" x1="298.1" y1="152.5" x2="233.1" y2="317.5" />
+    <line class="wall-in" x1="401.3" y1="191.7" x2="336.3" y2="356.7" />
+    <line class="wall-in" x1="499.9" y1="229.1" x2="434.9" y2="394.1" />
+    <line class="wall-in" x1="578.2" y1="258.8" x2="513.2" y2="423.8" />
+    <polygon class="wall" points="120,85 700,305 635,470 55,250" />
+    <!-- entrance / sitting room -->
+    <polygon class="room" points="745,178 918,185 930,300 700,310" />
+    <polygon class="wall" points="745,178 918,185 930,300 700,310" />
+    <!-- living wing -->
+    <polygon class="room" points="930,205 1290,148 1345,375 1000,500" />
+    <polygon class="bath" points="945,212 1045,198 1055,265 958,282" />
+    <polygon class="wall" points="930,205 1290,148 1345,375 1000,500" />
+    {[...suites, ...marks].map(([n, x, y]) => (
+      <g class="mark" aria-hidden="true"><circle cx={x} cy={y} r="32" /><text x={x} y={y + 13}>{n}</text></g>
+    ))}
+    <text class="bay" x="700" y="636" aria-hidden="true">{t(locale, 'plan.bay')}</text>
+  </svg>
+  <figcaption>
+    <ol class="legend">
+      {legend.map((k) => <li data-n={k === 'suites' ? '1–4' : String(legend.indexOf(k) + 4)}>{t(locale, `plan.${k}`)}</li>)}
+    </ol>
+    <p class="small muted">{t(locale, 'plan.note')}</p>
+  </figcaption>
+</figure>
+<style>
+  .plan { margin: var(--space-3) auto 0; max-width: 62rem; }
+  svg { width: 100%; height: auto; display: block; }
+  .room { fill: var(--c-bg); }
+  .bath { fill: var(--c-surface); stroke: var(--c-ink-soft); stroke-width: 2; }
+  .wall { fill: none; stroke: var(--c-ink); stroke-width: 7; stroke-linejoin: round; }
+  .wall-in { stroke: var(--c-ink); stroke-width: 3; }
+  .terrace { fill: #E3D8C6; }
+  .patio { fill: #DCCDB5; }
+  .pergola { fill: url(#slats); }
+  .slat { stroke: var(--c-oak); stroke-width: 3; }
+  .mark circle { fill: var(--c-bay); }
+  .mark text { fill: #fff; font: 600 36px var(--font-text); text-anchor: middle; }
+  .bay { fill: var(--c-ink-soft); font: 500 26px var(--font-text); letter-spacing: .12em; text-transform: uppercase; text-anchor: middle; }
+  figcaption { margin-top: var(--space-3); }
+  .legend { list-style: none; padding: 0; margin: 0 0 var(--space-2); display: grid; gap: .5rem; }
+  @media (min-width: 48rem) { .legend { grid-template-columns: repeat(2, 1fr); column-gap: var(--space-4); } }
+  .legend li { display: flex; gap: .75rem; align-items: baseline; }
+  .legend li::before { content: attr(data-n); flex: none; min-width: 2.6rem; padding: .1rem .45rem; border-radius: 999px; background: var(--c-bay); color: #fff; font-size: var(--step--1); font-weight: 600; text-align: center; }
+</style>

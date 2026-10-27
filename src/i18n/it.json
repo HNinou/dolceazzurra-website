@@ -128,7 +128,10 @@
     "56": "Divano esterno contro un muro a secco, lavanda e colline verdi alle spalle",
     "57": "Il patio coperto della villa dietro la lavanda, un'agave e un ulivo",
     "58": "Lavanda in fiore davanti alla pergola in legno",
-    "59": "Sylvie e Michel, i proprietari, in riva al mare davanti a un forte in pietra"
+    "59": "Sylvie e Michel, i proprietari, in riva al mare davanti a un forte in pietra",
+    "60": "Suite con parete a listelli in rovere e porta vetrata sulla terrazza, con la baia sullo sfondo",
+    "61": "Suite al tramonto, con le vetrate sulla terrazza della piscina illuminata",
+    "62": "Lavabo del bagno, con la suite e la sua terrazza oltre la porta aperta"
   },
   "yaml": {
     "Final cleaning": "Pulizia finale",
@@ -137,14 +140,12 @@
     "Starlink internet and Wi-Fi 7": "Internet Starlink e Wi-Fi 7",
     "Pool, outdoor kitchen, bocce and table tennis": "Piscina, cucina esterna, bocce e ping-pong",
     "Parking and EV charging": "Parcheggio e ricarica per auto elettriche",
-    "Welcome gift": "Regalo di benvenuto",
     "Open-plan living, dining and kitchen behind floor-to-ceiling glass facing the bay": "Soggiorno, pranzo e cucina open space dietro vetrate a tutta altezza sulla baia",
     "Four double suites in a separate wing, each with private outdoor space facing morning sun": "Quattro suite matrimoniali in un'ala separata, ognuna con uno spazio esterno privato al sole del mattino",
     "Five tiled bathrooms with walk-in showers and opening skylights": "Cinque bagni piastrellati con doccia walk-in e lucernari apribili",
     "Open-air courtyard under a timber pergola linking the two wings": "Corte a cielo aperto sotto una pergola in legno che collega le due ali",
     "80 m² covered patio with sea view and ENO outdoor kitchen (electric plancha, sink, fridge)": "Patio coperto di 80 m² con vista mare e cucina esterna ENO (plancha elettrica, lavello, frigorifero)",
     "Infinity pool facing the bay, with a hidden retractable safety cover": "Piscina a sfioro di fronte alla baia, con copertura di sicurezza retrattile nascosta",
-    "Lounge with fireplace under the olive trees": "Salotto con camino sotto gli ulivi",
     "Bocce (pétanque) court with small bar and outdoor fridge; outdoor competition table-tennis table": "Campo da bocce con piccolo bar e frigorifero esterno; tavolo da ping-pong da competizione all'aperto",
     "Roof terrace among the olive trees for sunrise and sunset": "Terrazza sul tetto tra gli ulivi, per l'alba e il tramonto",
     "Outdoor shower facing the garden": "Doccia esterna affacciata sul giardino",
@@ -167,7 +168,6 @@
     "11 kg washing machine and 9 kg dryer": "Lavatrice da 11 kg e asciugatrice da 9 kg",
     "Private parking for 2 cars and EV charging point": "Parcheggio privato per 2 auto e colonnina di ricarica",
     "Gas and carbon monoxide detectors, fire extinguishers": "Rilevatori di gas e di monossido di carbonio, estintori",
-    "Local cold-pressed olive oil and a bottle of Alta Langa on arrival": "Olio d'oliva locale spremuto a freddo e una bottiglia di Alta Langa all'arrivo",
     "Private wine cellar (36 bottles) with Ligurian wines available to buy": "Cantina privata (36 bottiglie) con vini liguri in vendita",
     "3 km of fine sand beach and bagni (beach clubs)": "3 km di spiaggia di sabbia fine e bagni",
     "The Budello (Via XX Settembre) and the Muretto di Alassio": "Il Budello (Via XX Settembre) e il Muretto di Alassio",
@@ -214,7 +214,22 @@
     },
     "more": "Altre recensioni"
   },
+  "plan": {
+      "kicker": "Pianta",
+      "heading": "Tutto su un solo livello",
+      "intro": "Le suite hanno la loro ala, la zona giorno l'altra; il patio coperto sotto la pergola le unisce. Ogni suite si apre sulla terrazza.",
+      "title": "Pianta della villa: quattro suite con bagno in un'ala, la zona giorno nell'altra, il patio coperto tra le due",
+      "suites": "Quattro suite matrimoniali, ognuna con il suo bagno",
+      "living": "Soggiorno, tavolo da pranzo e cucina",
+      "entrance": "Ingresso e salottino",
+      "patio": "Patio coperto sotto la pergola, con la cucina esterna",
+      "wc": "Bagno per gli ospiti",
+      "bay": "La baia di Alassio",
+      "note": "Semplificata dalla pianta degli architetti, non in scala."
+  },
   "hero": {
+    "pauseVideo": "Metti in pausa il video",
+    "playVideo": "Riproduci il video",
     "alt": "La baia di Alassio vista dalla villa"
   },
   "home": {
