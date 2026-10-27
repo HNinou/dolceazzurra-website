@@ -1,74 +1,92 @@
 ---
-// Simplified ground plan, traced from the architects' planning drawing (not to scale, no dimensions).
-// Numbered markers in the drawing, labels in the legend below, so it stays readable on phones.
+// Simplified ground plan, traced from the architects' drawings (FLOOR PLAN_POTENTIAL for the rooms,
+// FLOOR PLAN_PLANNING for the pool; the guest WC follows the owners' later 3D render). Not to scale, no dimensions. Numbered markers in the drawing,
+// labels in the legend below, so it stays readable on phones. Hallway, entrance and living room
+// share one floor colour with no wall between them, to show that they connect.
 import { t } from '../lib/i18n';
 interface Props { locale: string }
 const { locale } = Astro.props;
-const suites: [string, number, number][] = [['1', 606.6, 364.4], ['2', 419.6, 293.4], ['3', 315.7, 254.1], ['4', 138.5, 186.9]];
-const marks: [string, number, number][] = [['5', 1150, 330], ['6', 818, 240], ['7', 812, 400], ['8', 1000, 240]];
-const legend = ['suites', 'living', 'entrance', 'patio', 'wc'];
+const marks: [string, number, number][] = [
+  ['1', 530.2, 281.7], ['2', 405, 231.9], ['3', 333.4, 203.3], ['4', 208.2, 153.5],
+  ['5', 895, 250], ['6', 676, 192], ['7', 668, 300], ['8', 780, 181], ['9', 900, 140], ['10', 161, 558],
+];
+const legend: [string, string][] = [['1–4', 'suites'], ['5', 'living'], ['6', 'entrance'], ['7', 'patio'], ['8', 'wc'], ['9', 'service'], ['10', 'pool']];
+const inner = [[262.4, 110.1, 225.6, 225.3], [316, 131.5, 279.2, 246.7], [387.6, 160, 350.8, 275.2], [459.2, 188.5, 422.4, 303.7], [512.8, 209.9, 476, 325.1]];
+const baths = [
+  '261.3,113.6 314.9,134.9 298.4,186.8 244.7,165.4', '243.2,170.0 296.9,191.4 280.3,243.2 226.7,221.9',
+  '458.1,192.0 511.7,213.3 495.2,265.2 441.5,243.8', '440.0,248.4 493.7,269.8 477.1,321.6 423.5,300.3',
+];
 ---
 <figure class="plan">
-  <svg viewBox="0 60 1400 590" role="img" aria-labelledby="plan-title">
+  <svg viewBox="-40 30 1105 628" role="img" aria-labelledby="plan-title">
     <title id="plan-title">{t(locale, 'plan.title')}</title>
     <defs>
-      <pattern id="slats" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-70)">
-        <line x1="0" y1="0" x2="0" y2="14" class="slat" />
+      <pattern id="slats" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(-68)">
+        <line x1="0" y1="0" x2="0" y2="11" class="slat" />
       </pattern>
     </defs>
     <!-- terraces -->
-    <polygon class="terrace" points="55,250 635,470 616.8,516.2 19.4,289.6" />
-    <polygon class="terrace" points="640,478 985,480 1000,500 1345,375 1395,415 1010,548 810,632 616,516" />
-    <!-- covered patio and pergola -->
-    <polygon class="patio" points="700,312 930,302 985,480 640,478" />
-    <polygon class="pergola" points="700,312 930,302 985,480 640,478" />
-    <!-- suites wing -->
-    <polygon class="room" points="120,85 700,305 635,470 55,250" />
-    <polygon class="bath" points="218.8,132.0 294.8,160.8 267.5,230.1 191.5,201.3" />
-    <polygon class="bath" points="187.6,211.2 263.6,240.0 236.3,309.3 160.3,280.5" />
-    <polygon class="bath" points="496.7,237.3 575.0,267.1 547.7,336.4 469.4,306.6" />
-    <polygon class="bath" points="465.5,316.6 543.8,346.2 516.5,415.6 438.2,385.9" />
-    <line class="wall-in" x1="222.1" y1="123.7" x2="157.1" y2="288.7" />
-    <line class="wall-in" x1="298.1" y1="152.5" x2="233.1" y2="317.5" />
-    <line class="wall-in" x1="401.3" y1="191.7" x2="336.3" y2="356.7" />
-    <line class="wall-in" x1="499.9" y1="229.1" x2="434.9" y2="394.1" />
-    <line class="wall-in" x1="578.2" y1="258.8" x2="513.2" y2="423.8" />
-    <polygon class="wall" points="120,85 700,305 635,470 55,250" />
-    <!-- entrance / sitting room -->
-    <polygon class="room" points="745,178 918,185 930,300 700,310" />
-    <polygon class="wall" points="745,178 918,185 930,300 700,310" />
-    <!-- living wing -->
-    <polygon class="room" points="930,205 1290,148 1345,375 1000,500" />
-    <polygon class="bath" points="945,212 1045,198 1055,265 958,282" />
-    <polygon class="wall" points="930,205 1290,148 1345,375 1000,500" />
-    {[...suites, ...marks].map(([n, x, y]) => (
-      <g class="mark" aria-hidden="true"><circle cx={x} cy={y} r="32" /><text x={x} y={y + 13}>{n}</text></g>
+    <polygon class="terrace" points="154.0,196.8 547.6,353.6 533.8,396.7 140.2,239.9" />
+    <polygon class="terrace" points="547.6,353.6 790.3,366.6 810,408 655,455 533.8,396.7" />
+    <polygon class="terrace" points="790.3,366.6 1034,253.3 1053,294 810,408" />
+    <!-- pool -->
+    <polygon class="deck" points="2.7,427.7 357.6,499.4 328.9,641.4 -26.0,569.7" />
+    <polygon class="water" points="70.9,493.9 317.8,543.7 299.9,632.5 53.0,582.6" />
+    <polygon class="steps" points="22.1,484.0 70.9,493.9 53.0,582.6 4.2,572.7" />
+    <!-- covered patio under the pergola -->
+    <polygon class="patio" points="584.4,238.4 740.4,239.7 790.3,366.6 547.6,353.6" />
+    <polygon class="pergola" points="584.4,238.4 740.4,239.7 790.3,366.6 547.6,353.6" />
+    <!-- floors: hallway behind the suites, entrance + hall, living room (one continuous floor) -->
+    <polygon class="room" points="200.9,50.0 594.5,206.8 584.4,238.4 190.8,81.6" />
+    <polygon class="room" points="594.5,206.8 620,150 733.3,150 737,146.7 743.8,162.6 749.5,189.8 764.2,223.8 740.4,239.7 584.4,238.4" />
+    <polygon class="room" points="740.4,239.7 764.2,223.8 975.1,124 1034,253.3 790.3,366.6" />
+    <polygon class="room" points="190.8,81.6 584.4,238.4 547.6,353.6 154.0,196.8" />
+    <!-- baths, service strip, guest WC -->
+    {baths.map((p) => <polygon class="bath" points={p} />)}
+    <polygon class="service" points="743.8,162.6 826.6,126.3 834.5,143.3 896.9,120.6 976,92 975.1,124 764.2,223.8 749.5,189.8" />
+    <polygon class="bath" points="743.8,162.6 792.0,141.5 818.7,198.0 764.2,223.8 749.5,189.8" />
+    <!-- walls -->
+    {inner.map(([x1, y1, x2, y2]) => <line class="wall-in" x1={x1} y1={y1} x2={x2} y2={y2} />)}
+    <line class="wall-in" x1="764.2" y1="223.8" x2="926.3" y2="147.8" />
+    <line class="wall-in" x1="947" y1="138" x2="975.1" y2="124.8" />
+    <polyline class="wall-in" points="190.8,81.6 262.4,110.1" />
+    <polyline class="wall-in" points="316,131.5 459.2,188.5" />
+    <polyline class="wall-in" points="512.8,209.9 584.4,238.4" />
+    <polyline class="wall" points="740.4,239.7 790.3,366.6 1034,253.3 976,92 896.9,120.6 834.5,143.3 826.6,126.3 743.8,162.6 737,146.7 733.3,150 620,150 594.5,206.8 200.9,50.0 190.8,81.6 154.0,196.8 547.6,353.6 584.4,238.4 648,238.35" />
+    <line class="wall" x1="674" y1="238.3" x2="740.4" y2="239.7" />
+    {marks.map(([n, x, y]) => (
+      <g class="mark" aria-hidden="true"><circle cx={x} cy={y} r="26" /><text x={x} y={y + 10}>{n}</text></g>
     ))}
-    <text class="bay" x="700" y="636" aria-hidden="true">{t(locale, 'plan.bay')}</text>
+    <text class="hall" x="430" y="157" transform="rotate(21.7 430 152)" aria-hidden="true">{t(locale, 'plan.hallway')}</text>
+    <text class="bay" x="640" y="630" aria-hidden="true">{t(locale, 'plan.bay')}</text>
   </svg>
   <figcaption>
     <ol class="legend">
-      {legend.map((k) => <li data-n={k === 'suites' ? '1–4' : String(legend.indexOf(k) + 4)}>{t(locale, `plan.${k}`)}</li>)}
+      {legend.map(([n, k]) => <li data-n={n}>{t(locale, `plan.${k}`)}</li>)}
     </ol>
-    <p class="small muted">{t(locale, 'plan.note')}</p>
   </figcaption>
 </figure>
 <style>
   .plan { margin: var(--space-3) auto 0; max-width: 62rem; }
   svg { width: 100%; height: auto; display: block; }
   .room { fill: var(--c-bg); }
-  .bath { fill: var(--c-surface); stroke: var(--c-ink-soft); stroke-width: 2; }
-  .wall { fill: none; stroke: var(--c-ink); stroke-width: 7; stroke-linejoin: round; }
-  .wall-in { stroke: var(--c-ink); stroke-width: 3; }
+  .bath { fill: var(--c-surface); stroke: var(--c-ink-soft); stroke-width: 1.5; }
+  .service { fill: #DDD6CB; }
+  .wall { fill: none; stroke: var(--c-ink); stroke-width: 5; stroke-linejoin: round; stroke-linecap: round; }
+  .wall-in { fill: none; stroke: var(--c-ink); stroke-width: 2.2; }
   .terrace { fill: #E3D8C6; }
+  .deck { fill: #E3D8C6; }
+  .water { fill: #9EC3D6; stroke: #5E8FA9; stroke-width: 2; }
+  .steps { fill: #B9D4E2; stroke: #5E8FA9; stroke-width: 2; }
   .patio { fill: #DCCDB5; }
   .pergola { fill: url(#slats); }
-  .slat { stroke: var(--c-oak); stroke-width: 3; }
+  .slat { stroke: var(--c-oak); stroke-width: 2.2; }
   .mark circle { fill: var(--c-bay); }
-  .mark text { fill: #fff; font: 600 36px var(--font-text); text-anchor: middle; }
-  .bay { fill: var(--c-ink-soft); font: 500 26px var(--font-text); letter-spacing: .12em; text-transform: uppercase; text-anchor: middle; }
+  .mark text { fill: #fff; font: 600 28px var(--font-text); text-anchor: middle; }
+  .bay { fill: var(--c-ink-soft); font: 500 20px var(--font-text); letter-spacing: .12em; text-transform: uppercase; text-anchor: middle; }
+  .hall { fill: var(--c-ink-soft); font: 500 15px var(--font-text); letter-spacing: .1em; text-transform: uppercase; text-anchor: middle; }
   figcaption { margin-top: var(--space-3); }
-  .legend { list-style: none; padding: 0; margin: 0 0 var(--space-2); display: grid; gap: .5rem; }
+  .legend { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
   @media (min-width: 48rem) { .legend { grid-template-columns: repeat(2, 1fr); column-gap: var(--space-4); } }
   .legend li { display: flex; gap: .75rem; align-items: baseline; }
   .legend li::before { content: attr(data-n); flex: none; min-width: 2.6rem; padding: .1rem .45rem; border-radius: 999px; background: var(--c-bay); color: #fff; font-size: var(--step--1); font-weight: 600; text-align: center; }

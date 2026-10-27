@@ -218,14 +218,16 @@
       "kicker": "Pianta",
       "heading": "Tutto su un solo livello",
       "intro": "Le suite hanno la loro ala, la zona giorno l'altra; il patio coperto sotto la pergola le unisce. Ogni suite si apre sulla terrazza.",
-      "title": "Pianta della villa: quattro suite con bagno in un'ala, la zona giorno nell'altra, il patio coperto tra le due",
+      "title": "Pianta della villa: quattro suite con bagno in un'ala, collegate da un corridoio all'ingresso e al soggiorno; il patio coperto tra le ali e la piscina più in basso",
       "suites": "Quattro suite matrimoniali, ognuna con il suo bagno",
       "living": "Soggiorno, tavolo da pranzo e cucina",
       "entrance": "Ingresso e salottino",
       "patio": "Patio coperto sotto la pergola, con la cucina esterna",
       "wc": "Bagno per gli ospiti",
-      "bay": "La baia di Alassio",
-      "note": "Semplificata dalla pianta degli architetti, non in scala."
+      "hallway": "Corridoio",
+      "pool": "Piscina a sfioro",
+      "service": "Locale tecnico e dispensa",
+      "bay": "La baia di Alassio"
   },
   "hero": {
     "pauseVideo": "Metti in pausa il video",

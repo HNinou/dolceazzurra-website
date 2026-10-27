@@ -218,14 +218,16 @@
       "kicker": "Plan",
       "heading": "Tout sur un seul niveau",
       "intro": "Les suites ont leur aile, la vie commune l'autre ; le patio couvert sous la pergola relie les deux. Chaque suite ouvre sur la terrasse.",
-      "title": "Plan de la villa : quatre suites avec salle de bains dans une aile, les pièces de vie dans l'autre, le patio couvert entre les deux",
+      "title": "Plan de la villa : quatre suites avec salle de bains dans une aile, reliées par un couloir à l'entrée et au séjour ; le patio couvert entre les ailes et la piscine en contrebas",
       "suites": "Quatre suites doubles, chacune avec sa salle de bains",
       "living": "Séjour, table à manger et cuisine",
       "entrance": "Entrée et petit salon",
       "patio": "Patio couvert sous la pergola, avec la cuisine extérieure",
       "wc": "WC invités",
-      "bay": "La baie d'Alassio",
-      "note": "Simplifié d'après le plan des architectes, pas à l'échelle."
+      "hallway": "Couloir",
+      "pool": "Piscine à débordement",
+      "service": "Local technique et cellier",
+      "bay": "La baie d'Alassio"
   },
   "hero": {
     "pauseVideo": "Mettre le film en pause",
