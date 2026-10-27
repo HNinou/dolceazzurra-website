@@ -60,7 +60,7 @@ booking:
 rates:
   currency: EUR
   all_inclusive: true
-  low_season_per_night: 856
+  low_season_per_night: 700
   high_season_per_night: 1427
   season_dates: TODO_OWNER            # which months are low/high
   minimum_stay:

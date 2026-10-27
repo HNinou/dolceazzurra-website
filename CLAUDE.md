@@ -203,7 +203,7 @@ Use **one accent per screen**. The old site's dark navy (`#0a1628`) is retired. 
 ### Components
 
 - **Header:** logo (rebuild the sunset mark as a simple inline SVG in `--c-oak`, wordmark "DOLCE & AZZURRA" in spaced caps), nav (Villa, Gallery, Alassio, Services), language switcher (live locales; links to the same page in the other language), "Check dates" button. Transparent over the hero, solid `--c-bg` after scroll. On mobile, a full-screen menu.
-- **Sticky CTA:** on mobile a bottom bar "Check dates · from €856/night" (`data-cta="book"`), on desktop the header button stays visible (sticky header). Must be visible mid-page (the browser check tests it). Hide it on the Book page itself.
+- **Sticky CTA:** on mobile a bottom bar "Check dates · from €700/night" (`data-cta="book"`), on desktop the header button stays visible (sticky header). Must be visible mid-page (the browser check tests it). Hide it on the Book page itself.
 - **Facts strip:** 8 guests · 4 suites · 5 bathrooms · infinity pool · 180° sea view. Thin oak rules between items.
 - **Award line:** "Longlisted · Archello Awards 2026 · Small House of the Year (Rural)" + architect credit with link.
 - **Footer:** contact (email, phones, Instagram), address, `CIN IT009001B4PNT36KBS`, company + VAT, links to Legal and Privacy, architect credit, © year.
@@ -228,7 +228,7 @@ Content outlines and draft English headlines are in `content/copy-brief.md`. Str
 - **Gallery:** all `rights: owner` photos with `role` gallery/feature/hero, grouped by `group`.
 - **Alassio:** text sections from `villa.yaml` → `location`: beaches & Budello, Muretto, Gallinara, walks from the villa, cycle path, day trips, restaurants (only `verified` ones; if none verified, show the section without restaurant names and list them in the build report), distances table, "Open in Google Maps" link (`https://www.google.com/maps/search/?api=1&query=44.0086,8.1731`). Villa photos only (Alassio photos are unconfirmed).
 - **Services:** one card per `villa.yaml` → `services`, each ending with an "Ask us" mailto link (prefilled subject). Note: "Paid separately, arranged on request."
-- **Book:** `BookingWidget` (one per page), "From €856/night, everything included, up to 8 guests", minimum-stay rules (only non-`proposed` values; if all proposed, say "Minimum stay varies by season, see the calendar"), included list, check-in 16:00 / check-out 10:00, house rules, FAQ, deposit/cancellation **only if not TODO_OWNER**, CIN.
+- **Book:** `BookingWidget` (one per page), "From €700/night, everything included, up to 8 guests", minimum-stay rules (only non-`proposed` values; if all proposed, say "Minimum stay varies by season, see the calendar"), included list, check-in 16:00 / check-out 10:00, house rules, FAQ, deposit/cancellation **only if not TODO_OWNER**, CIN.
 - **Legal:** company, VAT, address, CIN, contact, architect credit, photo credits.
 - **Privacy:** GDPR notice: no cookies or analytics on this site; booking is processed by Hostaway (link their privacy policy) when the guest uses the widget; contact for data requests. Keep it short and factual. Mark `reviewed: false`; the owner must check it.
 
