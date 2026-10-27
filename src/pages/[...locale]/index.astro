@@ -13,7 +13,7 @@ import { vacationRentalLd } from '../../lib/jsonld';
 export const getStaticPaths = localePaths;
 const locale = localeFromParam(Astro.params.locale);
 const c = page(locale, 'home').frontmatter;
-const strip = ['03', '09', '18', '22', '11', '06'];
+const strip = ['03', '57', '18', '22', '11', '06'];
 const ld = await vacationRentalLd(locale, c.description);
 const [qo, qc] = locale === 'en' ? ['“', '”'] : ['«\u00A0', '\u00A0»'];
 const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));

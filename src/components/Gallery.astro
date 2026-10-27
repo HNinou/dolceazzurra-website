@@ -28,21 +28,27 @@ const cellsOf = <T extends { p: { small?: boolean } }>(items: T[]) => {
 const tallFirst = <T extends { p: { src: { width: number; height: number } } }>(cells: T[][]) =>
   [...cells.filter((c) => tall(c)), ...cells.filter((c) => !tall(c))];
 let index = 0;
-// Desktop column count per group, chosen so rows fill without orphan tiles
-// (a portrait tile spans two rows; a pair of small photos takes one tile).
+// Desktop columns per group: 2 for groups of 2 or 4 tiles, otherwise 3. In a 3-column group
+// whose tiles don't fill the last row, the last one or two tiles widen to fill it.
 const tall = (cell: { p: { src: { width: number; height: number } } }[]) => cell.length === 1 && cell[0].p.src.height > cell[0].p.src.width;
+const tilesOf = (cells: { p: { src: { width: number; height: number } } }[][]) => cells.reduce((sum, c) => sum + (tall(c) ? 2 : 1), 0);
 const colsFor = (cells: { p: { src: { width: number; height: number } } }[][]) => {
-  const n = cells.reduce((sum, c) => sum + (tall(c) ? 2 : 1), 0);
-  return [3, 4, 2].find((c) => n % c === 0 && n >= c) ?? 3;
+  const n = tilesOf(cells);
+  return n === 2 || n === 4 ? 2 : 3;
+};
+const fillOf = (cells: { p: { src: { width: number; height: number } } }[][], i: number) => {
+  if (colsFor(cells) !== 3) return undefined;
+  const rem = tilesOf(cells) % 3;
+  return rem && i >= cells.length - rem ? `fill-${rem}` : undefined;
 };
 ---
 <div class="gallery" data-gallery>
   {sections.filter((s) => s.items.length).map((s) => ({ ...s, cells: tallFirst(cellsOf(s.items)) })).map((s) => (
     <section class="group" aria-labelledby={`g-${s.g}`}>
       <h2 id={`g-${s.g}`} class="gh"><span class="kicker">{t(locale, `gallery.groups.${s.g}`)}</span></h2>
-      <ul class="grid" style={`--cols:${colsFor(s.cells)}`}>
-        {s.cells.map((cell) => (
-          <li class:list={{ pair: cell.length > 1, tall: tall(cell) }}>
+      <ul class:list={['grid', { six: colsFor(s.cells) === 3 }]} style={`--cols:${colsFor(s.cells)}`}>
+        {s.cells.map((cell, i) => (
+          <li class:list={[{ pair: cell.length > 1, tall: tall(cell) }, fillOf(s.cells, i)]}>
             {cell.map(({ p, full }) => {
               const a = altFor(locale, p);
               const w = Math.min(cell.length > 1 ? 700 : 1400, p.src.width);
@@ -66,7 +72,14 @@ const colsFor = (cells: { p: { src: { width: number; height: number } } }[][]) =
   .gh .kicker { margin: 0; }
   .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; grid-template-columns: 1fr; grid-auto-flow: dense; }
   @media (min-width: 36rem) { .grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 60rem) { .grid { grid-template-columns: repeat(var(--cols, 3), 1fr); gap: .9rem; } }
+  @media (min-width: 60rem) {
+    .grid { grid-template-columns: repeat(var(--cols, 3), 1fr); gap: .9rem; }
+    /* 3-column groups run on a 6-track grid so a short last row can be shared by wider tiles. */
+    .grid.six { grid-template-columns: repeat(6, 1fr); }
+    .grid.six li { grid-column: span 2; }
+    .grid.six li.fill-2 { grid-column: span 3; }
+    .grid.six li.fill-1 { grid-column: span 6; aspect-ratio: 3 / 1; }
+  }
   .grid li { aspect-ratio: 3 / 2; }
   @media (min-width: 36rem) { .grid li.tall { grid-row: span 2; aspect-ratio: auto; } }
   .grid li.pair { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }

@@ -28,4 +28,4 @@ export function alt(locale: string, p: Photo): string {
   return locale === 'en' ? p.altEn : t(locale, `alt.${p.id}`);
 }
 
-export const groups = ['architecture', 'outdoors', 'pool', 'interiors', 'suites', 'bathrooms'];
+export const groups = ['architecture', 'outdoors', 'pool', 'interiors', 'suites'];

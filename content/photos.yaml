@@ -23,8 +23,6 @@ photos:
       group: pool, alt_en: "Sunbeds and parasols along the infinity pool facing the bay" }
   - { file: 07-vue-depuis-la-villa-la-baie-d-alassio-illuminee-la-nuit-vill.webp, w: 2560, h: 1706, rights: owner, role: feature,
       group: architecture, alt_en: "The villa and its pool lit at night among the olive terraces" }
-  - { file: 09-facade-villa-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
-      group: outdoors, alt_en: "Glass facade of the living room opening onto the covered patio" }
   - { file: 10-jardin-dolce-azzurra.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: outdoors, alt_en: "Garden of olive trees and Mediterranean shrubs sloping towards the sea" }
   - { file: 11-vue-baie-alassio-depuis-oliviers.webp, w: 1280, h: 852, rights: owner, role: feature,
@@ -41,8 +39,6 @@ photos:
       group: interiors, alt_en: "Kitchen island in front of a floor-to-ceiling window looking over the bay" }
   - { file: 19-entree-boiseries-a-claire-voie-mobilier-sur-mesure.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: interiors, alt_en: "Kitchen with custom oak cabinetry and stone island, glass doors to the garden" }
-  - { file: 20-suite-rangements-integres-chene-vue-jardin.webp, w: 2560, h: 1708, rights: owner, role: gallery,
-      group: suites, alt_en: "Suite with large window onto the garden and hills" }
   - { file: 21-couloir-boiseries-a-claire-voie-puit-de-lumiere-zenithal.webp, w: 2560, h: 1708, rights: owner, role: page,
       group: interiors, alt_en: "Open-plan living space with kitchen island, oak joinery and pendant lights" }
   - { file: 22-chambre-etagere-bibliotheque-rangements-chene-naturel.webp, w: 2560, h: 1708, rights: owner, role: gallery,
@@ -52,17 +48,11 @@ photos:
 
   # Added from the owner's Airbnb listing (2026-10-27).
   - { file: 43-salle-de-bain-douche-italienne-puits-de-lumiere.webp, w: 2560, h: 1708, rights: owner, role: gallery,
-      group: bathrooms, alt_en: "Suite bathroom with walk-in shower, opening skylights and oak cabinet" }
-  - { file: 44-salle-de-bain-vasque-suite.webp, w: 2560, h: 1708, rights: owner, role: gallery,
-      group: bathrooms, alt_en: "Bathroom washbasin opening onto the suite and its bed" }
-  - { file: 45-suite-mur-chene-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: gallery,
-      group: suites, alt_en: "Suite with oak slatted wall and a sliding window onto the terrace and the bay" }
+      group: suites, alt_en: "Suite bathroom with walk-in shower, opening skylights and oak cabinet" }
   - { file: 47-table-a-manger-chene-vue-mer.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: interiors, alt_en: "Long oak dining table between two glass walls, with the hills and sea beyond" }
   - { file: 49-facade-en-pierre-et-piscine.webp, w: 2560, h: 1707, rights: owner, role: gallery,
       group: architecture, alt_en: "Stone facade of the villa reflected in the pool, sunbeds and parasols in front" }
-  - { file: 50-toit-vegetalise-vue-baie-alassio.webp, w: 2560, h: 1708, rights: owner, role: gallery,
-      group: architecture, alt_en: "Green roof with skylights at dusk, the bay of Alassio beyond" }
   - { file: 51-alassio-la-nuit-depuis-la-villa.webp, w: 2560, h: 1920, rights: owner, role: gallery,
       group: outdoors, alt_en: "Alassio and its bay lit at night, seen from the villa" }
   - { file: 52-piscine-eclairee-au-crepuscule.webp, w: 2560, h: 1546, rights: owner, role: gallery,
