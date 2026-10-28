@@ -12,7 +12,7 @@ const year = new Date().getFullYear();
     <div class="top">
       <div class="brandcol">
         <Logo />
-        <p class="tagline">{t(locale, 'footer.tagline')}</p>
+        <p class="tagline">{a.locality} · {a.city} · {a.region}</p>
         <a class="btn btn-light" href={lp(locale, 'book')} data-cta="book">{t(locale, 'cta.checkDates')}</a>
       </div>
       <div>
@@ -58,7 +58,7 @@ const year = new Date().getFullYear();
   .top { display: grid; gap: var(--space-4); }
   @media (min-width: 48rem) { .top { grid-template-columns: 1.4fr 1fr 1fr .8fr; } }
   .brandcol :global(.logo) { color: #fff; }
-  .tagline { margin: var(--space-2) 0 var(--space-3); font-family: var(--font-display); font-size: var(--step-1); font-weight: 350; color: #fff; }
+  .tagline { margin: var(--space-2) 0 var(--space-3); font-size: var(--step--1); letter-spacing: .08em; text-transform: uppercase; color: #fff; }
   .fh { font: 500 var(--step--1)/1.2 var(--font-text); letter-spacing: .08em; text-transform: uppercase; color: var(--c-oak); margin-bottom: var(--space-2); }
   .fl { list-style: none; margin: 0; padding: 0; }
   .fl li a, .maplink { display: inline-flex; align-items: center; min-height: 40px; }

@@ -23,7 +23,7 @@
     "fromNight": "da {priceLow} €/notte",
     "whatsapp": "Fai una domanda",
     "invite": "Verifica disponibilità",
-    "inviteLine": "Da {priceLow} € a notte, tutto incluso, fino a {guests} ospiti."
+    "inviteLine": "Da {priceLow} € a notte fino a {guests} ospiti, più {cleaningFee} € di pulizia finale per soggiorno."
   },
   "common": {
     "openMaps": "Apri in Google Maps",
@@ -40,7 +40,9 @@
     "suites": "suite",
     "bathrooms": "bagni",
     "pool": "Piscina a sfioro",
-    "view": "vista mare"
+    "view": "vista mare",
+    "singleLevel": "Un solo livello",
+    "beach": "Spiaggia"
   },
   "award": {
     "longlisted": "Nella longlist",
@@ -77,7 +79,6 @@
     "ask": "Chiedici"
   },
   "footer": {
-    "tagline": "La vita come dovrebbe essere",
     "contact": "Contatti",
     "address": "Indirizzo",
     "info": "Informazioni",
@@ -215,23 +216,33 @@
     "more": "Altre recensioni"
   },
   "plan": {
-      "kicker": "Pianta",
-      "heading": "Tutto su un solo livello",
-      "intro": "Le suite hanno la loro ala, la zona giorno l'altra; il patio coperto sotto la pergola le unisce. Ogni suite si apre sulla terrazza.",
-      "title": "Pianta della villa: quattro suite con bagno in un'ala, collegate da un corridoio all'ingresso e al soggiorno; il patio coperto tra le ali e la piscina più in basso",
-      "suites": "Quattro suite matrimoniali, ognuna con il suo bagno",
-      "living": "Soggiorno, tavolo da pranzo e cucina",
-      "entrance": "Ingresso e salottino",
-      "patio": "Patio coperto sotto la pergola, con la cucina esterna",
-      "wc": "Bagno per gli ospiti",
-      "hallway": "Corridoio",
-      "pool": "Piscina a sfioro",
-      "service": "Locale tecnico e dispensa",
-      "bay": "La baia di Alassio"
+    "kicker": "Pianta",
+    "heading": "Tutto su un solo livello",
+    "intro": "Le suite hanno la loro ala, la zona giorno l'altra; il patio coperto sotto la pergola le unisce. Ogni suite si apre sulla terrazza.",
+    "title": "Pianta della villa: quattro suite con bagno in un'ala, collegate da un corridoio all'ingresso e al soggiorno; il patio coperto tra le ali e la piscina più in basso",
+    "suites": "Quattro suite matrimoniali, ognuna con il suo bagno",
+    "living": "Soggiorno, tavolo da pranzo e cucina",
+    "entrance": "Ingresso e salottino",
+    "patio": "Patio coperto sotto la pergola, con la cucina esterna",
+    "wc": "Bagno per gli ospiti",
+    "hallway": "Corridoio",
+    "pool": "Piscina a sfioro",
+    "service": "Locale tecnico e dispensa",
+    "bay": "La baia di Alassio"
   },
   "hero": {
     "pauseVideo": "Metti in pausa il video",
     "playVideo": "Riproduci il video",
-    "alt": "La baia di Alassio vista dalla villa"
+    "alt": "La baia di Alassio vista dalla villa",
+    "sleeps": "{guests} ospiti · da {priceLow} € a notte"
+  },
+  "terms": {
+    "minStayTitle": "Soggiorno minimo",
+    "minStay": {
+      "peak": "Luglio e agosto: {nights} notti, da sabato a sabato",
+      "shoulder": "Da aprile a giugno, settembre e ottobre: {nights} notti"
+    },
+    "cancelTitle": "Cancellazione",
+    "cancel": "Rimborso totale fino a {full} giorni prima dell'arrivo, 50% fino a {half} giorni prima."
   }
 }

@@ -43,6 +43,32 @@ hosts:
     - "Dieser italienische Badeort hat uns sofort für sich gewonnen: familiär und ursprünglich, lebendig, mit einem Sinn für das Schöne und einem Hauch Luxus, der sich nie zur Schau stellt. Hier treffen das Meer und das milde Klima auf die Herzlichkeit der Menschen und eine italienische Lebensart, von der man nie genug bekommt. Es ist die Art von Ort, den man eigentlich nie verlassen möchte."
     - "In diesem echten Ort der Ruhe wollten wir das Projekt verwirklichen, umgeben von außergewöhnlichen Teams und Menschen, die wir unterwegs kennengelernt haben und die denselben Anspruch und dieselbe Leidenschaft teilten. Gemeinsam haben sie aus Dolce & Azzurra viel mehr als eine Villa gemacht: einen Ort, der zu uns passt."
   signature: "Sylvie & Michel"
+moments:
+  kicker: "Ein Tag hier"
+  title: "Morgens, nachmittags, abends"
+  items:
+    - photo: "12"
+      time: "Morgens"
+      title: "Kaffee auf der Terrasse"
+      text: "Das Frühstück steht auf dem langen Tisch unter der Pergola. Unten liegt die Bucht noch still und glatt."
+    - photo: "16"
+      time: "Nachmittags"
+      title: "Der Pool und der Horizont"
+      text: "Der Infinity-Pool läuft aufs Meer hinaus. Eine Sicherheitsabdeckung verschwindet im Boden, wenn er nicht genutzt wird."
+    - photo: "52"
+      time: "Abends"
+      title: "Der Pool in der Dämmerung"
+      text: "Wenn die Sonne hinter dem Kap versinkt, gehen die Lichter im Pool an und unten erscheinen die Lichter von Alassio. Das Abendessen ist nur ein paar Schritte entfernt, unter der Pergola."
+who:
+  kicker: "Für wen"
+  title: "Gemacht für acht"
+  items:
+    - title: "Familien"
+      text: "Alles liegt auf einer Ebene, der Pool hat eine versenkbare Sicherheitsabdeckung und der Strand ist zehn Minuten entfernt. Die vier Suiten sind gleichwertig, die Großeltern wohnen also genauso komfortabel wie alle anderen."
+    - title: "Freunde"
+      text: "Vier gleichwertige Doppelsuiten, eine Außenküche unter der Pergola, eine Bocciabahn und eine Tischtennisplatte. Alle vier Suiten haben dasselbe Queen-Size-Bett und einen eigenen Außenbereich."
+    - title: "Winter und Homeoffice"
+      text: "Starlink-Internet mit rund 100 Mbit/s, Fußbodenheizung und der milde Winter der Riviera. Fragen Sie uns nach längeren Aufenthalten."
 cta:
   title: "Sehen Sie, welche Termine frei sind"
 ---

@@ -43,6 +43,32 @@ hosts:
     - "Cette charmante ville balnéaire italienne nous a immédiatement séduits : familiale et authentique, vivante, avec ce goût du beau et cette touche de luxe qui ne s'affiche jamais. Ici, la mer et la douceur du climat se mêlent à la chaleur des habitants et à un art de vivre à l'italienne dont on ne se lasse pas, le genre d'endroit que l'on n'a jamais vraiment envie de quitter."
     - "C'est dans ce véritable havre de paix que nous avons eu envie de donner vie à ce projet, entourés d'équipes et de personnes exceptionnelles, rencontrées en chemin, qui ont partagé la même exigence et la même passion pour faire de Dolce & Azzurra bien plus qu'une villa : un lieu qui nous ressemble."
   signature: "Sylvie & Michel"
+moments:
+  kicker: "Une journée ici"
+  title: "Le matin, l'après-midi, le soir"
+  items:
+    - photo: "12"
+      time: "Matin"
+      title: "Le café sur le patio"
+      text: "Le petit-déjeuner est servi sur la grande table, sous la pergola. En contrebas, la baie est encore lisse et silencieuse."
+    - photo: "16"
+      time: "Après-midi"
+      title: "La piscine et l'horizon"
+      text: "La piscine à débordement file vers la mer. Une couverture de sécurité se range dans la plage quand on ne s'en sert pas."
+    - photo: "52"
+      time: "Soir"
+      title: "La piscine au crépuscule"
+      text: "Quand le soleil passe derrière le cap, la piscine s'éclaire et les lumières d'Alassio apparaissent en contrebas. Le dîner est à quelques pas, sous la pergola."
+who:
+  kicker: "Pour qui"
+  title: "Pensée pour huit"
+  items:
+    - title: "Familles"
+      text: "Tout est de plain-pied, la piscine a une couverture de sécurité invisible et la plage est à dix minutes. Les quatre suites sont équivalentes : les grands-parents ont le même confort que tout le monde."
+    - title: "Amis"
+      text: "Quatre suites doubles équivalentes, une cuisine extérieure sous la pergola, un terrain de pétanque et une table de ping-pong. Les quatre suites ont le même lit queen-size et leur propre extérieur."
+    - title: "Hiver et télétravail"
+      text: "Internet Starlink à environ 100 Mbit/s, chauffage au sol et la douceur de l'hiver sur la Riviera. Interrogez-nous pour les longs séjours."
 cta:
   title: "Voir les dates disponibles"
 ---

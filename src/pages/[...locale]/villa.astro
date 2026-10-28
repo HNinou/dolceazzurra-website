@@ -100,7 +100,26 @@ const outdoorIds = ['patio', 'pool', 'courtyard', 'games', 'roof-terrace', 'outd
     </div>
   </section>
 
-  <section class="section band" aria-labelledby="sus-h">
+  <section class="section band moments" aria-labelledby="moments-h">
+    <div class="wrap">
+      <div class="reveal head">
+        <span class="kicker">{c.moments.kicker}</span>
+        <h2 id="moments-h">{c.moments.title}</h2>
+      </div>
+      <ol class="moment-list">
+        {c.moments.items.map((m: any) => (
+          <li class="moment reveal">
+            <Figure id={m.photo} locale={locale} ratio="4 / 5" sizes="(min-width: 60rem) 30vw, 100vw" widths={[480, 800]} position="50% 50%" />
+            <span class="kicker time">{m.time}</span>
+            <h3>{m.title}</h3>
+            <p>{m.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="sus-h">
     <div class="wrap split top">
       <div class="reveal">
         <span class="kicker">{c.sustainability.kicker}</span>
@@ -113,7 +132,7 @@ const outdoorIds = ['patio', 'pool', 'courtyard', 'games', 'roof-terrace', 'outd
     </div>
   </section>
 
-  <section class="section" aria-labelledby="am-h">
+  <section class="section band" aria-labelledby="am-h">
     <div class="wrap">
       <div class="reveal">
         <span class="kicker">{c.amenities.kicker}</span>
@@ -127,6 +146,20 @@ const outdoorIds = ['patio', 'pool', 'courtyard', 'games', 'roof-terrace', 'outd
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section class="section who" aria-labelledby="who-h">
+    <div class="wrap">
+      <div class="reveal head">
+        <span class="kicker">{c.who.kicker}</span>
+        <h2 id="who-h">{c.who.title}</h2>
+      </div>
+      <ul class="who-list">
+        {c.who.items.map((w: any) => (
+          <li class="reveal"><h3>{w.title}</h3><p>{w.text}</p></li>
+        ))}
+      </ul>
     </div>
   </section>
 
@@ -165,6 +198,22 @@ const outdoorIds = ['patio', 'pool', 'courtyard', 'games', 'roof-terrace', 'outd
   .amen h3 { font-size: var(--step-1); }
   @media (min-width: 60rem) { .hosts { grid-template-columns: 5fr 7fr; } }
   .signature { font-family: var(--font-display); font-size: var(--step-1); font-style: italic; margin-top: var(--space-3); }
+  .head { margin-bottom: var(--space-4); }
+  .moment-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-5); }
+  @media (min-width: 60rem) { .moment-list { grid-template-columns: repeat(3, 1fr); gap: var(--space-4); } }
+  .moment .time { margin-top: var(--space-3); color: var(--c-olive-deep); }
+  .moment h3 { font-size: var(--step-2); }
+  .moment p { color: var(--c-ink-soft); max-width: 30rem; }
+  .who-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
+  /* Phones: one row of cards to swipe through. */
+  @media (max-width: 59.99rem) {
+    .who-list { grid-auto-flow: column; grid-auto-columns: 82%; gap: var(--space-2); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--space-2); }
+    .who-list li { scroll-snap-align: start; background: var(--c-surface); padding: var(--space-3); }
+  }
+  @media (min-width: 60rem) { .who-list { grid-template-columns: repeat(3, 1fr); gap: var(--space-5); } }
+  .who-list li { border-top: 1px solid var(--c-oak); padding-top: var(--space-3); }
+  .who-list h3 { font-size: var(--step-2); }
+  .who-list p { color: var(--c-ink-soft); margin: 0; }
   .cta { text-align: center; }
   .cta .lead { margin-bottom: var(--space-3); }
 </style>

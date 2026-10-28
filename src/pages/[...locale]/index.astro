@@ -5,6 +5,8 @@ import FactsStrip from '../../components/FactsStrip.astro';
 import AwardLine from '../../components/AwardLine.astro';
 import Figure from '../../components/Figure.astro';
 import BookingWidget from '../../components/BookingWidget.astro';
+import BookingTerms from '../../components/BookingTerms.astro';
+import DistanceTable from '../../components/DistanceTable.astro';
 import Reviews from '../../components/Reviews.astro';
 import { localePaths, localeFromParam, liveCodes, lp, t, tf } from '../../lib/i18n';
 import { page } from '../../lib/content';
@@ -15,8 +17,8 @@ export const getStaticPaths = localePaths;
 const locale = localeFromParam(Astro.params.locale);
 const c = page(locale, 'home').frontmatter;
 const strip = ['03', '57', '18', '22', '11', '06'];
+const near = ['Alassio beach and Budello', 'Laigueglia', 'Albenga', 'Genoa airport (GOA)', 'Nice airport (NCE)'];
 const ld = await vacationRentalLd(locale, c.description);
-const [qo, qc] = locale === 'en' ? ['“', '”'] : locale === 'de' ? ['„', '“'] : ['«\u00A0', '\u00A0»'];
 const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
 ---
 <Base locale={locale} slug="" title={fill(c.title)} description={fill(c.description)} overlayHeader>
@@ -25,64 +27,10 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
     <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   </Fragment>
 
-  <Hero locale={locale} id="01" mobileId="04" title={c.hero.title} sub={c.hero.sub} alt={t(locale, 'hero.alt')} position="50% 55%" whatsapp video />
+  <!-- Essentials -->
+  <Hero locale={locale} id="01" mobileId="04" title={c.hero.title} sub={c.hero.sub} meta={fill(t(locale, 'hero.sleeps'))} alt={t(locale, 'hero.alt')} position="50% 55%" whatsapp video />
 
   <div class="wrap facts-wrap"><FactsStrip locale={locale} /></div>
-
-  <section class="section intro" aria-labelledby="intro-h">
-    <div class="wrap split">
-      <div class="reveal">
-        <span class="kicker">{c.intro.kicker}</span>
-        <h2 id="intro-h">{c.intro.title}</h2>
-        <p class="lead">{fill(c.intro.text)}</p>
-        <a class="link-arrow" href={lp(locale, 'villa')}>{t(locale, 'common.discoverVilla')}</a>
-      </div>
-      <div class="reveal">
-        <blockquote class="quote">
-          <p>{qo}{c.quote.text}{qc}</p>
-          <footer>{c.quote.cite} <a href={house.architect.url} rel="noopener">{house.architect.name}</a></footer>
-        </blockquote>
-        <AwardLine locale={locale} />
-      </div>
-    </div>
-  </section>
-
-  <figure class="patio">
-    <Figure id="08" locale={locale} class="bleed pano" sizes="100vw" widths={[640, 960, 1280, 1920]} position="50% 100%" />
-  </figure>
-
-  <section class="section band moments" aria-labelledby="moments-h">
-    <div class="wrap">
-      <div class="reveal head">
-        <span class="kicker">{c.moments.kicker}</span>
-        <h2 id="moments-h">{c.moments.title}</h2>
-      </div>
-      <ol class="moment-list">
-        {c.moments.items.map((m: any) => (
-          <li class="moment reveal">
-            <Figure id={m.photo} locale={locale} ratio="4 / 5" sizes="(min-width: 60rem) 30vw, 100vw" widths={[480, 800]} position="50% 50%" />
-            <span class="kicker time">{m.time}</span>
-            <h3>{m.title}</h3>
-            <p>{m.text}</p>
-          </li>
-        ))}
-      </ol>
-    </div>
-  </section>
-
-  <section class="section who" aria-labelledby="who-h">
-    <div class="wrap">
-      <div class="reveal head">
-        <span class="kicker">{c.who.kicker}</span>
-        <h2 id="who-h">{c.who.title}</h2>
-      </div>
-      <ul class="who-list">
-        {c.who.items.map((w: any) => (
-          <li class="reveal"><h3>{w.title}</h3><p>{w.text}</p></li>
-        ))}
-      </ul>
-    </div>
-  </section>
 
   <section class="section strip" aria-labelledby="strip-h">
     <div class="wrap">
@@ -96,8 +44,64 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
     </div>
   </section>
 
-  <Reviews locale={locale} band={false} />
+  <section class="section band points" aria-labelledby="points-h">
+    <div class="wrap">
+      <div class="reveal head">
+        <span class="kicker">{c.points.kicker}</span>
+        <h2 id="points-h">{c.points.title}</h2>
+      </div>
+      <ol class="point-list">
+        {c.points.items.map((p: any) => (
+          <li class="point reveal">
+            <Figure id={p.photo} locale={locale} ratio="4 / 3" sizes="(min-width: 60rem) 30vw, 100vw" widths={[480, 800]} />
+            <h3>{p.title}</h3>
+            <p>{fill(p.text)}</p>
+          </li>
+        ))}
+      </ol>
+      <a class="link-arrow" href={lp(locale, 'villa')}>{t(locale, 'common.discoverVilla')}</a>
+    </div>
+  </section>
 
+  <section class="section teaser" aria-labelledby="alassio-h">
+    <div class="wrap split top">
+      <div class="reveal">
+        <span class="kicker">{c.alassio.kicker}</span>
+        <h2 id="alassio-h">{c.alassio.title}</h2>
+        <p>{c.alassio.text}</p>
+        <Figure id="51" locale={locale} ratio="3 / 2" class="teaser-photo" />
+      </div>
+      <div class="reveal">
+        <DistanceTable locale={locale} only={near} />
+        <a class="link-arrow" href={lp(locale, 'alassio')}>{t(locale, 'common.discoverAlassio')}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust -->
+  <Reviews locale={locale} limit />
+
+  <section class="section trust" aria-labelledby="intro-h">
+    <div class="wrap split top">
+      <div class="reveal">
+        <span class="kicker">{c.intro.kicker}</span>
+        <h2 id="intro-h">{c.intro.title}</h2>
+        <p class="lead">{fill(c.intro.text)}</p>
+        <AwardLine locale={locale} />
+      </div>
+      <div class="hosts reveal">
+        <Figure id="59" locale={locale} ratio="4 / 5" sizes="10rem" widths={[320, 480]} class="hosts-photo" />
+        <div>
+          <span class="kicker">{c.hosts.kicker}</span>
+          <h3>{c.hosts.title}</h3>
+          <p>{c.hosts.text}</p>
+          <a class="link-arrow" href={`${lp(locale, 'villa')}#hosts-h`}>{c.hosts.link}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book -->
   <section class="booking-band" aria-labelledby="book-h">
     <div class="bb-photo">
       <Figure id="04" locale={locale} sizes="40vw" widths={[480, 900]} position="50% 70%" class="bb-wide" />
@@ -107,48 +111,35 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
       <span class="kicker">{c.booking.kicker}</span>
       <h2 id="book-h">{c.booking.title}</h2>
       <p class="lead">{fill(c.booking.price)}</p>
-      <p class="muted small minstay">{c.booking.minStay}</p>
+      <BookingTerms locale={locale} />
       <BookingWidget locale={locale} />
       <h3 class="inc-h">{c.booking.includedTitle}</h3>
       <ul class="inc">{house.included.map((i: string) => <li>{tf(locale, i)}</li>)}</ul>
       <a class="link-arrow" href={lp(locale, 'book')}>{c.booking.more}</a>
     </div>
   </section>
-
-  <section class="section teaser" aria-labelledby="alassio-h">
-    <div class="wrap split reverse">
-      <div class="reveal">
-        <span class="kicker">{c.alassio.kicker}</span>
-        <h2 id="alassio-h">{c.alassio.title}</h2>
-        <p>{c.alassio.text}</p>
-        <a class="link-arrow" href={lp(locale, 'alassio')}>{t(locale, 'common.discoverAlassio')}</a>
-      </div>
-      <Figure id="51" locale={locale} ratio="3 / 2" class="reveal" />
-    </div>
-  </section>
 </Base>
 
 <style>
   .facts-wrap { margin-top: var(--space-4); }
-  .intro { padding-top: var(--space-5); }
-  .intro .split { align-items: start; }
-  .intro .lead { margin-bottom: var(--space-3); }
-  .quote { margin: 0 0 var(--space-4); padding: 0; }
-  .quote p { font: 350 var(--step-2)/1.3 var(--font-display); font-style: italic; margin-bottom: var(--space-2); }
-  .quote footer { color: var(--c-ink-soft); font-size: var(--step--1); }
-  @media (min-width: 60rem) { .intro .split > :last-child { padding-top: 4.2rem; } }
   .head { margin-bottom: var(--space-4); }
-  .moment-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-5); }
-  @media (min-width: 60rem) { .moment-list { grid-template-columns: repeat(3, 1fr); gap: var(--space-4); } }
-  .moment .time { margin-top: var(--space-3); color: var(--c-olive-deep); }
-  .moment h3 { font-size: var(--step-2); }
-  .moment p { color: var(--c-ink-soft); max-width: 30rem; }
   .strip-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: var(--space-2); margin-bottom: var(--space-3); }
   .strip-head h2 { margin: 0; }
   .strip-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: .5rem; }
   @media (min-width: 48rem) { .strip-grid { grid-template-columns: repeat(3, 1fr); } }
   @media (min-width: 72rem) { .strip-grid { grid-template-columns: repeat(6, 1fr); } }
   .strip-grid a { display: block; }
+  .point-list { list-style: none; margin: 0 0 var(--space-4); padding: 0; display: grid; gap: var(--space-5); }
+  @media (min-width: 60rem) { .point-list { grid-template-columns: repeat(3, 1fr); gap: var(--space-4); } }
+  .point h3 { font-size: var(--step-2); margin-top: var(--space-3); }
+  .point p { color: var(--c-ink-soft); max-width: 30rem; }
+  .teaser :global(.teaser-photo) { margin-top: var(--space-3); }
+  .teaser .link-arrow { margin-top: var(--space-3); }
+  .trust .lead { margin-bottom: var(--space-4); }
+  .hosts { display: grid; grid-template-columns: 8rem 1fr; gap: var(--space-3); align-items: start; }
+  @media (min-width: 60rem) { .hosts { grid-template-columns: 10rem 1fr; padding-top: 4.2rem; } }
+  .hosts h3 { font-size: var(--step-2); }
+  .hosts p { color: var(--c-ink-soft); }
   .booking-band { display: grid; background: var(--c-surface); }
   .bb-photo :global(img) { width: 100%; height: 60svh; object-fit: cover; }
   /* Phones already see photo 04 in the hero, so the booking band uses another portrait photo there. */
@@ -163,20 +154,7 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
   }
   .bb-body { border-top: 4px solid var(--c-dusk); }
   @media (min-width: 60rem) { .bb-body { border-top: 0; border-left: 4px solid var(--c-dusk); } }
-  .minstay { margin-top: calc(-1 * var(--space-1)); }
   .inc-h { margin-top: var(--space-4); font-size: var(--step-0); font-family: var(--font-text); font-weight: 500; }
   .inc { columns: 2 14rem; column-gap: var(--space-4); padding-left: 1.1rem; margin: 0 0 var(--space-3); color: var(--c-ink-soft); }
   .inc li { margin-bottom: .3rem; break-inside: avoid; }
-  .teaser { padding-top: var(--space-6); }
-  .patio { margin: 0 0 var(--space-5); }
-  .who-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
-  /* Phones: one row of cards to swipe through. */
-  @media (max-width: 59.99rem) {
-    .who-list { grid-auto-flow: column; grid-auto-columns: 82%; gap: var(--space-2); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--space-2); }
-    .who-list li { scroll-snap-align: start; background: var(--c-surface); padding: var(--space-3); }
-  }
-  @media (min-width: 60rem) { .who-list { grid-template-columns: repeat(3, 1fr); gap: var(--space-5); } }
-  .who-list li { border-top: 1px solid var(--c-oak); padding-top: var(--space-3); }
-  .who-list h3 { font-size: var(--step-2); }
-  .who-list p { color: var(--c-ink-soft); margin: 0; }
 </style>

@@ -1,0 +1,27 @@
+---
+// Minimum stay (confirmed rules from villa.yaml) and cancellation policy, shown next to the calendar.
+import { t } from '../lib/i18n';
+import { confirmedMinStays, fill, known, legal } from '../lib/villa';
+interface Props { locale: string }
+const { locale } = Astro.props;
+const cp = legal.cancellation_policy;
+---
+<dl class="terms">
+  {confirmedMinStays.length > 0 && (
+    <div>
+      <dt>{t(locale, 'terms.minStayTitle')}</dt>
+      {confirmedMinStays.map((m: any) => <dd>{fill(t(locale, `terms.minStay.${m.id}`), { nights: m.nights })}</dd>)}
+    </div>
+  )}
+  {known(cp) && (
+    <div>
+      <dt>{t(locale, 'terms.cancelTitle')}</dt>
+      <dd>{fill(t(locale, 'terms.cancel'), { full: cp.full_refund_days, half: cp.half_refund_days })}</dd>
+    </div>
+  )}
+</dl>
+<style>
+  .terms { margin: 0 0 var(--space-3); display: grid; gap: var(--space-2); }
+  dt { font: 500 var(--step--1)/1.4 var(--font-text); letter-spacing: .08em; text-transform: uppercase; color: var(--c-ink-soft); margin-bottom: .2rem; }
+  dd { margin: 0 0 .15rem; }
+</style>

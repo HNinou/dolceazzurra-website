@@ -1,14 +1,16 @@
 ---
 import { t, tf } from '../lib/i18n';
 import { location } from '../lib/villa';
-interface Props { locale: string }
-const { locale } = Astro.props;
+// only: a subset of places (English names from villa.yaml), e.g. for the home page teaser.
+interface Props { locale: string; only?: string[] }
+const { locale, only } = Astro.props;
+const rows = only ? location.distances.filter((d: any) => only.includes(d.place)) : location.distances;
 ---
 <table class="dist">
   <caption class="sr-only">{t(locale, 'alassio.distCaption')}</caption>
   <thead><tr><th scope="col">{t(locale, 'alassio.distPlace')}</th><th scope="col">{t(locale, 'alassio.distTime')}</th></tr></thead>
   <tbody>
-    {location.distances.map((d: any) => (
+    {rows.map((d: any) => (
       <tr><th scope="row">{tf(locale, d.place)}</th><td>{d.km ? `${String(d.km).replace('.', t(locale, 'common.decimal'))} km · ` : ''}{d.time.replace(/\bmin\b/, t(locale, 'common.min'))}</td></tr>
     ))}
   </tbody>

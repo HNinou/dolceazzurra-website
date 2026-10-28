@@ -43,6 +43,32 @@ hosts:
     - "This Italian seaside town won us over at once: family-friendly and authentic, lively, with a taste for beautiful things and a touch of luxury that never shows off. Here the sea and the mild climate meet the warmth of the people and an Italian way of life you never tire of. It is the kind of place you never really want to leave."
     - "This haven of peace is where we wanted to bring the project to life, surrounded by exceptional teams and people we met along the way, who shared the same high standards and the same passion. Together they made Dolce & Azzurra much more than a villa: a place that is truly ours."
   signature: "Sylvie & Michel"
+moments:
+  kicker: "A day here"
+  title: "Morning, afternoon, evening"
+  items:
+    - photo: "12"
+      time: "Morning"
+      title: "Coffee on the patio"
+      text: "Breakfast is laid on the long table under the pergola. Below, the bay is still flat and quiet."
+    - photo: "16"
+      time: "Afternoon"
+      title: "The pool and the horizon"
+      text: "The infinity pool runs out towards the sea. A safety cover hides in the deck when it is not in use."
+    - photo: "52"
+      time: "Evening"
+      title: "The pool at dusk"
+      text: "As the sun drops behind the cape, the pool lights come on and the lights of Alassio appear below. Dinner is a few steps away, under the pergola."
+who:
+  kicker: "Who it's for"
+  title: "Made for eight"
+  items:
+    - title: "Families"
+      text: "Everything is on one level, the pool has a hidden safety cover and the beach is ten minutes away. The four suites are equal, so grandparents get the same comfort as everyone else."
+    - title: "Friends"
+      text: "Four equal double suites, an outdoor kitchen under the pergola, a bocce court and a table-tennis table. All four suites have the same queen bed and their own outdoor space."
+    - title: "Winter and remote work"
+      text: "Starlink internet at about 100 Mbit/s, underfloor heating and the mild Riviera winter. Ask us about longer stays."
 cta:
   title: "See which dates are free"
 ---

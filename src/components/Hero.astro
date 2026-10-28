@@ -10,8 +10,8 @@ import { whatsappUrl } from '../lib/villa';
 // whatsapp: show the 'Ask a question' WhatsApp button next to 'Check dates'.
 // video: muted looping film over the photo, on screens from 60rem only. Nothing is downloaded on phones,
 // with reduced motion or Save-Data; the photo stays underneath until the film plays, then fades out.
-interface Props { locale: string; id: string; mobileId?: string; title: string; sub?: string; note?: string; alt?: string; position?: string; textTop?: boolean; whatsapp?: boolean; video?: boolean }
-const { locale, id, mobileId, title, sub, note, alt, position = '50% 60%', textTop = false, whatsapp = false, video = false } = Astro.props;
+interface Props { locale: string; id: string; mobileId?: string; title: string; sub?: string; note?: string; alt?: string; position?: string; textTop?: boolean; whatsapp?: boolean; video?: boolean; meta?: string }
+const { locale, id, mobileId, title, sub, note, alt, position = '50% 60%', textTop = false, whatsapp = false, video = false, meta } = Astro.props;
 const p = photo(id);
 const m = mobileId ? photo(mobileId) : undefined;
 const SMALL = '(max-width: 59.99rem)';
@@ -36,13 +36,14 @@ const fallback = await getImage({ src: p.src, width: fw, format: 'webp', quality
   </picture>
   {video && (
     <video class="hero-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"
-      data-src-lg="/video/villa-dolce-azzurra-1920.mp4" data-src-sm="/video/villa-dolce-azzurra-1280.mp4"></video>
+      data-src-lg="/video/villa-dolce-azzurra-bay-1920.mp4" data-src-sm="/video/villa-dolce-azzurra-bay-1280.mp4"></video>
   )}
   {video && <button type="button" class="hero-pause" hidden aria-pressed="false" data-pause={t(locale, 'hero.pauseVideo')} data-play={t(locale, 'hero.playVideo')} aria-label={t(locale, 'hero.pauseVideo')}><span aria-hidden="true"></span></button>}
   <div class="hero-text wrap">
     {note && <p class="note">{note}</p>}
     <h1>{title}</h1>
     {sub && <p class="sub">{sub}</p>}
+    {meta && <p class="meta">{meta}</p>}
     <div class="ctas">
       <a class="btn btn-light" href={lp(locale, 'book')} data-cta="book">{t(locale, 'cta.checkDates')}</a>
       {whatsapp && whatsappUrl(locale) && <a class="btn btn-outline-light" href={whatsappUrl(locale)} rel="noopener">{t(locale, 'cta.whatsapp')}</a>}
@@ -89,6 +90,8 @@ const fallback = await getImage({ src: p.src, width: fw, format: 'webp', quality
   .note { font: 500 var(--step--1)/1.4 var(--font-text); letter-spacing: .08em; text-transform: uppercase; margin: 0 0 var(--space-2); text-shadow: 0 1px 12px rgba(0, 0, 0, .35); }
   h1 { max-width: 19ch; margin-bottom: var(--space-2); text-shadow: 0 2px 30px rgba(0, 0, 0, .35); }
   .sub { max-width: 34rem; font-size: var(--step-1); line-height: 1.45; margin-bottom: var(--space-4); text-shadow: 0 1px 12px rgba(0, 0, 0, .3); }
+  .sub:has(+ .meta) { margin-bottom: var(--space-2); }
+  .meta { font: 500 var(--step--1)/1.4 var(--font-text); letter-spacing: .08em; text-transform: uppercase; margin: 0 0 var(--space-4); text-shadow: 0 1px 12px rgba(0, 0, 0, .35); }
   @media (min-width: 60rem) { .hero { min-height: 92svh; } }
   .hero.text-top { align-items: flex-start; }
   .hero.text-top :global(picture) { bottom: auto; height: 140%; }

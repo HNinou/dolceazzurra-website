@@ -1,20 +1,20 @@
 ---
 import Base from '../../layouts/Base.astro';
 import BookingWidget from '../../components/BookingWidget.astro';
+import BookingTerms from '../../components/BookingTerms.astro';
 import Faq from '../../components/Faq.astro';
 import Figure from '../../components/Figure.astro';
 import Reviews from '../../components/Reviews.astro';
 import { localePaths, localeFromParam, t, tf } from '../../lib/i18n';
 import { page } from '../../lib/content';
-import { cin, confirmedMinStays, contact, fill, house, known, legal, whatsappUrl } from '../../lib/villa';
+import { cin, contact, fill, house, known, legal, whatsappUrl } from '../../lib/villa';
 
 export const getStaticPaths = localePaths;
 const locale = localeFromParam(Astro.params.locale);
 const c = page(locale, 'book').frontmatter;
-// Owner-supplied terms only; TODO_OWNER values render nothing.
+// Owner-supplied terms only; TODO_OWNER values render nothing. Minimum stay and cancellation sit next to the calendar (BookingTerms).
 const terms = [
   ['depositTitle', legal.security_deposit],
-  ['cancellationTitle', legal.cancellation_policy],
   ['paymentTitle', legal.payment_terms],
   ['taxTitle', legal.tourist_tax],
 ].filter(([, v]) => known(v));
@@ -27,6 +27,7 @@ const terms = [
         <h1>{c.heading}</h1>
         <p class="lead">{fill(c.price)}</p>
         <p class="muted">{c.priceNote}</p>
+        <BookingTerms locale={locale} />
         <ul class="reassure">{c.reassure.map((r: string) => <li>{fill(r)}</li>)}</ul>
         <div class="asks">
           <a class="link-arrow" href={`mailto:${contact.email}`}>{c.askLink}</a>
@@ -46,10 +47,6 @@ const terms = [
         <ul class="list-clean">{house.included.map((i: string) => <li>{tf(locale, i)}</li>)}</ul>
       </div>
       <div>
-        <h2 class="h-sm">{c.minStayTitle}</h2>
-        {confirmedMinStays.length
-          ? <ul class="list-clean">{confirmedMinStays.map((m: any) => <li>{fill(c.minStayItem, { nights: m.nights })}</li>)}</ul>
-          : <p>{c.minStayVaries}</p>}
         <h2 class="h-sm">{c.rulesTitle}</h2>
         <ul class="list-clean">{house.rules.map((r: string) => <li>{tf(locale, r)}</li>)}</ul>
         {terms.map(([k, v]) => <><h2 class="h-sm">{c[k]}</h2><p>{v}</p></>)}

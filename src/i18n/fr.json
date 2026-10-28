@@ -23,7 +23,7 @@
     "fromNight": "à partir de {priceLow} €/nuit",
     "whatsapp": "Poser une question",
     "invite": "Voir les disponibilités",
-    "inviteLine": "À partir de {priceLow} € la nuit, tout compris, jusqu'à {guests} personnes."
+    "inviteLine": "À partir de {priceLow} € la nuit pour {guests} personnes maximum, plus {cleaningFee} € de ménage de fin de séjour."
   },
   "common": {
     "openMaps": "Ouvrir dans Google Maps",
@@ -40,7 +40,9 @@
     "suites": "suites",
     "bathrooms": "salles de bains",
     "pool": "Piscine à débordement",
-    "view": "vue mer"
+    "view": "vue mer",
+    "singleLevel": "De plain-pied",
+    "beach": "Plage"
   },
   "award": {
     "longlisted": "Présélectionnée",
@@ -77,7 +79,6 @@
     "ask": "Nous demander"
   },
   "footer": {
-    "tagline": "La vie comme elle devrait être",
     "contact": "Contact",
     "address": "Adresse",
     "info": "Informations",
@@ -215,23 +216,33 @@
     "more": "Plus d'avis"
   },
   "plan": {
-      "kicker": "Plan",
-      "heading": "Tout sur un seul niveau",
-      "intro": "Les suites ont leur aile, la vie commune l'autre ; le patio couvert sous la pergola relie les deux. Chaque suite ouvre sur la terrasse.",
-      "title": "Plan de la villa : quatre suites avec salle de bains dans une aile, reliées par un couloir à l'entrée et au séjour ; le patio couvert entre les ailes et la piscine en contrebas",
-      "suites": "Quatre suites doubles, chacune avec sa salle de bains",
-      "living": "Séjour, table à manger et cuisine",
-      "entrance": "Entrée et petit salon",
-      "patio": "Patio couvert sous la pergola, avec la cuisine extérieure",
-      "wc": "WC invités",
-      "hallway": "Couloir",
-      "pool": "Piscine à débordement",
-      "service": "Local technique et cellier",
-      "bay": "La baie d'Alassio"
+    "kicker": "Plan",
+    "heading": "Tout sur un seul niveau",
+    "intro": "Les suites ont leur aile, la vie commune l'autre ; le patio couvert sous la pergola relie les deux. Chaque suite ouvre sur la terrasse.",
+    "title": "Plan de la villa : quatre suites avec salle de bains dans une aile, reliées par un couloir à l'entrée et au séjour ; le patio couvert entre les ailes et la piscine en contrebas",
+    "suites": "Quatre suites doubles, chacune avec sa salle de bains",
+    "living": "Séjour, table à manger et cuisine",
+    "entrance": "Entrée et petit salon",
+    "patio": "Patio couvert sous la pergola, avec la cuisine extérieure",
+    "wc": "WC invités",
+    "hallway": "Couloir",
+    "pool": "Piscine à débordement",
+    "service": "Local technique et cellier",
+    "bay": "La baie d'Alassio"
   },
   "hero": {
     "pauseVideo": "Mettre le film en pause",
     "playVideo": "Lire le film",
-    "alt": "La baie d'Alassio vue depuis la villa"
+    "alt": "La baie d'Alassio vue depuis la villa",
+    "sleeps": "{guests} personnes · à partir de {priceLow} € la nuit"
+  },
+  "terms": {
+    "minStayTitle": "Séjour minimum",
+    "minStay": {
+      "peak": "Juillet et août : {nights} nuits, du samedi au samedi",
+      "shoulder": "D'avril à juin, septembre et octobre : {nights} nuits"
+    },
+    "cancelTitle": "Annulation",
+    "cancel": "Remboursement intégral jusqu'à {full} jours avant l'arrivée, 50 % jusqu'à {half} jours avant."
   }
 }

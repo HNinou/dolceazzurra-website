@@ -36,7 +36,7 @@ legal:
   maps_url: "https://www.google.com/maps/place/DOLCE+%26+AZZURRA/@44.0230509,8.1776283,154m/data=!3m1!1e3!4m6!3m5!1s0x12d25d001ae65d7f:0x401144a80138c6f!8m2!3d44.022997!4d8.177775!16s%2Fg%2F11xgf8_tqb"   # the villa's Google Maps place
   tourist_tax: TODO_OWNER
   security_deposit: TODO_OWNER
-  cancellation_policy: TODO_OWNER
+  cancellation_policy: { full_refund_days: 14, half_refund_days: 7 }   # owner 2026-10-28: 100% refund up to 14 days before arrival, 50% up to 7 days
   payment_terms: TODO_OWNER
 
 contact:
@@ -59,20 +59,20 @@ booking:
 
 rates:
   currency: EUR
-  all_inclusive: true
+  all_inclusive: false              # owner, 2026-10-28: final cleaning is charged separately
+  cleaning_fee: 440                  # EUR per stay (final cleaning), owner 2026-10-28
   low_season_per_night: 700
   high_season_per_night: 1427
   season_dates: TODO_OWNER            # which months are low/high
   minimum_stay:
-    peak: { months: [7, 8], nights: 7, changeover: saturday, status: proposed }
-    shoulder: { months: [4, 5, 6, 9, 10], nights: 3, status: proposed }
-    winter_monthly_rate: { status: proposed, price: TODO_OWNER }
-  # Always display rates as "from €X / night, everything included, up to 8 guests".
+    peak: { months: [7, 8], nights: 7, changeover: saturday, status: confirmed }
+    shoulder: { months: [4, 5, 6, 9, 10], nights: 3, status: confirmed }
+    winter_monthly_rate: { status: confirmed, price: TODO_OWNER }
+  # Display rates as "from €X a night for up to 8 guests, plus a €440 final cleaning fee per stay".
   # The Hostaway widget is the source of truth for actual prices.
 
 house:
   name: "Villa Dolce & Azzurra"
-  tagline: "Life as it should be"
   architect:
     name: "Giordano Hadamik Architects"
     project_name: "Villa NN - Dolce & Azzurra"
@@ -147,8 +147,7 @@ house:
       - "Private parking for 2 cars and EV charging point"
       - "Gas and carbon monoxide detectors, fire extinguishers"
 
-  included:   # "everything included" list for the Book page
-    - "Final cleaning"
+  included:   # what the nightly rate includes (Book page and booking band); cleaning is extra
     - "Bed linen and towels, beds made on arrival"
     - "Personal welcome"
     - "Starlink internet and Wi-Fi 7"

@@ -31,7 +31,7 @@ Last run (2026-10-26): `npm run verify` 1145 checks passed, 52 warnings, 0 failu
 - **Translating yaml text.** Free-text facts (amenities, spaces, services, distances…) are written in English in `villa.yaml`. Their FR/IT versions live in `src/i18n/<lang>.json` → `"yaml"`, keyed by the English text. If someone edits an English line in `villa.yaml` without updating the translations, the build stops and names the missing line, so English never slips onto FR/IT pages unnoticed.
 - **Page copy** is in `src/content/pages/<lang>/<page>.md` frontmatter (structured sections). Only the Privacy page uses the Markdown body. Loaded with `import.meta.glob` instead of content collections (simpler, no schema needed).
 - **Restaurants:** none are `verified`, so the Alassio page has an "Eating out" section with no names ("ask us for our list"). Names will appear automatically once set to `verified: true`.
-- **Minimum stay:** every rule is `proposed`, so the Book page says "Minimum stay varies by season, see the calendar."
+- **Minimum stay:** confirmed by the owner (28 Oct 2026); shown next to both calendars.
 - **Deposit, cancellation, payment, tourist tax:** all `TODO_OWNER`, so nothing is shown. Each one appears on the Book page once filled in.
 - **FAQ:** the children-policy, pets and payment/deposit questions are left out because those facts are missing. "Nearest shops" says only "in Alassio, below the villa" because no distance is known.
 - **Direct-booking line** ("no platform fees, apero box on arrival") is left out: the copy brief says the owner must confirm the gift first.
@@ -85,6 +85,17 @@ Not done (needs the owner): photos of all four suites and more bathrooms; courty
 - The spec says draft locales go live only after a native speaker has reviewed them. The owner chose to publish first: every German file is still `reviewed: false`, so a native proofread is the next step.
 - The Hostaway calendar's own labels ("Select check-in and check-out dates", weekday names) stay in English in every language; they come from Hostaway's script, not from the site.
 - Dutch (`nl`) stays a draft.
+
+## Front page rework (28 Oct 2026)
+- **Rates:** `rates.all_inclusive: false`, `rates.cleaning_fee: 440` (EUR per stay); "Final cleaning" left the included list. Minimum stays are `confirmed` (July–August 7 nights Saturday to Saturday; April–June, September–October 3 nights). `legal.cancellation_policy` filled: 100% refund up to 14 days before arrival, 50% up to 7 days. Every "everything included" / "tout compris" / "tutto incluso" / "alles inklusive" is gone; prices now read "from €700 a night for up to 8 guests (about €88 per person per night), plus a €440 final cleaning fee per stay". Copy brief and CLAUDE.md updated to match.
+- **Home order:** hero (with "Sleeps 8 · from €700 a night" from villa.yaml) → facts strip (8 guests · 4 suites · 5 bathrooms · single level · infinity pool · beach 10 min) → gallery strip → "The villa in three points" (suites 60, living 18, outside 16) → Alassio teaser with a 5-row distance table → reviews (two, then "More reviews" on every screen; rating linked to Airbnb) → architecture + award + short "Your hosts" linking to The Villa → booking band (price + cleaning fee, minimum stay and cancellation next to the calendar, included list) → footer.
+- `docs/front-page-review.md` (named as the source for the "three points" texts) is not in the repository; the texts were written from villa.yaml and the existing copy.
+- "A day here" and "Who it's for" moved to The Villa page (after Outdoors, and before Your hosts). Friends card: "All four suites have the same queen bed and their own outdoor space."
+- The pull quote and its "after Giordano Hadamik Architects" line are removed (not the architects' wording). The 08 panorama strip is no longer on the home page (it still opens The Villa page).
+- Book page: minimum stay and cancellation sit in the left column next to the calendar (shared `BookingTerms` component); the lower "Minimum stay" block is gone.
+- Footer: "Life as it should be" removed (also from villa.yaml); the footer reads "Solva Cavia · Alassio · Liguria".
+- Hero film re-cut to start on the pergola view over the bay; the house-front shots now come last (`public/video/villa-dolce-azzurra-bay-*.mp4`, 3.9 MB and 2.1 MB).
+- All changed pages and UI strings are `reviewed: false`.
 
 ## Remaining warnings
 - Translation review flags (27 files). These are expected until the owner proofreads.

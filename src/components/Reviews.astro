@@ -2,8 +2,9 @@
 // Real guest reviews from villa.yaml -> house.reviews (quoted in the page language, marked when translated).
 import { t } from '../lib/i18n';
 import { booking, house, known } from '../lib/villa';
-interface Props { locale: string; id?: string; band?: boolean }
-const { locale, id = 'reviews', band = true } = Astro.props;
+interface Props { locale: string; id?: string; band?: boolean; limit?: boolean }
+// limit: two quotes on every screen size (phones always show two), the rest behind "More reviews".
+const { locale, id = 'reviews', band = true, limit = false } = Astro.props;
 const r = house.reviews;
 const quotes = known(r.quotes) ? (r.quotes as any[]) : [];
 const rating = known(r.airbnb?.rating) ? Number(r.airbnb.rating).toFixed(1).replace('.', t(locale, 'common.decimal')) : null;
@@ -18,7 +19,7 @@ const monthOf = (m: string) => new Intl.DateTimeFormat(locale, { month: 'long', 
         <h2 id={`${id}-h`}>{t(locale, 'reviews.title')}</h2>
         {rating && <p class="rating"><a href={booking.airbnb_url} rel="noopener">{t(locale, 'reviews.rating').replace('{rating}', rating).replace('{count}', r.airbnb.count)}</a>{known(r.airbnb.label) && <> · {t(locale, 'reviews.favourite')}</>}</p>}
       </div>
-      <ul class="quotes" data-quotes>
+      <ul class:list={['quotes', { limit }]} data-quotes>
         {quotes.map((q, n) => {
           const own = q.lang === locale;
           const text = own ? q.text : q[locale];
@@ -35,7 +36,7 @@ const monthOf = (m: string) => new Intl.DateTimeFormat(locale, { month: 'long', 
           );
         })}
       </ul>
-      {quotes.length > 2 && <button type="button" class="btn btn-ghost more" data-more-reviews>{t(locale, 'reviews.more')}</button>}
+      {quotes.length > 2 && <button type="button" class:list={['btn', 'btn-ghost', 'more', { limit }]} data-more-reviews>{t(locale, 'reviews.more')}</button>}
     </div>
   </section>
 )}
@@ -59,6 +60,7 @@ const monthOf = (m: string) => new Intl.DateTimeFormat(locale, { month: 'long', 
   /* Phones: two quotes, the rest behind "More reviews". */
   .more { margin-top: var(--space-4); }
   @media (max-width: 47.99rem) { .quotes:not(.all) .extra { display: none; } }
-  @media (min-width: 48rem) { .more { display: none; } }
+  @media (min-width: 48rem) { .more:not(.limit) { display: none; } }
+  .quotes.limit:not(.all) .extra { display: none; }
   .tr { display: block; margin-top: .2rem; font-style: italic; }
 </style>

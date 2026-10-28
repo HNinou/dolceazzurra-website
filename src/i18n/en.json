@@ -23,7 +23,7 @@
     "fromNight": "from €{priceLow}/night",
     "whatsapp": "Ask a question",
     "invite": "Check availability",
-    "inviteLine": "From €{priceLow} per night, everything included, up to {guests} guests."
+    "inviteLine": "From €{priceLow} a night for up to {guests} guests, plus a €{cleaningFee} final cleaning fee per stay."
   },
   "common": {
     "openMaps": "Open in Google Maps",
@@ -40,7 +40,9 @@
     "suites": "suites",
     "bathrooms": "bathrooms",
     "pool": "Infinity pool",
-    "view": "sea view"
+    "view": "sea view",
+    "singleLevel": "Single level",
+    "beach": "Beach"
   },
   "award": {
     "longlisted": "Longlisted",
@@ -77,7 +79,6 @@
     "ask": "Ask us"
   },
   "footer": {
-    "tagline": "Life as it should be",
     "contact": "Contact",
     "address": "Address",
     "info": "Information",
@@ -110,23 +111,33 @@
     "more": "More reviews"
   },
   "plan": {
-      "kicker": "Layout",
-      "heading": "Everything on one level",
-      "intro": "The suites have their own wing, the living space the other; the covered patio under the pergola links the two. Every suite opens onto the terrace.",
-      "title": "Ground plan of the villa: four suites with bathrooms in one wing, joined by a hallway to the entrance and the living room; the covered patio between the wings and the pool below",
-      "suites": "Four double suites, each with its own bathroom",
-      "living": "Living room, dining table and kitchen",
-      "entrance": "Entrance and sitting room",
-      "patio": "Covered patio under the pergola, with the outdoor kitchen",
-      "wc": "Guest WC",
-      "hallway": "Hallway",
-      "pool": "Infinity pool",
-      "service": "Plant room and pantry",
-      "bay": "The bay of Alassio"
+    "kicker": "Layout",
+    "heading": "Everything on one level",
+    "intro": "The suites have their own wing, the living space the other; the covered patio under the pergola links the two. Every suite opens onto the terrace.",
+    "title": "Ground plan of the villa: four suites with bathrooms in one wing, joined by a hallway to the entrance and the living room; the covered patio between the wings and the pool below",
+    "suites": "Four double suites, each with its own bathroom",
+    "living": "Living room, dining table and kitchen",
+    "entrance": "Entrance and sitting room",
+    "patio": "Covered patio under the pergola, with the outdoor kitchen",
+    "wc": "Guest WC",
+    "hallway": "Hallway",
+    "pool": "Infinity pool",
+    "service": "Plant room and pantry",
+    "bay": "The bay of Alassio"
   },
   "hero": {
     "pauseVideo": "Pause the film",
     "playVideo": "Play the film",
-    "alt": "The bay of Alassio seen from the villa"
+    "alt": "The bay of Alassio seen from the villa",
+    "sleeps": "Sleeps {guests} · from €{priceLow} a night"
+  },
+  "terms": {
+    "minStayTitle": "Minimum stay",
+    "minStay": {
+      "peak": "July and August: {nights} nights, Saturday to Saturday",
+      "shoulder": "April to June, September and October: {nights} nights"
+    },
+    "cancelTitle": "Cancellation",
+    "cancel": "Full refund up to {full} days before arrival, 50% up to {half} days before."
   }
 }

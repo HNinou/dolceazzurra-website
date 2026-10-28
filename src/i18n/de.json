@@ -23,7 +23,7 @@
     "fromNight": "ab {priceLow} €/Nacht",
     "whatsapp": "Frage stellen",
     "invite": "Verfügbarkeit prüfen",
-    "inviteLine": "Ab {priceLow} € pro Nacht, alles inklusive, für bis zu {guests} Gäste."
+    "inviteLine": "Ab {priceLow} € pro Nacht für bis zu {guests} Gäste, zuzüglich {cleaningFee} € Endreinigung pro Aufenthalt."
   },
   "common": {
     "openMaps": "In Google Maps öffnen",
@@ -40,7 +40,9 @@
     "suites": "Suiten",
     "bathrooms": "Bäder",
     "pool": "Infinity-Pool",
-    "view": "Meerblick"
+    "view": "Meerblick",
+    "singleLevel": "Eine Ebene",
+    "beach": "Strand"
   },
   "award": {
     "longlisted": "Longlist",
@@ -77,7 +79,6 @@
     "ask": "Anfragen"
   },
   "footer": {
-    "tagline": "Das Leben, wie es sein sollte",
     "contact": "Kontakt",
     "address": "Adresse",
     "info": "Informationen",
@@ -127,7 +128,8 @@
   "hero": {
     "pauseVideo": "Film anhalten",
     "playVideo": "Film abspielen",
-    "alt": "Die Bucht von Alassio von der Villa aus gesehen"
+    "alt": "Die Bucht von Alassio von der Villa aus gesehen",
+    "sleeps": "Für {guests} Gäste · ab {priceLow} € pro Nacht"
   },
   "alt": {
     "01": "Überdachte Terrasse unter einer Holzpergola, die die Bucht von Alassio und einen alten Olivenbaum einrahmt",
@@ -233,5 +235,14 @@
     "Budello institution, seafood and pasta": "Eine Institution im Budello, Fisch und Pasta",
     "Pizza by a medieval tower on the sea": "Pizza an einem mittelalterlichen Turm am Meer",
     "Modern, short menu, Ligurian wines": "Modern, kleine Karte, ligurische Weine"
+  },
+  "terms": {
+    "minStayTitle": "Mindestaufenthalt",
+    "minStay": {
+      "peak": "Juli und August: {nights} Nächte, Samstag bis Samstag",
+      "shoulder": "April bis Juni, September und Oktober: {nights} Nächte"
+    },
+    "cancelTitle": "Stornierung",
+    "cancel": "Volle Erstattung bis {full} Tage vor Anreise, 50 % bis {half} Tage vorher."
   }
 }

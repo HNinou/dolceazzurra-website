@@ -27,7 +27,7 @@ An architect's house among olive trees, with the whole bay of Alassio in front o
 1. **The view**: 180° over the bay, from the pool, the patio and the kitchen.
 2. **The architecture**: stone, oak, timber and olive trees. Built into the land, not on it.
    Designed by Giordano Hadamik Architects; longlisted, Archello Awards 2026, Small House of the Year (Rural).
-3. **The ease**: one level, 4 equal suites, everything included, 10 minutes to the beach and the Budello.
+3. **The ease**: one level, 4 equal suites, linen, Wi-Fi and parking included, 10 minutes to the beach and the Budello.
 
 ## Banned claims (any language). The verifier fails the build on these.
 
@@ -78,7 +78,7 @@ Adapt freely, but keep facts tied to `content/villa.yaml`.
 - One card per service in `villa.yaml` → `services`. Each ends with "Ask us" (mailto/WhatsApp). No third-party phone numbers.
 
 ### Book
-- Calendar widget, "from €700 / night, everything included, up to 8 guests", minimum stays, what's included, check-in/out, house rules,
+- Calendar widget, "from €700 a night for up to 8 guests, plus a €440 final cleaning fee per stay", minimum stays, what's included, check-in/out, house rules,
   deposit/cancellation (only when the owner fills them in), FAQ, CIN.
 - Direct-booking advantage line: "Book direct: no platform fees, and a Ligurian apero box on arrival." (Owner to confirm the gift.)
 

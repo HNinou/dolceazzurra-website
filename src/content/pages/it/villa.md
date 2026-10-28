@@ -43,6 +43,32 @@ hosts:
     - "Questa affascinante cittadina di mare ci ha conquistati subito: familiare e autentica, vivace, con il gusto del bello e un tocco di lusso che non si ostenta mai. Qui il mare e la dolcezza del clima si uniscono al calore della gente e a un modo di vivere all'italiana di cui non ci si stanca mai. È il genere di posto da cui non si ha mai davvero voglia di ripartire."
     - "È in questo vero angolo di pace che abbiamo voluto dare vita al progetto, circondati da squadre e persone eccezionali incontrate lungo il cammino, che hanno condiviso la stessa cura e la stessa passione per fare di Dolce & Azzurra molto più di una villa: un luogo che ci somiglia."
   signature: "Sylvie & Michel"
+moments:
+  kicker: "Una giornata qui"
+  title: "Mattina, pomeriggio, sera"
+  items:
+    - photo: "12"
+      time: "Mattina"
+      title: "Il caffè sul patio"
+      text: "La colazione è servita sul lungo tavolo sotto la pergola. Sotto, la baia è ancora piatta e silenziosa."
+    - photo: "16"
+      time: "Pomeriggio"
+      title: "La piscina e l'orizzonte"
+      text: "La piscina a sfioro corre verso il mare. Quando non si usa, una copertura di sicurezza scompare nel bordo."
+    - photo: "52"
+      time: "Sera"
+      title: "La piscina al tramonto"
+      text: "Quando il sole scende dietro il capo, la piscina si illumina e sotto compaiono le luci di Alassio. La cena è a pochi passi, sotto la pergola."
+who:
+  kicker: "Per chi"
+  title: "Pensata per otto"
+  items:
+    - title: "Famiglie"
+      text: "Tutto è su un unico livello, la piscina ha una copertura di sicurezza nascosta e la spiaggia è a dieci minuti. Le quattro suite si equivalgono: i nonni hanno lo stesso comfort di tutti."
+    - title: "Amici"
+      text: "Quattro suite matrimoniali uguali, una cucina esterna sotto la pergola, un campo da bocce e un tavolo da ping-pong. Le quattro suite hanno lo stesso letto queen-size e il proprio spazio esterno."
+    - title: "Inverno e smart working"
+      text: "Internet Starlink a circa 100 Mbit/s, riscaldamento a pavimento e l'inverno mite della Riviera. Chiedeteci per i soggiorni lunghi."
 cta:
   title: "Scopri le date libere"
 ---

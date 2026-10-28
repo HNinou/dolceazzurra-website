@@ -43,6 +43,7 @@ export const tokens: Record<string, string | number> = {
   priceLow: rates.low_season_per_night,
   priceHigh: rates.high_season_per_night,
   perPerson: Math.round(rates.low_season_per_night / house.capacity.guests),
+  cleaningFee: rates.cleaning_fee,
   altitude: house.altitude_m,
   villaSize: house.size_m2.villa,
   patio: house.size_m2.patio,
