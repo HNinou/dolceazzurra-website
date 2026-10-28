@@ -50,7 +50,7 @@
     "designedBy": "Progetto di"
   },
   "widget": {
-    "button": "Verifica disponibilità",
+    "button": "Procedi alla prenotazione",
     "clear": "Cancella le date",
     "loading": "Caricamento del calendario…",
     "fallback": "Apri la pagina di prenotazione"

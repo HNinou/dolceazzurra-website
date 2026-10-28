@@ -50,7 +50,7 @@
     "designedBy": "Entworfen von"
   },
   "widget": {
-    "button": "Verfügbarkeit prüfen",
+    "button": "Weiter zur Buchung",
     "clear": "Daten löschen",
     "loading": "Kalender wird geladen …",
     "fallback": "Buchungsseite öffnen"

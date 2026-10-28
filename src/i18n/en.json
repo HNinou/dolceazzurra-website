@@ -50,7 +50,7 @@
     "designedBy": "Designed by"
   },
   "widget": {
-    "button": "Check availability",
+    "button": "Continue to booking",
     "clear": "Clear dates",
     "loading": "Loading the calendar…",
     "fallback": "Open the booking page"

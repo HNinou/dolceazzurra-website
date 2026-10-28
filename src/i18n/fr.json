@@ -50,7 +50,7 @@
     "designedBy": "Conçue par"
   },
   "widget": {
-    "button": "Voir les disponibilités",
+    "button": "Continuer la réservation",
     "clear": "Effacer les dates",
     "loading": "Chargement du calendrier…",
     "fallback": "Ouvrir la page de réservation"
