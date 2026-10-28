@@ -14,6 +14,7 @@ export async function vacationRentalLd(locale: string, description: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'VacationRental',
+    additionalType: 'Villa',
     name: house.name,
     identifier: cin,
     url: domain + lp(locale),
