@@ -8,7 +8,7 @@ price: "From €{priceLow} a night for up to {guests} guests (about €{perPerso
 priceNote: "Rates vary by season. The calendar shows the exact price for your dates."
 reassure:
   - "Check-in from {checkIn}, check-out by {checkOut}"
-  - "Linen, towels, Wi-Fi and parking included"
+  - "Linen, towels, Wi-Fi, pool and parking included"
   - "All on one level, pool with a safety cover"
 askLink: "Questions? Write to us"
 sleepTitle: "Sleeping arrangements"

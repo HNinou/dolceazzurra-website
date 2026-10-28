@@ -8,7 +8,7 @@ price: "Da {priceLow} € a notte fino a {guests} ospiti (circa {perPerson} € 
 priceNote: "Le tariffe variano secondo la stagione. Il calendario mostra il prezzo esatto per le vostre date."
 reassure:
   - "Check-in dalle {checkIn}, check-out entro le {checkOut}"
-  - "Biancheria, asciugamani, Wi-Fi e parcheggio inclusi"
+  - "Biancheria, asciugamani, Wi-Fi, piscina e parcheggio inclusi"
   - "Tutto su un unico livello, piscina con copertura di sicurezza"
 askLink: "Domande? Scriveteci"
 sleepTitle: "Posti letto"

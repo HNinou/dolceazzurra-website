@@ -8,7 +8,7 @@ price: "À partir de {priceLow} € la nuit pour {guests} personnes maximum (env
 priceNote: "Les tarifs varient selon la saison. Le calendrier indique le prix exact pour vos dates."
 reassure:
   - "Arrivée à partir de {checkIn}, départ avant {checkOut}"
-  - "Linge, serviettes, Wi-Fi et parking compris"
+  - "Linge, serviettes, Wi-Fi, piscine et parking compris"
   - "Tout de plain-pied, piscine avec couverture de sécurité"
 askLink: "Une question ? Écrivez-nous"
 sleepTitle: "Couchages"

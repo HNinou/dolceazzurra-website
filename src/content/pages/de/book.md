@@ -8,7 +8,7 @@ price: "Ab {priceLow} € pro Nacht für bis zu {guests} Gäste (rund {perPerson
 priceNote: "Die Preise variieren je nach Saison. Der Kalender zeigt den genauen Preis für Ihre Termine."
 reassure:
   - "Anreise ab {checkIn} Uhr, Abreise bis {checkOut} Uhr"
-  - "Bettwäsche, Handtücher, WLAN und Parkplatz inklusive"
+  - "Bettwäsche, Handtücher, WLAN, Pool und Parkplatz inklusive"
   - "Alles auf einer Ebene, Pool mit Sicherheitsabdeckung"
 askLink: "Fragen? Schreiben Sie uns"
 sleepTitle: "Schlafmöglichkeiten"

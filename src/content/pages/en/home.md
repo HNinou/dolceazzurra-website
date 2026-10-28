@@ -1,6 +1,6 @@
 ---
 title: "Villa with pool in Alassio · Villa Dolce & Azzurra"
-description: "An architect's house among olive trees above Alassio: four suites, an infinity pool and a 180° view of the bay. Ten minutes from the beach."
+description: "Architect-designed villa above Alassio for 8 guests: four suites, an infinity pool and the whole bay in view. 10 minutes from the beach. Book direct."
 reviewed: false
 hero:
   title: "An architect's house above the bay of Alassio"
@@ -8,20 +8,20 @@ hero:
 intro:
   kicker: "The house"
   title: "Built into the hillside, not on top of it"
-  text: "Villa Dolce & Azzurra sits among old olive trees on the Solva hillside, about {altitude} m above the sea. Local stone, natural oak and wide sheets of glass, all on one level. It was completed in {completed}."
+  text: "Villa Dolce & Azzurra sits among old olive trees on the Solva hillside, about {altitude} m above the sea. Local stone, natural oak and wide sheets of glass, all on one level. Completed in {completed}."
 points:
   kicker: "The villa"
   title: "The villa in three points"
   items:
     - photo: "60"
       title: "Four equal suites"
-      text: "Four double suites in their own quiet wing, each with a queen-size bed, hotel bedding, its own bathroom and its own terrace in the morning sun."
+      text: "Queen beds, private outdoor space and five bathrooms, all on one level, so families and friends share the same comfort."
     - photo: "18"
       title: "Living with the view"
-      text: "Living room, dining table and kitchen share one open space on a single level, behind floor-to-ceiling glass that frames the bay of Alassio."
+      text: "An open kitchen and living room behind floor-to-ceiling glass, facing the bay. Starlink Wi-Fi and underfloor heating for winter stays."
     - photo: "16"
       title: "Outside"
-      text: "An {patio} m² covered patio with an outdoor kitchen, the infinity pool facing the bay, a bocce court and a table-tennis table among the olive trees."
+      text: "Infinity pool with a hidden safety cover, a covered patio with outdoor kitchen, bocce and table tennis under the olive trees."
 hosts:
   kicker: "Your hosts"
   title: "Sylvie and Michel"
@@ -34,6 +34,7 @@ booking:
   kicker: "Book"
   title: "Check your dates"
   price: "From €{priceLow} a night for up to {guests} guests (about €{perPerson} per person per night), plus a €{cleaningFee} final cleaning fee per stay."
+  included: "Linen, towels, Wi-Fi, pool and parking included."
   includedTitle: "Included in every stay"
   more: "Rates, stays and house rules"
 alassio:

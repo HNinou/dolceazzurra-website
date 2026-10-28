@@ -1,6 +1,6 @@
 ---
 title: "Villa avec piscine à Alassio · Villa Dolce & Azzurra"
-description: "Une maison d'architecte parmi les oliviers au-dessus d'Alassio : quatre suites, une piscine à débordement et la baie à 180°. À dix minutes de la plage."
+description: "Villa d’architecte au-dessus d’Alassio pour 8 personnes : quatre suites, piscine à débordement et toute la baie en vue. Plage à 10 min."
 reviewed: false
 hero:
   title: "Une maison d'architecte au-dessus de la baie d'Alassio"
@@ -8,20 +8,20 @@ hero:
 intro:
   kicker: "La maison"
   title: "Posée dans la colline, pas sur elle"
-  text: "Villa Dolce & Azzurra se tient parmi de vieux oliviers sur la colline de Solva, à environ {altitude} m au-dessus de la mer. Pierre locale, chêne naturel et grandes baies vitrées, le tout de plain-pied. Elle a été achevée en {completed}."
+  text: "Villa Dolce & Azzurra se tient parmi de vieux oliviers sur la colline de Solva, à environ {altitude} m au-dessus de la mer. Pierre locale, chêne naturel et grandes baies vitrées, le tout de plain-pied. Achevée en {completed}."
 points:
   kicker: "La villa"
   title: "La villa en trois points"
   items:
     - photo: "60"
       title: "Quatre suites égales"
-      text: "Quatre suites doubles dans leur aile, au calme, chacune avec un lit queen-size, une literie d'hôtel, sa salle de bains et sa terrasse au soleil du matin."
+      text: "Lits queen-size, extérieur privé et cinq salles de bains, le tout de plain-pied : familles et amis partagent le même confort."
     - photo: "18"
       title: "Vivre face à la vue"
-      text: "Séjour, table à manger et cuisine partagent un seul grand espace de plain-pied, derrière des baies vitrées toute hauteur ouvertes sur la baie d'Alassio."
+      text: "Cuisine ouverte et séjour derrière des baies vitrées toute hauteur, face à la baie. Wi-Fi Starlink et chauffage au sol pour les séjours d’hiver."
     - photo: "16"
       title: "Dehors"
-      text: "Un patio couvert de {patio} m² avec cuisine extérieure, la piscine à débordement face à la baie, un terrain de pétanque et une table de ping-pong sous les oliviers."
+      text: "Piscine à débordement avec couverture de sécurité invisible, patio couvert avec cuisine extérieure, pétanque et ping-pong sous les oliviers."
 hosts:
   kicker: "Vos hôtes"
   title: "Sylvie et Michel"
@@ -34,6 +34,7 @@ booking:
   kicker: "Réserver"
   title: "Choisissez vos dates"
   price: "À partir de {priceLow} € la nuit pour {guests} personnes maximum (environ {perPerson} € par personne et par nuit), plus {cleaningFee} € de ménage de fin de séjour."
+  included: "Linge, serviettes, Wi-Fi, piscine et parking compris."
   includedTitle: "Compris dans chaque séjour"
   more: "Tarifs, séjours et règlement intérieur"
 alassio:
