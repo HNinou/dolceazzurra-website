@@ -113,7 +113,7 @@ const redirectable = JSON.stringify(liveCodes.filter((x) => x !== 'en'));
       <p class="lead">{fill(c.booking.price)}</p>
       <p class="included-line">{c.booking.included}</p>
       <BookingTerms locale={locale} />
-      <BookingWidget locale={locale} />
+      <BookingWidget locale={locale} link={false} />
       <h3 class="inc-h">{c.booking.includedTitle}</h3>
       <ul class="inc">{house.included.map((i: string) => <li>{tf(locale, i)}</li>)}</ul>
       <a class="link-arrow" href={lp(locale, 'book')}>{c.booking.more}</a>

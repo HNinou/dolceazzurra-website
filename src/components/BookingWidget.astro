@@ -2,8 +2,10 @@
 // Hostaway calendar widget. One per page (Hostaway limit). Script loads only when the widget nears the viewport.
 import { t } from '../lib/i18n';
 import { booking } from '../lib/villa';
-interface Props { locale: string }
-const { locale } = Astro.props;
+// link: keep the 'Open the booking page' link under the calendar once it has loaded. With link={false}
+// the link only shows while loading, or if the calendar fails to load.
+interface Props { locale: string; link?: boolean }
+const { locale, link = true } = Astro.props;
 // Localize the listing URL: /fr/listings/... -> /<locale>/listings/...
 const fallbackUrl = booking.listing_url.replace(/\/(en|fr|it|de|nl)\/listings\//, `/${locale}/listings/`);
 const config = {
@@ -21,7 +23,7 @@ const config = {
   <div id="hostaway-calendar-widget"></div>
   <p class="fallback" data-widget-fallback>
     <span class="loading">{t(locale, 'widget.loading')}</span>
-    <a href={fallbackUrl} rel="noopener">{t(locale, 'widget.fallback')}</a>
+    <a href={fallbackUrl} rel="noopener" class:list={{ 'until-ready': !link }}>{t(locale, 'widget.fallback')}</a>
   </p>
   <noscript><p><a href={fallbackUrl} rel="noopener">{t(locale, 'widget.fallback')}</a></p></noscript>
 </div>
@@ -41,7 +43,7 @@ const config = {
         let advanced = false;
         const onRender = () => {
           if (!target || !target.childElementCount) return;
-          host.querySelector<HTMLElement>('[data-widget-fallback] .loading')?.remove();
+          host.querySelectorAll<HTMLElement>('[data-widget-fallback] .loading, [data-widget-fallback] .until-ready').forEach((el) => el.remove());
           // Late in the month the current month is mostly past: show next month first.
           // The widget's first two text-less buttons are its previous/next arrows.
           if (!advanced && new Date().getDate() > 20) {
