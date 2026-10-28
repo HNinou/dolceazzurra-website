@@ -90,6 +90,8 @@ photos:
       group: suites, alt_en: "Suite at dusk, its glass doors looking onto the lit pool terrace" }
   - { file: 62-salle-de-bains-ouverte-sur-la-suite.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: suites, alt_en: "Bathroom washbasin, with the suite and its terrace through the open door" }
+  - { file: 63-sylvie-et-michel-portrait.webp, w: 637, h: 796, rights: owner, role: page,
+      alt_en: "Sylvie and Michel, the owners, smiling by the sea" }   # close crop of 59 for the home page
   - { file: 59-sylvie-et-michel-vos-hotes.webp, w: 743, h: 929, rights: owner, role: page,
       alt_en: "Sylvie and Michel, the owners, by the sea in front of a stone fort" }   # owners' own photo, 2026-10-27
 
