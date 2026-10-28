@@ -36,7 +36,7 @@ export async function vacationRentalLd(locale: string, description: string) {
     containsPlace: {
       '@type': 'Accommodation',
       additionalType: 'EntirePlace',
-      occupancy: { '@type': 'QuantitativeValue', maxValue: house.capacity.guests },
+      occupancy: { '@type': 'QuantitativeValue', value: house.capacity.guests },
       numberOfBedrooms: house.capacity.suites,
       numberOfBathroomsTotal: house.capacity.bathrooms,
       numberOfRooms: house.capacity.suites,
