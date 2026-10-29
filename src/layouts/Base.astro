@@ -35,7 +35,10 @@ const ogImage = `${domain}/og/${locale}.jpg`;
     <link rel="canonical" href={canonical} />
     {alternates && liveCodes.map((c) => <link rel="alternate" hreflang={c} href={domain + lp(c, slug)} />)}
     {alternates && <link rel="alternate" hreflang="x-default" href={domain + lp(defaultLocale, slug)} />}
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preload" href={frauncesUrl} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={interUrl} as="font" type="font/woff2" crossorigin />
     <meta name="theme-color" content="#F4EFE8" />

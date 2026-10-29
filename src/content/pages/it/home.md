@@ -16,7 +16,7 @@ points:
     - photo: "60"
       title: "Quattro suite uguali"
       text: "Letti queen-size, spazio esterno privato e cinque bagni, tutto su un solo livello: famiglie e amici condividono lo stesso comfort."
-    - photo: "18"
+    - photo: "64"
       title: "Vivere con la vista"
       text: "Cucina aperta e soggiorno dietro vetrate a tutta altezza, di fronte alla baia. Wi-Fi Starlink e riscaldamento a pavimento per i soggiorni invernali."
     - photo: "16"

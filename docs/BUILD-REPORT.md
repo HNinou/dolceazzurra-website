@@ -97,6 +97,11 @@ Not done (needs the owner): photos of all four suites and more bathrooms; courty
 - Hero film re-cut to start on the pergola view over the bay; the house-front shots now come last (`public/video/villa-dolce-azzurra-bay-*.mp4`, 3.9 MB and 2.1 MB).
 - All changed pages and UI strings are `reviewed: false`.
 
+## New owner photos (29 Oct 2026)
+- Added to the gallery: 64 kitchen with the bay (interiors), 65 suites hallway (interiors), 66 covered patio and outdoor kitchen (outdoors), 67 the villa at sunset among olive trees (architecture, 1264 px, gallery only), 68 stone passage (architecture). Alt texts in EN/FR/IT/DE.
+- Swaps: home "Living with the view" uses 64 (was 18); The Villa uses 66 before "Outdoors" (was 57) and 68 beside the materials paragraph (was the night aerial 07, still in the gallery).
+- A sixth photo (sunset over the pool) was not added: it shows signs of AI generation (smeared stone texture, a ghost figure in the window reflections). Owner rule: no AI-generated images.
+
 ## Remaining warnings
 - Translation review flags (27 files). These are expected until the owner proofreads.
 - Small tap targets inside the Hostaway widget (third-party).

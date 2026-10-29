@@ -92,6 +92,16 @@ photos:
       group: suites, alt_en: "Bathroom washbasin, with the suite and its terrace through the open door" }
   - { file: 63-sylvie-et-michel-portrait.webp, w: 637, h: 796, rights: owner, role: page,
       alt_en: "Sylvie and Michel, the owners, smiling by the sea" }   # close crop of 59 for the home page
+  - { file: 64-cuisine-ilot-vue-sur-la-baie.webp, w: 2000, h: 1298, rights: owner, role: gallery,
+      group: interiors, alt_en: "Kitchen with oak cabinets and a stone island, a floor-to-ceiling window onto the bay of Alassio" }   # owner, 2026-10-29
+  - { file: 65-couloir-des-suites-lamelles-chene-puits-de-lumiere.webp, w: 1500, h: 2000, rights: owner, role: gallery,
+      group: interiors, alt_en: "Hallway to the suites, with an oak slatted wall and skylights" }   # owner, 2026-10-29
+  - { file: 66-patio-couvert-pergola-et-cuisine-exterieure.webp, w: 2000, h: 1334, rights: owner, role: gallery,
+      group: outdoors, alt_en: "Covered patio under the timber pergola, with outdoor sofas, dining table and outdoor kitchen" }   # owner, 2026-10-29
+  - { file: 67-villa-au-soleil-couchant-parmi-les-oliviers.webp, w: 1264, h: 843, rights: owner, role: gallery,
+      group: architecture, alt_en: "The stone villa in evening light among olive trees, sunbeds by the pool on the left" }   # owner, 2026-10-29
+  - { file: 68-passage-en-pierre-vers-la-cour.webp, w: 1125, h: 1500, rights: owner, role: gallery,
+      group: architecture, alt_en: "Opening in the villa's dry-stone wall, with olive trees and hills beyond" }   # owner, 2026-10-29
   - { file: 59-sylvie-et-michel-vos-hotes.webp, w: 743, h: 929, rights: owner, role: page,
       alt_en: "Sylvie and Michel, the owners, by the sea in front of a stone fort" }   # owners' own photo, 2026-10-27
 

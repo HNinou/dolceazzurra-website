@@ -16,7 +16,7 @@ points:
     - photo: "60"
       title: "Quatre suites égales"
       text: "Lits queen-size, extérieur privé et cinq salles de bains, le tout de plain-pied : familles et amis partagent le même confort."
-    - photo: "18"
+    - photo: "64"
       title: "Vivre face à la vue"
       text: "Cuisine ouverte et séjour derrière des baies vitrées toute hauteur, face à la baie. Wi-Fi Starlink et chauffage au sol pour les séjours d’hiver."
     - photo: "16"

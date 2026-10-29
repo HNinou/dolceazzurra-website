@@ -16,7 +16,7 @@ points:
     - photo: "60"
       title: "Vier gleichwertige Suiten"
       text: "Queen-Size-Betten, eigener Außenbereich und fünf Bäder, alles auf einer Ebene: Familien und Freunde wohnen gleich komfortabel."
-    - photo: "18"
+    - photo: "64"
       title: "Wohnen mit Aussicht"
       text: "Offene Küche und Wohnzimmer hinter raumhohen Glasfronten mit Blick auf die Bucht. Starlink-WLAN und Fußbodenheizung für Winteraufenthalte."
     - photo: "16"

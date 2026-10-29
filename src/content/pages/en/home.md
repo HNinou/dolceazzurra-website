@@ -16,7 +16,7 @@ points:
     - photo: "60"
       title: "Four equal suites"
       text: "Queen beds, private outdoor space and five bathrooms, all on one level, so families and friends share the same comfort."
-    - photo: "18"
+    - photo: "64"
       title: "Living with the view"
       text: "An open kitchen and living room behind floor-to-ceiling glass, facing the bay. Starlink Wi-Fi and underfloor heating for winter stays."
     - photo: "16"
