@@ -44,7 +44,7 @@ faq:
   - q: "Peut-on venir en hiver ?"
     a: "Oui. La maison est chauffée et garde une température douce, et la Riviera est calme et ensoleillée hors saison. Interrogez-nous pour un long séjour."
   - q: "Comment aller à la plage ?"
-    a: "Comptez environ 10 minutes en voiture jusqu'à la plage et au Budello. Un sentier descend aussi jusqu'à Alassio par Solva."
+    a: "Comptez environ 10 minutes en voiture jusqu'à la plage et au Budello, ou environ 20 minutes à pied par un sentier qui descend par Solva."
   - q: "Où sont les commerces les plus proches ?"
     a: "Supermarchés, boulangeries et marché se trouvent à Alassio, en contrebas de la villa."
 ---

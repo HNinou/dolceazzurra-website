@@ -24,6 +24,8 @@ const { locale } = Astro.props;
       i = (n + tiles.length) % tiles.length;
       const d = tiles[i].dataset;
       img.src = d.full!; img.alt = d.alt!; img.width = +d.w!; img.height = +d.h!;
+      // Low-resolution photos: at most half their pixel width on screen, so they stay sharp.
+      img.style.maxWidth = +d.w! < 1600 ? `min(100%, ${Math.round(+d.w! / 2)}px)` : '';
       cap.textContent = d.alt!; count.textContent = `${i + 1} / ${tiles.length}`;
     };
     tiles.forEach((tile, n) => tile.addEventListener('click', () => { show(n); dlg.showModal(); }));

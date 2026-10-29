@@ -19,7 +19,7 @@ sections:
     text: "L'isola di fronte alla costa è una riserva marina protetta. Dal porto partono barche per il giro dell'isola, e l'acqua limpida è ideale per lo snorkeling."
   - id: walks
     title: "Passeggiate dalla villa"
-    text: "Per camminare non serve l'auto. I sentieri collinari partono dalla villa, e un'antica mulattiera scende fino in paese."
+    text: "Per camminare non serve l'auto. I sentieri collinari partono dalla villa, e un sentiero scende fino alla spiaggia in circa 20 minuti."
   - id: cycling
     title: "La pista ciclabile"
     text: "Una pista ciclabile costiera va da Alassio verso Andora. Possiamo far consegnare e-bike in villa."

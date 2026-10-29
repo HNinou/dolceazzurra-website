@@ -41,7 +41,6 @@ An architect's house among olive trees, with the whole bay of Alassio in front o
 | Paradise, breathtaking, stunning, unique, dream | Hype | Concrete detail |
 | Mantellassi or any agency | One booking path only | Hostaway widget / "Check dates" |
 | Invented reviews or testimonials | Illegal and dishonest | Real quotes from `villa.yaml` only |
-| Salt-water pool | Not confirmed | "Infinity pool" |
 
 ## Page outlines with draft headlines (EN)
 

@@ -39,7 +39,7 @@ Never claim a step is done without running its check and reading the output.
 ## 2. Non-negotiable rules
 
 1. **Facts come from `content/villa.yaml`.** Never invent a fact, number, review, award, price, policy or distance. A value of `TODO_OWNER` means unknown: omit that element (render nothing), and list it in the build report.
-2. **Banned claims** (see `content/copy-brief.md`): no "Passivhaus certified", no photovoltaics, no energy figures, no star ratings, no "award-winning" (it is a *longlist*), no salt-water pool, no hype words, no Mantellassi or other agency. The verifier enforces this in every language.
+2. **Banned claims** (see `content/copy-brief.md`): no "Passivhaus certified", no photovoltaics, no energy figures, no star ratings, no "award-winning" (it is a *longlist*), no salt-water pool unless `villa.yaml` confirms it (confirmed 29 Oct 2026), no hype words, no Mantellassi or other agency. The verifier enforces this in every language.
 3. **One booking path: Hostaway.** Every page has a visible "Check dates" button (`data-cta="book"`) leading to the Book page with the Hostaway calendar widget.
 4. **The CIN `IT009001B4PNT36KBS` is visible on every page** (footer). Italian law.
 5. **Photo rights:** only photos with `rights: owner` (or `licensed`) in `content/photos.yaml` may be copied into `src/`. The 18 Alassio photos are `unconfirmed`: do not use them. Use villa photos for the Alassio page until the owner confirms.

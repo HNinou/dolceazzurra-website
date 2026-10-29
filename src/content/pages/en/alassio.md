@@ -19,7 +19,7 @@ sections:
     text: "The island off the coast is a protected marine reserve. Boats leave from the harbour for trips around it, and the clear water is good for snorkelling."
   - id: walks
     title: "Walks from the villa"
-    text: "You do not need the car to walk. Trails through the hills start at the villa, and an old footpath leads all the way down to the town."
+    text: "You do not need the car to walk. Trails through the hills start at the villa, and a footpath leads down to the beach in about 20 minutes."
   - id: cycling
     title: "The cycle path"
     text: "A coastal cycle path runs from Alassio towards Andora. We can arrange e-bikes delivered to the villa."

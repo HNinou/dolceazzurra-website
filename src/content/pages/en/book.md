@@ -44,7 +44,7 @@ faq:
   - q: "Can we stay in winter?"
     a: "Yes. The house is heated and keeps a mild temperature, and the Riviera is quiet and sunny out of season. Ask us about longer stays."
   - q: "How do we get to the beach?"
-    a: "It is about 10 minutes by car to the beach and the Budello. A footpath also leads down to Alassio through Solva."
+    a: "It is about 10 minutes by car to the beach and the Budello, or about 20 minutes on foot by a footpath that leads down through Solva."
   - q: "Where are the nearest shops?"
     a: "Supermarkets, bakeries and the market are in Alassio, below the villa."
 ---

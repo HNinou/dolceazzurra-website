@@ -21,7 +21,7 @@ points:
       text: "Cuisine ouverte et séjour derrière des baies vitrées toute hauteur, face à la baie. Wi-Fi Starlink et chauffage au sol pour les séjours d’hiver."
     - photo: "16"
       title: "Dehors"
-      text: "Piscine à débordement avec couverture de sécurité invisible, patio couvert avec cuisine extérieure, pétanque et ping-pong sous les oliviers."
+      text: "Piscine à débordement à l’eau salée avec couverture de sécurité invisible, patio couvert avec cuisine extérieure, pétanque et ping-pong sous les oliviers."
 hosts:
   kicker: "Vos hôtes"
   title: "Sylvie et Michel"
@@ -40,5 +40,5 @@ booking:
 alassio:
   kicker: "Alassio"
   title: "Dix minutes jusqu'à la plage et au Budello"
-  text: "Sous la villa s'étendent trois kilomètres de sable fin, les ruelles du Budello et le Muretto. L'île Gallinara est à une courte sortie en bateau, et les sentiers de colline partent de la villa."
+  text: "Sous la villa s'étendent trois kilomètres de sable fin, les ruelles du Budello et le Muretto. L'île Gallinara est à une courte sortie en bateau, et les sentiers de colline partent de la villa. Un chemin descend à la plage en 20 minutes environ."
 ---

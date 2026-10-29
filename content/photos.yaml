@@ -5,6 +5,7 @@
 #                   sets rights to owner/licensed. The verifier fails the build if one is used.
 # role: hero | feature | gallery | destination | map | page (used on a page, left out of the gallery)
 # display: small -> shown at half width in the gallery (two side by side)
+# display: tile  -> portrait photo shown in a normal landscape tile in the gallery, not a tall one
 # alt_en: write FR/IT/DE/NL alts from this; keep them factual (what is in the frame).
 # Villa photos 01-23 and 43-54 come from the owner's Airbnb listing at 2560 px (2026-10-27); the
 # originals in assets/photos stay as an archive (11, 15, 18 have no Airbnb version and keep their size).
@@ -82,7 +83,7 @@ photos:
       group: outdoors, alt_en: "Outdoor sofa against a dry-stone wall, lavender and green hills behind" }
   - { file: 57-villa-agave-et-lavande.webp, w: 2560, h: 1704, rights: owner, role: gallery,
       group: outdoors, alt_en: "The villa's covered patio behind lavender, an agave and an olive tree" }
-  - { file: 58-lavande-devant-la-pergola.webp, w: 2560, h: 3846, rights: owner, role: gallery,
+  - { file: 58-lavande-devant-la-pergola.webp, w: 2560, h: 3846, rights: owner, role: gallery, display: tile,
       group: outdoors, alt_en: "Lavender in flower in front of the timber pergola" }
   - { file: 60-suite-vue-sur-la-baie.webp, w: 2560, h: 1708, rights: owner, role: gallery,
       group: suites, alt_en: "Suite with an oak slatted wall and a glass door onto its terrace, the bay beyond" }

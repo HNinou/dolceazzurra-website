@@ -19,7 +19,7 @@ sections:
     text: "Die Insel vor der Küste ist ein Meeresschutzgebiet. Vom Hafen fahren Boote zu Rundfahrten, und das klare Wasser eignet sich gut zum Schnorcheln."
   - id: walks
     title: "Wanderungen ab der Villa"
-    text: "Zum Wandern brauchen Sie kein Auto. Die Wege in die Hügel beginnen an der Villa, und ein alter Fußweg führt bis hinunter in die Stadt."
+    text: "Zum Wandern brauchen Sie kein Auto. Die Wege in die Hügel beginnen an der Villa, und ein Fußweg führt in rund 20 Minuten hinunter zum Strand."
   - id: cycling
     title: "Der Radweg"
     text: "Ein Radweg entlang der Küste führt von Alassio Richtung Andora. Auf Wunsch lassen wir E-Bikes an die Villa liefern."

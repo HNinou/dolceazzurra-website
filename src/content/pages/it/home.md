@@ -21,7 +21,7 @@ points:
       text: "Cucina aperta e soggiorno dietro vetrate a tutta altezza, di fronte alla baia. Wi-Fi Starlink e riscaldamento a pavimento per i soggiorni invernali."
     - photo: "16"
       title: "Fuori"
-      text: "Piscina a sfioro con copertura di sicurezza nascosta, patio coperto con cucina esterna, bocce e ping-pong sotto gli ulivi."
+      text: "Piscina a sfioro con acqua salata e copertura di sicurezza nascosta, patio coperto con cucina esterna, bocce e ping-pong sotto gli ulivi."
 hosts:
   kicker: "I padroni di casa"
   title: "Sylvie e Michel"
@@ -40,5 +40,5 @@ booking:
 alassio:
   kicker: "Alassio"
   title: "Dieci minuti dalla spiaggia e dal Budello"
-  text: "Sotto la villa ci sono tre chilometri di sabbia fine, i vicoli del Budello e il Muretto. L'isola Gallinara è a una breve gita in barca, e i sentieri collinari partono dalla villa."
+  text: "Sotto la villa ci sono tre chilometri di sabbia fine, i vicoli del Budello e il Muretto. L'isola Gallinara è a una breve gita in barca, e i sentieri collinari partono dalla villa. Un sentiero scende alla spiaggia in circa 20 minuti."
 ---

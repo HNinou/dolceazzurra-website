@@ -152,7 +152,6 @@
     "Five tiled bathrooms with walk-in showers and opening skylights": "Cinque bagni piastrellati con doccia walk-in e lucernari apribili",
     "Open-air courtyard under a timber pergola linking the two wings": "Corte a cielo aperto sotto una pergola in legno che collega le due ali",
     "80 m² covered patio with sea view and ENO outdoor kitchen (electric plancha, sink, fridge)": "Patio coperto di 80 m² con vista mare e cucina esterna ENO (plancha elettrica, lavello, frigorifero)",
-    "Infinity pool facing the bay, with a hidden retractable safety cover": "Piscina a sfioro di fronte alla baia, con copertura di sicurezza retrattile nascosta",
     "Bocce (pétanque) court with small bar and outdoor fridge; outdoor competition table-tennis table": "Campo da bocce con piccolo bar e frigorifero esterno; tavolo da ping-pong da competizione all'aperto",
     "Roof terrace among the olive trees for sunrise and sunset": "Terrazza sul tetto tra gli ulivi, per l'alba e il tramonto",
     "Outdoor shower facing the garden": "Doccia esterna affacciata sul giardino",
@@ -181,7 +180,6 @@
     "Gallinara Island marine reserve: boat trips, snorkelling": "Riserva marina dell'isola Gallinara: gite in barca, snorkeling",
     "Riviera cycle path from Alassio towards Andora": "Pista ciclabile della Riviera da Alassio verso Andora",
     "Solva Cavia hillside above Alassio, Riviera di Ponente, Liguria": "Sulla collina di Solva Cavia, sopra Alassio, Riviera di Ponente, Liguria",
-    "A footpath leads down to Alassio through Solva; hill trails (Solva, Cavia, Monte Castellaro) start from the villa.": "Un sentiero scende ad Alassio passando per Solva; i sentieri collinari (Solva, Cavia, Monte Castellaro) partono dalla villa.",
     "Alassio beach and Budello": "Spiaggia di Alassio e Budello",
     "Laigueglia": "Laigueglia",
     "Albenga": "Albenga",
@@ -204,7 +202,9 @@
     "Hillside, seasonal tasting menu, book ahead": "In collina, menu degustazione stagionale, prenotare in anticipo",
     "Budello institution, seafood and pasta": "Un'istituzione del Budello, pesce e pasta",
     "Pizza by a medieval tower on the sea": "Pizza ai piedi di una torre medievale sul mare",
-    "Modern, short menu, Ligurian wines": "Moderno, menu breve, vini liguri"
+    "Modern, short menu, Ligurian wines": "Moderno, menu breve, vini liguri",
+    "Salt-water infinity pool facing the bay, with a hidden retractable safety cover": "Piscina a sfioro con acqua salata di fronte alla baia, con copertura di sicurezza retrattile nascosta",
+    "A footpath leads down to Alassio beach through Solva, about 20 minutes on foot; hill trails (Solva, Cavia, Monte Castellaro) start from the villa.": "Un sentiero scende alla spiaggia di Alassio passando per Solva, circa 20 minuti a piedi; i sentieri collinari (Solva, Cavia, Monte Castellaro) partono dalla villa."
   },
   "reviews": {
     "kicker": "Ospiti",

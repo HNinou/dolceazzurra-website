@@ -102,6 +102,11 @@ Not done (needs the owner): photos of all four suites and more bathrooms; courty
 - Swaps: home "Living with the view" uses 64 (was 18); The Villa uses 66 before "Outdoors" (was 57) and 68 beside the materials paragraph (was the night aerial 07, still in the gallery).
 - A sixth photo (sunset over the pool) was not added: it shows signs of AI generation (smeared stone texture, a ghost figure in the window reflections). Owner rule: no AI-generated images.
 
+## Pool, footpath and gallery sizes (29 Oct 2026)
+- **Salt-water pool** confirmed by the owner: `salt_water: true` (the verifier's salt-water ban only applies when it isn't). Mentioned in the pool amenity and the home "Outside" point, in all languages. Copy brief and CLAUDE.md rule updated.
+- **Footpath:** a path leads down to Alassio beach in about 20 minutes on foot. In villa.yaml (`location.walks`), the home Alassio teaser, the Alassio "Walks" section and the Book FAQ.
+- **Gallery:** photos under 1600 px wide (here 67, the villa at sunset) never take the full-width last tile and show at most half their pixel width in the viewer, so they stay sharp. New `display: tile` in photos.yaml shows a portrait photo in a normal landscape tile; used for the lavender (58).
+
 ## Remaining warnings
 - Translation review flags (27 files). These are expected until the owner proofreads.
 - Small tap targets inside the Hostaway widget (third-party).

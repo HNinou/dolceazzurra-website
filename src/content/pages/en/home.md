@@ -21,7 +21,7 @@ points:
       text: "An open kitchen and living room behind floor-to-ceiling glass, facing the bay. Starlink Wi-Fi and underfloor heating for winter stays."
     - photo: "16"
       title: "Outside"
-      text: "Infinity pool with a hidden safety cover, a covered patio with outdoor kitchen, bocce and table tennis under the olive trees."
+      text: "Salt-water infinity pool with a hidden safety cover, a covered patio with outdoor kitchen, bocce and table tennis under the olive trees."
 hosts:
   kicker: "Your hosts"
   title: "Sylvie and Michel"
@@ -40,5 +40,5 @@ booking:
 alassio:
   kicker: "Alassio"
   title: "Ten minutes to the beach and the Budello"
-  text: "Below the villa lie three kilometres of fine sand, the old lanes of the Budello and the Muretto. Gallinara Island is a short boat trip away, and the hill trails start from the villa."
+  text: "Below the villa lie three kilometres of fine sand, the old lanes of the Budello and the Muretto. Gallinara Island is a short boat trip away, and the hill trails start from the villa. A footpath leads down to the beach in about 20 minutes."
 ---

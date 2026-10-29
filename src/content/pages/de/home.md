@@ -21,7 +21,7 @@ points:
       text: "Offene Küche und Wohnzimmer hinter raumhohen Glasfronten mit Blick auf die Bucht. Starlink-WLAN und Fußbodenheizung für Winteraufenthalte."
     - photo: "16"
       title: "Draußen"
-      text: "Infinity-Pool mit versenkbarer Sicherheitsabdeckung, überdachte Terrasse mit Außenküche, Boccia und Tischtennis unter den Olivenbäumen."
+      text: "Salzwasser-Infinity-Pool mit versenkbarer Sicherheitsabdeckung, überdachte Terrasse mit Außenküche, Boccia und Tischtennis unter den Olivenbäumen."
 hosts:
   kicker: "Ihre Gastgeber"
   title: "Sylvie und Michel"
@@ -40,5 +40,5 @@ booking:
 alassio:
   kicker: "Alassio"
   title: "Zehn Minuten zum Strand und zum Budello"
-  text: "Unterhalb der Villa liegen drei Kilometer feiner Sandstrand, die Gassen des Budello und der Muretto. Die Insel Gallinara ist eine kurze Bootsfahrt entfernt, und die Wanderwege in die Hügel beginnen direkt an der Villa."
+  text: "Unterhalb der Villa liegen drei Kilometer feiner Sandstrand, die Gassen des Budello und der Muretto. Die Insel Gallinara ist eine kurze Bootsfahrt entfernt, und die Wanderwege in die Hügel beginnen direkt an der Villa. Ein Fußweg führt in rund 20 Minuten hinunter zum Strand."
 ---

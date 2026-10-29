@@ -19,7 +19,7 @@ sections:
     text: "L'île au large est une réserve marine protégée. Des bateaux partent du port pour en faire le tour, et l'eau claire se prête au snorkeling."
   - id: walks
     title: "Randonnées depuis la villa"
-    text: "Pas besoin de voiture pour marcher. Des sentiers de colline partent de la villa, et un vieux chemin descend jusqu'à la ville."
+    text: "Pas besoin de voiture pour marcher. Des sentiers de colline partent de la villa, et un chemin descend jusqu'à la plage en 20 minutes environ."
   - id: cycling
     title: "La piste cyclable"
     text: "Une piste cyclable longe la côte d'Alassio vers Andora. Nous pouvons faire livrer des vélos électriques à la villa."

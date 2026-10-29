@@ -117,8 +117,8 @@ house:
     - id: patio
       en: "80 m² covered patio with sea view and ENO outdoor kitchen (electric plancha, sink, fridge)"
     - id: pool
-      en: "Infinity pool facing the bay, with a hidden retractable safety cover"
-      salt_water: "yes" # Airbnb says salt water; old site doesn't. Omit until confirmed.
+      en: "Salt-water infinity pool facing the bay, with a hidden retractable safety cover"
+      salt_water: true   # confirmed by the owner, 2026-10-29
     - id: games
       en: "Bocce (pétanque) court with small bar and outdoor fridge; outdoor competition table-tennis table"
     - id: roof-terrace
@@ -205,7 +205,7 @@ location:
     - { place: "Monaco", time: "1 h 15" }
     - { place: "Genoa airport (GOA)", time: "1 h 20" }
     - { place: "Nice airport (NCE)", time: "1 h 35" }
-  walks: "A footpath leads down to Alassio through Solva; hill trails (Solva, Cavia, Monte Castellaro) start from the villa."
+  walks: "A footpath leads down to Alassio beach through Solva, about 20 minutes on foot; hill trails (Solva, Cavia, Monte Castellaro) start from the villa."   # 20 min on foot: owner, 2026-10-29
   highlights:
     - "3 km of fine sand beach and bagni (beach clubs)"
     - "The Budello (Via XX Settembre) and the Muretto di Alassio"

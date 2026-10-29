@@ -25,15 +25,19 @@ const cellsOf = <T extends { p: { small?: boolean } }>(items: T[]) => {
   return out;
 };
 // The group's first photo stays first (the gallery opens on the view); portrait tiles come
-// next so the grid packs into full rows.
+// next so the grid packs into full rows. Low-resolution photos (under LOW px wide) go before the
+// other landscape tiles, so they never land in the last row, where a tile can widen to full width.
+const LOW = 1600;
+const low = (cell: { p: { src: { width: number } } }[]) => cell.length === 1 && cell[0].p.src.width < LOW;
 const tallFirst = <T extends { p: { src: { width: number; height: number } } }>(cells: T[][]) => {
   const [lead, ...rest] = cells;
-  return lead ? [lead, ...rest.filter((c) => tall(c)), ...rest.filter((c) => !tall(c))] : cells;
+  const wide = rest.filter((c) => !tall(c));
+  return lead ? [lead, ...rest.filter((c) => tall(c)), ...wide.filter((c) => low(c)), ...wide.filter((c) => !low(c))] : cells;
 };
 let index = 0;
 // Desktop columns per group: 2 for groups of 2 or 4 tiles, otherwise 3. In a 3-column group
 // whose tiles don't fill the last row, the last one or two tiles widen to fill it.
-const tall = (cell: { p: { src: { width: number; height: number } } }[]) => cell.length === 1 && cell[0].p.src.height > cell[0].p.src.width;
+const tall = (cell: { p: { src: { width: number; height: number }; compact?: boolean } }[]) => cell.length === 1 && !cell[0].p.compact && cell[0].p.src.height > cell[0].p.src.width;
 const tilesOf = (cells: { p: { src: { width: number; height: number } } }[][]) => cells.reduce((sum, c) => sum + (tall(c) ? 2 : 1), 0);
 const colsFor = (cells: { p: { src: { width: number; height: number } } }[][]) => {
   const n = tilesOf(cells);
